@@ -72,15 +72,8 @@ var map = new mapboxgl.Map({
     center: [-101.33083597801148, 22.192387333218626], // starting position [lng, lat]
     zoom: 4.1 // starting zoom
 });
-map.addControl(
-    new mapboxgl.GeolocateControl({
-    positionOptions: {
-    enableHighAccuracy: true
-    },
-    trackUserLocation: true
-    })
-    );
-    
+
+
 var loadFiles = [
     d3.json("Mexico_Estados.geojson"),
     d3.csv("contagios.csv")
@@ -391,6 +384,14 @@ Promise.all(loadFiles).then(function(data) {
 
         map.style.sourceCaches['attribution-layer']._source.attribution = "&copy; <a href='https://escueladegobierno.itesm.mx/'> Estudiantes del Tecnológico de Monterrey </a>";
         map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(
+            new mapboxgl.GeolocateControl({
+            positionOptions: {
+            enableHighAccuracy: true
+            },
+            trackUserLocation: true
+            })
+            );
 
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
