@@ -65,7 +65,7 @@ var popup_mes = new mapboxgl.Popup({
 });
 var element_touched_a = 'AGS'
 var element_touched_b = 'AGS'
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nZWxmaWd1ZXJvYXJpdmVyYSIsImEiOiJjazh2eGZnNjcwcW9hM2ZudmRyaTRnMXRpIn0.Iz4sCjOM8HSDtLxnFCjSjg';
+mapboxgl.accessToken = 'pk.eyJ1Ijoicm9wb25teCIsImEiOiJjazg1OHpseHcwMG1lM2VrbGo1emY5enVzIn0.v27OOfnnNHFavaO04-affQ';
 
 var map = new mapboxgl.Map({
     container: 'map', // container id
