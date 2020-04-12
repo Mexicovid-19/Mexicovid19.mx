@@ -8,18 +8,18 @@
         <meta property="og:description" content="Seguimiento diario a la evoluación del Covid-19 en México"/>
         <title>ITESM @ Covid-19</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="style_covid.css">
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
 		<style>
 			body { margin: 0; padding: 0; }
 			#map { position: absolute; top: 0; bottom: 0; width: 100%; }
 		</style>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style_covid.css">
 	</head>
         
 
@@ -44,6 +44,7 @@
 	})
 	);
 	</script>
+	 <!--
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -56,9 +57,8 @@
               <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
             </ul>
           </div>
-        </nav>
-
-    <div class="container-fluid h-100 d-flex flex-column">
+        </nav>-->
+   	<div class="container-fluid h-100 d-flex flex-column">
         <div class="row h-75 map-container flex-fill" id='map'></div>
         <div id='map-overlay' class='map-overlay'></div>
         <div id='console'>
@@ -84,7 +84,7 @@
                     <label class="switch">
                         <input type="checkbox" name="checkbox" checked>
                         <div class="slider round">
-                            <span class="on">Positivos (clic)</span><span class="off">Sospechosos</span><!--END--></div></label>
+                            <span class="on">Positivos (clic)</span><span class="off">Sospechosos</span></div></label>
                         </div>
                     </div>
                     <p id=fuente>Fuente: SINAVE/DGE/InDRE</p>
@@ -278,7 +278,8 @@
                     </tr>
                 </table>
             </div>
-    </div>
-    <script src="mapas_covid.js"></script>
+	</div>
+	
+	<script src="mapas_covid.js"></script>
     </body>
 </html>
