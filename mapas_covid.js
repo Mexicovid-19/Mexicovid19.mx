@@ -383,7 +383,7 @@ Promise.all(loadFiles).then(function(data) {
 
 
         map.style.sourceCaches['attribution-layer']._source.attribution = "&copy; <a href='https://escueladegobierno.itesm.mx/'> Estudiantes del Tecnológico de Monterrey </a>";
-        /*map.addControl(new mapboxgl.NavigationControl());-->*/
+        /*;-->*/
         map.addControl(
             new mapboxgl.GeolocateControl({
             positionOptions: {
@@ -392,6 +392,7 @@ Promise.all(loadFiles).then(function(data) {
             trackUserLocation: true
             })
             );
+        map.addControl(new mapboxgl.NavigationControl())
 
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
