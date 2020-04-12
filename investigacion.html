@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>investigación</title>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .no-svg .logo {
+  width: 99px;
+  height: 99px;
+  background-image: url(/path-to/your-png-image.png);
+}
+
+h2{
+	text-align: center;
+	font-family: 'Alike', serif;
+	font-size: 1.75em;
+ 	letter-spacing: .2em;
+ 	line-height: 1.1em;
+ 	margin:0px;
+ 	text-align: center;
+ 	text-transform: uppercase;
+ 	color: #413F42;
+}
+
+h3{
+	text-align: center;
+	font-family: 'Alike', serif;
+	font-size:16px;
+}
+
+.author{
+  font-size: 10px;
+  text-align:right;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+}
+
+p{
+	font-family: 'Alike', serif;
+	text-align:left;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#doubling{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  padding-bottom: 1%;
+}
+
+.bullets{
+	font-family: 'Alike', serif;
+	font-size:20px;
+}
+
+table {
+                font-family: 'Alike', serif;
+                font-size: 0.7em;
+                border-collapse: collapse;
+                margin: 0.5em;
+                padding: 0.5em 0.5em;
+                right: 0em;
+                top: 0em;
+                }
+
+ td{
+                border-right: 1px;
+                border-bottom: 1px dotted ;
+                border-bottom-style: dotted;
+                text-align: left;
+                padding: 0.4em;
+                color: black;
+                }
+
+                th {
+                color: white;
+                text-align: left;
+                padding: 0.4em;
+                font-family: arial, sans-serif;
+                font-size: 0.7em;
+                border-right: none;
+                line-height: 0.5em;
+
+                }
+
+   hr {
+  border: 10px solid #213267  ;
+  border-radius: 5px;
+}
+
+.myFloated {
+  float: left;
+  position: relative;
+  top: -0.30em;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 0px;
+  margin-bottom: -0.9em;
+  font-size: 80px;
+  line-height: normal;
+  font-weight: bold;
+  padding: 5px 15px 25px  17px;
+}
+
+caption {
+  display: table-caption;
+  text-align: center;
+  caption-side: bottom;
+}
+
+figcaption{
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.navbar-header{
+	display:inline-block;
+}
+
+#logo{
+	position: relative;
+	padding-top:2px; 
+	padding-bottom: 0;
+}
+
+header{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 80px;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 72px;
+    margin-bottom: 20px;
+
+}
+
+.head{
+    text-align: center;
+    position: relative;
+}
+
+.headerobjectswrapper{
+}
+
+.subhead{
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 0 12px 0;
+
+}
+
+.headline.hl3{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 36px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+
+    text-align: center;
+	font-family: 'Alike', serif;
+ 	letter-spacing: .1em;
+ 	line-height: 1.1em;
+ 	margin:0px;
+ 	text-align: center;
+ 	text-transform: uppercase;
+ 	color: #413F42;
+}
+.headline.hl4{
+    font-weight: 700;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+
+
+ </style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Covid-19 en México</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="metodologia.html">Metodología</a></li>
+        <li><a href="seguimientoestados.html">Seguimiento a Estados</a></li>
+        <li class="active"><a href="investigacion.html">Investigación</a></li>
+        <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
+      </ul>
+      <img id="logo" src="logo.png" style="width:15%" align="right"> 
+    </div>
+  </div>
+</nav>
+<div class="jumbotron">
+  <div class="container sm">
+  	<div class="head">
+    <div class="headerobjectswrapper">
+        <header>Análisis</header>
+    </div>
+        <div class="subhead">Miércoles 8 de Abril del 2020</div>
+</div>
+
+<div class="row">
+      <div id="estados" class="col-sm-12">
+        <div class="content">
+            <div class="head"><span class="headline hl3"> Curvas de casos positivos reportados por entidad federativa </span><p><span class="headline hl4">por ALEJANDRO DÍAZ DOMINGUEZ*</span></p></div>
+        <p><span class="myFloated">E</span>l número absoluto de casos reportados como positivos por covid19 varía entre las entidades federativas de México, de acuerdo con la información emitida por la Secretaría de Salud (1). Considerando el reporte de 6 de abril de 2020, dichas variaciones van desde el número acumulado de 600 para Ciudad de México, 260 para el Estado de México, alrededor de 150 en Puebla, o 120 en Jalisco hasta menos de una decena en Campeche, Zacatecas y Colima.</p>
+
+        <p> Si bien es importante tener presente que dichas variaciones existen, también es importante conocer, con independencia del número de casos acumulados, cómo se comportan tales datos al ser graficados según la fecha de reporte. Esto nos permite observar una serie de curvas. </p>
+
+        <p> Como se sabe, las epidemias siguen las curvas de crecimiento típicas de la mayoría de los sistemas biológicos, llamadas “sigmoideas”. Cuando se modela un brote, las entradas cruciales son el cómo, el por qué y el cuándo la curva cambiará de una “fase” exponencial a una “fase” logarítmica. Cuanto antes podamos hacer que eso suceda será mejor. </p>
+
+        <p> Ahora bien, existen tres fases en una sigmoidea: crecimiento lento al principio (“fase” de rezago), crecimiento rápido (exponencial) en la parte media y luego se observa un crecimiento decreciente y eventualmente estancado al final (“fase” de logaritmo). Una forma de llegar a la “fase” de logaritmo podría ser disminuyendo los contactos entre las personas infectadas y las susceptibles. </p>
+
+        <p> En la Figura 1 se aprecian las curvas para cada entidad federativa entre el 13 de marzo y el 6 de abril, es decir los reportes públicos durante 25 días, respetando la escala apropiada para cada entidad. En dichas curvas parece que se ha transitado de la “fase” de rezago, o también llamada de crecimiento lento, a la “fase” de crecimiento rápido. Ello se puede apreciar porque las curvas empiezan a tomar cierta vertical que nos sugiere que los casos están aumentando considerablemente en pocos días. </p>
+
+              <figure>
+            <img id="doubling" src="graphics/curvasedosfinal.jpeg" class="img-responsive" style="width:100%" alt="Image">
+            <figcaption> Figura 1 - Confirmados Positivos por Estado.</figcaption>
+            </figure>
+
+        <p>Aunque ya se ha empezado a debatir sobre la conveniencia de analizar o no los datos oficiales por diversas razones, que van desde argumentos sobre el subreporte hasta la desconfianza, aún con ello, son los únicos datos públicos disponibles, los cuales de todas formas conviene escrudiñar. Para quienes lidiamos con datos de elecciones que provenían de la década de los ochenta, resultará hasta lógico trabajar con este tipo de consideraciones sobre fiabilidad. Sin embargo, ello no debe impedir que aprovechemos esta información, incluyendo desde luego, las previsiones, cavilaciones y críticas del caso. </p>
+
+        <p>En síntesis, lo que estas curvas reflejan es que nos encontramos, aun considerando las evidentes disparidades entre entidades federativas, en una etapa de crecimiento rápido para todos los casos. Si se piensa que estos datos conllevan un subreporte, entonces, esto podría afianzar la conclusión preliminar sobre dónde parece que nos encontramos, es decir, pasamos de la “fase” de rezago o crecimiento lento en un inicio, a una “fase” de crecimiento rápido en cada entidad federativa. Y ello significa lo que ya es evidente, es decir, nos falta un relativamente largo trecho por recorrer.</p>
+
+        <p>(1) Secretaría de Salud. <a href="https://www.gob.mx/salud/documentos/informacion-internacional-y-nacional-sobre-nuevo-coronavirus-2019-ncov" target="_blank"> Información internacional y nacional sobre nuevo coronavirus (COVID-2019) </a></p>
+
+<p>* Alejandro Díaz Domínguez es doctor en Ciencia Política por la Universidad de Vanderbilt y profesor de la Escuela de Gobierno del Tecnológico de Monterrey (<a href="https://twitter.com/alejdiazd" target="_blank">@alejdiazd</a>) </p>
+
+
+        </div>
+    </div>
+      <br>
+  <br>
+  <br>
+<hr>
+</div>
+
+      <div class="row">
+        <div id="est" class="col-sm-12">
+        <div class="content">
+            <div class="head"><span class="headline hl3">Tiempo de duplicación de casos positivos reportados por entidad federativa </span><p><span class="headline hl4">por ALEJANDRO DÍAZ DOMINGUEZ*</span></p></div>
+        <p><span class="myFloated">U</span>na forma de acercarse para tratar de empezar a entender la inmediatez de lo viral del covid19 es calcular el tiempo de duplicación y el número de reproducción. Ahora sólo trataremos el primer indicador, el cual es relativamente simple de entender: se trata de ver en cuántos días los casos positivos llegan al doble. Al principio, esto es, a inicios de marzo, esto ocurría en pocos días. Para el corte del 4 de abril, el número de días que tarda la duplicación varía entre 3 y 12 días, según la entidad federativa de la cual se trate. </p>
+
+		<p>Para calcular el tiempo de duplicación simplemente se calcula cada cuanto esto ocurre, considerando el número de casos reportados como positivos en cada entidad federativa. El promedio nacional al 4 de abril es de 7 días, es decir que, en lugar de 1890 casos, una semana antes había alrededor de 950. En otras palabras, entre el 28 y el 29 de marzo había alrededor de 920 casos (848 el 28 y 993 el 29).  </p> 
+
+		<p>Lo que se espera con medidas de mitigación es que la duplicación, medida en número de días, se amplíe, es decir, que pasen más días antes de observar una cifra al doble. Por ejemplo, a nivel nacional, el 16 de marzo se reportaron 82 casos positivos, para el 19 del mismo mes se reportaron 164, arrojando una duplicación de tres días. Dos semanas más tarde, es decir, al 4 de abril, el tiempo de duplicación es de siete días, sugiriendo que la duplicación ya toma algunos días más (de 3 a 7), lo cual es una noticia relativamente alentadora. </p>
+
+		<p>Sin embargo, esto varía de entidad en entidad federativa. Para ello, con corte al 4 de abril, se calculó el número de días que toma la duplicación de casos reportados como positivos, variando entre 3 y 12 días, como se observa en la gráfica. </p>
+
+		<p>Los casos parecen duplicarse más rápido en Tamaulipas y Sinaloa, esto es, cada 3 días. Con 4 días aparecen Tlaxcala, Morelos, Colima y la Ciudad de México. El doble de casos se observa cada 5 días en Tabasco, Chihuahua, Campeche, Baja California Sur, Baja California y Aguascalientes. Finalmente, con 6 días se observa a Zacatecas y Coahuila. Todos los estados antes mencionados, con corte al 4 de abril mostraban un tiempo menor de duplicación. El dato a nivel nacional es 7 días.  </p>
+
+
+		<p>Los 18 estados restantes muestran un tiempo mayor al dato nacional. Por ejemplo, se observan 10 días en Yucatán, San Luis Potosí, Querétaro y Jalisco, así como 12 en Nuevo León. Sin duda resultará relevante realizar análisis más detallados para conocer qué factores influyen en la variación observada en el número de días que toma observar la citada duplicación. </p>
+ 
+      <img id="doubling" src="graphics/doublingtime2.jpeg" class="img-responsive" style="width:80%" alt="Image">
+
+      <p>Una aplicación del tiempo de duplicación se encuentra en los análisis por región autonómica para el caso español elaborados por Kiko Llaneras et al (1). La estimación formal de toda la curva y el deseable incremento del número de días que tomaría observar el doble de casos positivos se halla en Abbott et al (2). <br> Agradezco las estimaciones proporcionadas por Mauro Díaz Domínguez para esta gráfica (@MauroDiazd). 
+
+
+	<p>(1) Andrino, Graso y Llaneras "Así evoluciona la curva del coronavirus en España y en cada autonomía": https://elpais.com/sociedad/2020/04/03/actualidad/1585936102_333545.html 
+	(2) Abbott et all, <a href="https://cmmid.github.io/topics/covid19/current-patterns-transmission/global-time-varying-transmission.html" target="_blank">"Temporal variation in transmission during the COVID-19 outbreak" </a> </p>
+
+	<p>* Alejandro Díaz Domínguez es doctor en Ciencia Política por la Universidad de Vanderbilt y profesor de la Escuela de Gobierno del Tecnológico de Monterrey (<a href="https://twitter.com/alejdiazd" target="_blank">@alejdiazd</a>) </p>
+	<br>
+	<br>
+	<br>
+<hr>
+    </div>
+    <div id="hospitalizacion" class="col-sm-12">
+    	 <div class="head"><span class="headline hl3">Acercamiento a las probabilidades de hospitalización por grupo de edad a nivel nacional </span><p><span class="headline hl4">por ALEJANDRO DÍAZ DOMINGUEZ*</span></p></div>
+        <p> <span class="myFloated">E</span>n términos del modelo para difusión estimado por doctora Natalie E. Dean, especialista en epidemiología de enfermedades infecciosas emergentes y profesora en la Universidad de Florida (<a href="https://twitter.com/nataliexdean" target="_blank">@nataliexdean</a>) para el caso de Nueva York (1), el número de hospitalizaciones por grupo de edad por coronavirus depende de contar con al menos la siguiente información: </p>
+
+        <p>
+        <ul class="bullets">
+		  <li>El tamaño del grupo de edad (¿cuántas personas tienen esa edad?).</li>
+		  <li>Probabilidad de infección en ese grupo de edad (¿con qué frecuencia se está expuesto?).</li>
+		  <li>Probabilidad de hospitalización una vez infectado, ello para el grupo de edad correspondiente.</li>
+		</ul>
+		</p>
+
+		<p>El cálculo es relativamente sencillo. Se divide el porcentaje de personas hospitalizadas entre el porcentaje de población que pertenece a cada grupo de edad. Esto nos da una razón.  Posteriormente se opta por un grupo como referencia para estandarizar las razones y estar en aptitud de realizar comparaciones apropiadas. Se procede a convertir en valor “uno” al grupo de edad de referencia, mientras que los valores restantes serán las X veces más probable que cada grupo tiene de ser hospitalizado en relación con el grupo referencia.</p>
+
+		<p>Para ello se requeriría información realmente desagregada, tal como:
+		<ul class="bullets">
+		  <li>Género</li>
+		  <li>Edad</li>
+		  <li>Fecha de prueba positiva</li>
+		  <li>Fecha de hospitalización</li>
+		  <li>Entidad federativa</li>
+		</ul> 
+ </p>
+
+		<p>Si bien esta información no se presenta desglosada en la base de datos de casos positivos, en el reporte del 4 de abril de 2020, ya se ofreció información agregada por edad y condición, esto es, ambulatoria y hospitalización. De esa gráfica, mediante un software para extraer datos de gráficas (graph digitizer) se obtuvo el número absoluto de personas hospitalizadas por grupo de edad (2). Asimismo, se obtuvo la pirámide poblacional nacional por grupos de edad al 2020 (3). Posteriormente se procedió a calcular los porcentajes tanto de población de cada grupo de edad, como de personas hospitalizadas. Para este último dato se dividió el número absoluto de personas hospitalizadas entre el total de casos hospitalizados reportado ese día. </p>
+
+		<p>Posteriormente se obtuvo una razón de población entre hospitalización por grupo de edad. Se definió a un grupo como referencia, en este caso, el grupo de 25 a 29 años. Esto permite estandarizar para convertir en “uno” al grupo referencia y obtener las veces que es más probable que las personas integrantes de cada grupo sean hospitalizadas.  </p>
+
+
+		<p>En la tabla que sirve de ejemplo para este ejercicio, se observa que por cada persona entre 25 y 29 años que tiene que ser hospitalizada, es 6 veces más probable que una persona de 65 años o mayor también tenga que serlo o 5 veces más probable quienes tengan entre 55 y 59 años, según se observa en la columna E.  </p>
+
+<div>
+<table width=90%>
+<h3>Tabla 1. Hospitalización por grupo de edad (“veces que es más probable”), México 2020</h3>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td > <p>A</p> </td>
+<td > <p>B</p> </td>
+<td > <p>C</p> </td>
+<td> <p>D</p> </td>
+<td><p>E</p></td>
+<td>&nbsp;</td>
+<td><p>F</p></td>
+</tr>
+<tr>
+<td> <p>Grupo</p></td>
+<td><p>Pob %</p></td>
+<td><p>Hosp %</p></td>
+<td><p>Raz&oacute;n</p></td>
+<td><p>Referencia</p></td>
+<td><p>Veces m&aacute;s <br> probable</p></td>
+<td>&nbsp;</td>
+<td><p>Hosp abs</p></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><p>F / total</p></td>
+<td><p>B/A</p></td>
+<td>&nbsp;</td>
+<td><p>C/D</p></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><p>0-4 a&ntilde;os</p></td>
+<td><p>8.5%</p></td>
+<td><p>0.9%</p></td>
+<td><p>0.110</p></td>
+<td><p>0.502</p></td>
+<td><p>0.2</p></td>
+<td>&nbsp;</td>
+<td><p>4</p></td>
+</tr>
+<tr>
+<td><p>5-9 a&ntilde;os</p></td>
+<td><p>8.7%</p></td>
+<td><p>0.0%</p></td>
+<td><p>0.000</p></td>
+<td><p>0.502</p></td>
+<td><p>0.0</p></td>
+<td>&nbsp;</td>
+<td><p>0</p></td>
+</tr>
+<tr>
+<td><p>10-14 a&ntilde;os</p></td>
+<td><p>8.6%</p>
+</td>
+<td><p>0.0%</p>
+</td>
+<td><p>0.000</p>
+</td>
+<td><p>0.502</p>
+</td>
+<td><p>0.0</p>
+</td>
+<td>&nbsp;</td>
+<td><p>0</p>
+</td>
+</tr>
+<tr>
+<td><p>15-19 a&ntilde;os</p></td>
+<td><p>8.7%</p></td>
+<td><p>1.2%</p></td>
+<td><p>0.134</p></td>
+<td><p>0.502</p></td>
+<td><p>0.3</p></td>
+<td>&nbsp;</td>
+<td><p>5</p></td>
+</tr>
+<tr>
+<td><p>20-24 a&ntilde;os</p>
+</td>
+<td><p>8.5%</p></td>
+<td><p>1.2%</p></td>
+<td><p>0.138</p></td>
+<td><p>0.502</p></td>
+<td ><p>0.3</p></td>
+<td >&nbsp;</td>
+<td><p>5</p></td>
+</tr>
+<tr>
+<td >
+<p><strong>25-29 a&ntilde;os</strong></p></td>
+<td><p>8.4%</p></td>
+<td><p>4.2%</p></td>
+<td><p><strong>0.502</strong></p></td>
+<td><p>0.502</p></td>
+<td ><p><strong>1.0</strong></p></td>
+<td>&nbsp;</td>
+<td><p>18</p></td>
+</tr>
+<tr>
+<td><p>30-34 a&ntilde;os</p></td>
+<td><p>7.6%</p></td>
+<td><p>8.2%</p></td>
+<td><p>1.077</p></td>
+<td><p>0.502</p></td>
+<td><p>2.1</p></td>
+<td>&nbsp;</td>
+<td><p>35</p></td>
+</tr>
+<tr>
+<td><p>35-39 a&ntilde;os</p></td>
+<td><p>7.1%</p></td>
+<td><p>7.9%</p></td>
+<td><p>1.127</p></td>
+<td><p>0.502</p></td>
+<td><p>2.2</p></td>
+<td>&nbsp;</td>
+<td><p>34</p></td>
+</tr>
+<tr>
+<td><p>40-44 a&ntilde;os</p></td>
+<td><p>6.6%</p></td>
+<td><p>9.6%</p></td>
+<td><p>1.448</p></td>
+<td><p>0.502</p></td>
+<td><p>2.9</p></td>
+<td>&nbsp;</td><td>
+<p>41</p></td>
+</tr>
+<tr>
+<td><p>45-49 a&ntilde;os</p></td>
+<td><p>6.2%</p></td>
+<td ><p>11.7%</p></td>
+<td><p>1.879</p></td>
+<td><p>0.502</p></td>
+<td><p>3.7</p></td>
+<td>&nbsp;</td>
+<td><p>50</p></td>
+</tr>
+<tr>
+<td><p>50-54 a&ntilde;os</p>
+</td>
+<td ><p>5.4%</p></td>
+<td ><p>11.7%</p></td>
+<td><p>2.175</p></td>
+<td><p>0.502</p></td>
+<td ><p>4.3</p></td>
+<td >&nbsp;</td>
+<td ><p>50</p></td>
+</tr>
+<tr>
+<td ><p>55-59 a&ntilde;os</p></td>
+<td ><p>4.5%</p></td>
+<td ><p>11.7%</p></td>
+<td ><p>2.582</p></td>
+<td><p>0.502</p></td>
+<td><p>5.1</p></td>
+<td>&nbsp;</td>
+<td><p>50</p></td>
+</tr>
+<tr>
+<td><p>60-64 a&ntilde;os</p></td>
+<td><p>3.6%</p></td>
+<td><p>8.6%</p></td>
+<td><p>2.387</p></td>
+<td><p>0.502</p></td>
+<td ><p>4.8</p></td>
+<td >&nbsp;</td>
+<td ><p>37</p></td>
+</tr>
+<tr>
+<td ><p><strong>65 a&ntilde;os +</strong></p></td>
+<td >
+<p>7.6%</p></td>
+<td ><p>23.1%</p></td>
+<td ><p>3.036</p></td>
+<td ><p>0.502</p></td>
+<td ><p><strong>6.0</strong></p></td>
+<td >&nbsp;</td>
+<td ><p>99</p></td>
+</tr>
+</tbody>
+<caption> Fuentes: A= pirámide poblacional CONAPO 2020; B y F= distribución de casos por grupo de edad, reporte 4 abril 2020, Secretaría de Salud.  Gran total= 1,890 positivos, 78% ambulatorios y 22% hospitalizados; B= corresponde al 22% de hospitalizados, cuyo total es 428. Cifras a nivel nacional. </caption>
+</table>
+</div>
+
+<p> Este ejercicio es una estimación muy general que simplemente permite asomarse a una somera idea sobre qué grupos de edad resultarían más susceptibles y en qué medida. Si bien se sabe que las personas mayores son las más susceptibles al contar en algunas situaciones con un estado de salud precario, este tipo de ejercicios permite conocer en qué medida esto ocurre (6 veces más para personas de 65 o más años, en comparación con el grupo de 25 a 29 años, como se aprecia en la columna E). </p>
+
+<p>Si bien la estimación resulta muy elemental, al menos permite contar con un panorama de veces en las cuales es más probable observar hospitalización por grupos de edad a nivel nacional. Si se contara con estos mismos datos a nivel entidad federativa podría replicarse este ejercicio para conocer un poco más sobre cada estado. </p>
+
+<p>Una crítica a este tipo de cálculos es que esta información puede no ser tan adecuada. Es decir, se requerirían datos serológicos para conocer anticuerpos (que derivan de muestras sanguíneas) para saber con qué frecuencia se infectan los diferentes grupos de edad. Dado que lo único con lo que contamos es con los datos públicos agregados que incluyen hospitalización, por grupo de edad, éstos en realidad sirven como una aproximación a la frecuencia con la cual cada grupo de edad se encuentra expuesto.</p>
+
+<p>Adicionalmente, debe recordarse que el dato de la columna F (número absoluto de personas hospitalizadas por grupo de edad) se obtuvo a partir de una gráfica que no incluye esos números, sino que se empleó un software especializado, lo cual puede no ser exacto por uno o dos casos, pero al menos la información obtenida sí parece servir para aproximarse al dato de frecuencia de exposición y con ello poder calcular las veces en las cuales es más probable observar hospitalización según un grupo de edad determinado.</p>
+
+
+<p>(1) “An EPI 101 tutorial…”: https://twitter.com/nataliexdean/status/1241507113429610503?s=20 <br>
+(2) Casos positivos por grupos de edad a nivel nacional: https://coronavirus.gob.mx/  <br>
+(3) CONAPO y SINAIS: http://www.dgis.salud.gob.mx/contenidos/basesdedatos/bdc_poblacion_gobmx.html </p>
+
+<p>* Alejandro Díaz Domínguez es doctor en Ciencia Política por la Universidad de Vanderbilt y profesor de la Escuela de Gobierno del Tecnológico de Monterrey (<a href="https://twitter.com/alejdiazd" target="_blank">@alejdiazd</a>)</p> 
+
+
+     </div>
+  </div>
+</div>
+
+</body>
+</html>
