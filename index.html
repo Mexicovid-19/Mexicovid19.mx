@@ -24,6 +24,26 @@
         
 
  <body>
+	<div id="map"></div>
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nZWxmaWd1ZXJvYXJpdmVyYSIsImEiOiJjazh2eGZnNjcwcW9hM2ZudmRyaTRnMXRpIn0.Iz4sCjOM8HSDtLxnFCjSjg';
+	var map = new mapboxgl.Map({
+	container: 'map', // container id
+	style: 'mapbox://styles/mapbox/streets-v11',
+	center: [-96, 37.8], // starting position
+	zoom: 3 // starting zoom
+	});
+	 
+	// Add geolocate control to the map.
+	map.addControl(
+	new mapboxgl.GeolocateControl({
+	positionOptions: {
+	enableHighAccuracy: true
+	},
+	trackUserLocation: true
+	})
+	);
+	</script>
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
