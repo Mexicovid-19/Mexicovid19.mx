@@ -65,13 +65,25 @@ var popup_mes = new mapboxgl.Popup({
 });
 var element_touched_a = 'AGS'
 var element_touched_b = 'AGS'
-mapboxgl.accessToken = 'pk.eyJ1Ijoicm9wb25teCIsImEiOiJjazg1OHpseHcwMG1lM2VrbGo1emY5enVzIn0.v27OOfnnNHFavaO04-affQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW5nZWxmaWd1ZXJvYXJpdmVyYSIsImEiOiJjazh2eGZnNjcwcW9hM2ZudmRyaTRnMXRpIn0.Iz4sCjOM8HSDtLxnFCjSjg';
+
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/roponmx/ck8gg4lk807en1ipfsdw472u6', // stylesheet location
     center: [-101.33083597801148, 22.192387333218626], // starting position [lng, lat]
     zoom: 4.1 // starting zoom
-});
+    });
+     
+    // Add geolocate control to the map.
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        })
+    );
+    
 var loadFiles = [
     d3.json("Mexico_Estados.geojson"),
     d3.csv("contagios.csv")
