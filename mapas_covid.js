@@ -69,7 +69,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoicm9wb25teCIsImEiOiJjazg1OHpseHcwMG1lM2VrbGo1e
 
 var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/roponmx/ck8gg4lk807en1ipfsdw472u6', // stylesheet location
+    style: 'mapbox://styles/roponmx/streets-v11', // stylesheet location
     center: [-101.33083597801148, 22.192387333218626], // starting position [lng, lat]
     zoom: 4.1 // starting zoom
     });
