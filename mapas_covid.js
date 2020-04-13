@@ -65,11 +65,11 @@ var popup_mes = new mapboxgl.Popup({
 });
 var element_touched_a = 'AGS'
 var element_touched_b = 'AGS'
-mapboxgl.accessToken = 'pk.eyJ1Ijoicm9wb25teCIsImEiOiJjazg1OHpseHcwMG1lM2VrbGo1emY5enVzIn0.v27OOfnnNHFavaO04-affQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoibWlsZHJlZGciLCJhIjoiY2s4eHc2cGpiMWJsbzNscXEzcTE5dzhtMiJ9.MPadSAVs6Jr1gOs7hfYVpQ';
 var map = new mapboxgl.Map({
     container: 'map', // container id
     /*style: 'mapbox://styles/roponmx/ck8gg4lk807en1ipfsdw472u6', // stylesheet location*/
-    style: 'mapbox://styles/mapbox/streets-v11',
+    style: 'mapbox://styles/mildredg/ck8xwex5j19ei1iqkha7x2sko',
     center: [-101.33083597801148, 22.192387333218626], // starting position [lng, lat]
     zoom: 4.1 // starting zoom
 });
