@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style_covid.css">
     </head>
         
@@ -77,27 +78,23 @@
             <div id="grafico"> 
             </div>
 
-            <div id='estados'>
-                <div class='totalsC' id='totals'>
-                    <h1> <center>Totales al día</center></h1>
-                    <h2> <b> <center> <label id='fechacorte_r'>.</label> </center></h2>
-                    <hr>
-                    <div class="col-sm-6">
-                            <p class=tot_label>POSITIVOS</p>
-                            <p id=tot_lab_pos >.</p>
-                    </div>
-                    <div class="col-sm-6">
-                            <p class=tot_label>SOSPECHOSOS</p>
-                            <p id=tot_lab_sos>.</p>
-                        </div>
+        <div id='estados'>
+            <div class='totalsC' id='totals'>
+                <div class="col-sm-12 text-center">
+                    <span id='fechacorte_r'>11 de Abril</span>
                 </div>
+                <div class="col-sm-6 text-center">
+                    <p id=tot_lab_pos >120</p>
+                    <span class=tot_label>POSITIVOS</span>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <p id=tot_lab_sos>120</p>
+                    <span class=tot_label>SOSPECHOSOS</span>
+                </div>
+            </div>
+            <hr>
             <div class="col-sm-12">
                 <table id='tabla-estados' class="js-sort-table">
-                    <tr>
-                        <th> <b> Entidad </b> </th>
-                        <th class="js-sort-number"> <b> Positivos </b> </th>
-                        <th class="js-sort-number"> <b> Sospechosos </b> </th>
-                    </tr>
                     <tr id='AGS' class='tupla'>
                         <td id='AGS_n' class='edo_label'> AGS  </td>
                         <td id='AGS_p' class='num_p'> . </td>
