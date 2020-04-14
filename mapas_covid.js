@@ -421,7 +421,7 @@ Promise.all(loadFiles).then(function(data) {
             overlay.innerHTML = '';
 
             popup_mes.setLngLat(e.lngLat)
-                .setHTML(feature.properties.ABREV + "<br/> Pos.:" + feature.properties[today_p] +"<br/>Sosp.:"+ feature.properties[today_s])
+                .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Positivos: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Sospechosos: "+ feature.properties[today_s])
                 .addTo(map);
             document.getElementById(feature.properties.ABREV).style.background = '#393a54';
             var element_touched_c = feature.properties.ABREV
@@ -585,11 +585,3 @@ Promise.all(loadFiles).then(function(data) {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-
-document.getElementById("clickMe").onclick = doFunction;
-
-document.getElementById("clickMe").onclick = function () {
-    estados;
-    estadosselect;
-};
