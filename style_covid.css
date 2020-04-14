@@ -59,18 +59,7 @@
                 color: #900C3F;
                 font-size: 4em;
                 }
-                #console {
-                position: absolute;
-                width: 20vw;
-                margin-top: 0;
-                margin: 0px;
-                padding: .7vh .9vw;
-                background-color: black;
-                }
-                #console:hover {
-                opacity: 1;
-                outline: #3f007d solid 2px;
-                }
+                
 
                 #logoegob{
                 max-width: 100%;
@@ -95,17 +84,7 @@
                 text-align: center;
                 color:white;
                 }
-                #estados {
-                position: absolute;
-                margin: 0em;
-                padding: .1em .10em;
-                top: 0em;
-                right: .5em;
-                background-color: black;
-                overflow: scroll;
-                width: 20vw;
-                height: 95vh;
-                }
+                
                 table {
                 font-family: arial, sans-serif;
                 font-size: 0.7em;
@@ -154,37 +133,7 @@
                 color: #DA7801;
                 font-size: 1em;
                 }
-                .sliderC {
-                -webkit-appearance: none;
-                width: 100%;
-                height: 0.7em;
-                background: #d3d3d3;
-                outline: none;
-                opacity: 0.7;
-                -webkit-transition: .2s;
-                transition: opacity .2s;
-                }
-                .sliderC:hover {
-                opacity: 1;
-                }
-                .sliderC::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 1em;
-                height: 1em;
-                border: 0.1em solid #f0ffff;
-                border-radius: 0.2em;
-                background: #a569e0;
-                cursor: pointer;
-                margin-top: -0.5em; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-                box-shadow: .1em .1em .1em #000000, 0em 0em .1em #0d0d0d;
-                }
-                .sliderC::-moz-range-thumb {
-                width: 1em;
-                height: 1em;
-                background: #3f007d;
-                cursor: pointer;
-                }
+               
                 .totalsC{
                 top:1vh;
                 width: 100%;
@@ -262,17 +211,7 @@
                 width: 0;
                 height: 0;
                 }
-                .slider {
-                position: absolute;
-                cursor: pointer;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: #DA7801;
-                -webkit-transition: .4s;
-                transition: .4s;
-                }
+                
                 .slider:before {
                 position: absolute;
                 content: "";
@@ -328,23 +267,12 @@
                 }
                 .slider.round:before {
                 border-radius: 80%;}
-
-                #grafico{
-                position: absolute;
-                width: 30vw;
-                margin-top: 10px;
-                padding: 10px 20px;
-                background-color: black;
-                bottom: 5vh;
-                left: 0.6vw;
-               }
-
-                #grafico:hover{
-                opacity: 1;
-                outline: #3f007d solid 2px;
-                margin: 0px;
+                .navbar{
+                    top: 0
+                    bottom: 0;
+                    width: 100vw;
+                    height:6vh;
                 }
-
 
                .line {
                     fill: none;
@@ -366,12 +294,7 @@
                     color: white;
                 }
 
-                .navbar{
-                top: 0
-                bottom: 0;
-                width: 100vw;
-                height:6vh;
-                }
+                
 
                 div.tooltip {   
                 position: absolute;         
@@ -393,3 +316,228 @@
                 top: 0em;
                 left: 0em;
             }
+
+
+                @media  (max-width: 990px) {
+                    header {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                    }
+                  
+                    .hamburger {
+                      display: flex;
+                      justify-content: flex-end;
+                    }
+                  
+                    .menu {
+                      display: none;
+                    }
+                  
+                    footer > ul {
+                      display: flex;
+                      padding: 0px 70px;
+                      justify-content: space-around;
+                      list-style: none;
+                    }
+                  
+                    main {
+                      display: flex;
+                      flex-direction: column;
+                    }
+                    #estados {
+                        display: none;
+                    }
+                    #console {
+                        display: none;
+                    }
+                    #grafico{
+                        display: none;
+                    }
+                    #noconsole {
+                        float: right;
+                        position: absolute;
+                        width: 20vw;
+                        margin-top: 0;
+                        margin: 0px;
+                        padding: .7vh .9vw;
+                        background-color: black;
+                        left: 0em;
+                        top: 2.7em;    
+                    }
+                    #noconsole:hover {
+                        opacity: 1;
+                        outline: #3f007d solid 2px;
+                    }
+                    .sliderC {
+                        -webkit-appearance: none;
+                        width: 100%;
+                        height: 0.7em;
+                        background: #d3d3d3;
+                        outline: none;
+                        opacity: 0.7;
+                        -webkit-transition: .2s;
+                        transition: opacity .2s;
+                        }
+                        .sliderC:hover {
+                        opacity: 1;
+                        }
+                        .sliderC::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 1em;
+                        height: 1em;
+                        border: 0.1em solid #f0ffff;
+                        border-radius: 0.2em;
+                        background: #a569e0;
+                        cursor: pointer;
+                        margin-top: -0.5em; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                        box-shadow: .1em .1em .1em #000000, 0em 0em .1em #0d0d0d;
+                        }
+                        .sliderC::-moz-range-thumb {
+                        width: 1em;
+                        height: 1em;
+                        background: #3f007d;
+                        cursor: pointer;
+                        }
+        
+                  }
+                  
+                  @media (min-width: 600px) {
+                    header {
+                      display: flex;
+                      flex-direction: row;
+                    }
+                    
+                    header > .logo {
+                      flex: 1;
+                      align-items: center;
+                      display: flex;
+                      justify-content: center;
+                    }
+                  
+                    header > h1 {
+                      flex: 2;
+                    }
+                  
+                    footer > ul {
+                      margin-bottom: 0px;
+                      -webkit-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
+                      -moz-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
+                      box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
+                      padding: 10px 0px;
+                    }
+                  
+                    
+                    .product {
+                      margin: 5px 50px;
+                    }
+                    
+                  }
+                  
+                  @media  (min-width: 990px) {
+                    .hamburger {
+                      display: none;
+                    }
+                  
+                    ul {
+                      display: flex;
+                      justify-content: flex-end;
+                      list-style: none;
+                      height: 50px;
+                      align-items: center;
+                    }
+                  
+                    footer > ul {
+                      justify-content: space-around;
+                    }
+                  
+                    ul > li {
+                      padding: 0px 20px;
+                    }
+                  
+                    main {
+                      display: flex;
+                      flex-direction: row;
+                    }
+                  
+                    .product {
+                      margin: 5px 20px;
+                      flex: 1;
+                    }
+                    #estados {
+                        float: right;
+                        position: absolute;
+                        margin: 0em;
+                        padding: .1em .10em;
+                        top: 0em;
+                        right: 0em;
+                        background-color: black;
+                        overflow: scroll;
+                        width: 20vw;
+                        height:100vh;
+                    }
+
+                    #console {
+                        float: right;
+                        position: absolute;
+                        width: 20vw;
+                        margin-top: 0;
+                        margin: 0px;
+                        padding: .7vh .9vw;
+                        background-color: black;
+                        left: 0em;
+                        top: 2.7em;    
+                    }
+                    #console:hover {
+                        opacity: 1;
+                        outline: #3f007d solid 2px;
+                    }
+                    #grafico{
+                        position: absolute;
+                        width: 30vw;
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        background-color: black;
+                        bottom: 5vh;
+                        left: 0vw;
+                       }
+        
+                    #grafico:hover{
+                        opacity: 1;
+                        outline: #3f007d solid 2px;
+                        margin: 0px;
+                    }
+                    .sliderC {
+                        -webkit-appearance: none;
+                        width: 100%;
+                        height: 0.7em;
+                        background: #d3d3d3;
+                        outline: none;
+                        opacity: 0.7;
+                        -webkit-transition: .2s;
+                        transition: opacity .2s;
+                        }
+                        .sliderC:hover {
+                        opacity: 1;
+                        }
+                        .sliderC::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 1em;
+                        height: 1em;
+                        border: 0.1em solid #f0ffff;
+                        border-radius: 0.2em;
+                        background: #a569e0;
+                        cursor: pointer;
+                        margin-top: -0.5em; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                        box-shadow: .1em .1em .1em #000000, 0em 0em .1em #0d0d0d;
+                        }
+                        .sliderC::-moz-range-thumb {
+                        width: 1em;
+                        height: 1em;
+                        background: #3f007d;
+                        cursor: pointer;
+                        }
+        
+                  }
