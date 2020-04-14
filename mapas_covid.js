@@ -423,7 +423,7 @@ Promise.all(loadFiles).then(function(data) {
             popup_mes.setLngLat(e.lngLat)
                 .setHTML(feature.properties.ABREV + "<br/> Pos.:" + feature.properties[today_p] +"<br/>Sosp.:"+ feature.properties[today_s])
                 .addTo(map);
-            document.getElementById(feature.properties.ABREV).style.background = '#bcbddc';
+            document.getElementById(feature.properties.ABREV).style.background = '#393a54';
             var element_touched_c = feature.properties.ABREV
             if (element_touched_c !== element_touched_a) {
                 document.getElementById(element_touched_a).style.background = '#222';

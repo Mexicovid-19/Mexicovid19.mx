@@ -86,7 +86,6 @@ color:white;
 }
 
 table {
-font-family: arial, sans-serif;
 font-size: 0.7em;
 border-collapse: collapse;
 width: 100%;
@@ -112,7 +111,6 @@ th {
 color: white;
 text-align: left;
 padding: 0.4em;
-font-family: arial, sans-serif;
 font-size: 0.7em;
 border-right: none;
 line-height: 0.5em;
@@ -179,7 +177,6 @@ color: white;
 }
 
 #tot_lab_pos{
-font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
 font-weight: 900;
 font-size: 1.6em;
 font-stretch: ultra-expanded;
@@ -187,7 +184,6 @@ color: #ff4747;
 margin:0
 }
 #tot_lab_sos{
-font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
 font-weight: 900;
 font-size: 1.6em;
 font-stretch: ultra-expanded;
@@ -279,7 +275,6 @@ transform: translate(-50%,-50%);
 top: 50%;
 left: 50%;
 font-size: 0.6em;
-font-family: Verdana, sans-serif;
 }
 input:checked+ .slider .on
 {display: block;}
@@ -302,7 +297,7 @@ border-radius: 80%;}
 
 .line {
   fill: none;
-  stroke: #ff4747;
+  stroke: #9dc7f1;
   stroke-width: 5;
   }
 
@@ -319,7 +314,9 @@ border-radius: 80%;}
 .dot {
   color: white;
 }
-
+circle  {
+  fill:#2066ac !important;
+}
 
 
 div.tooltip {   
