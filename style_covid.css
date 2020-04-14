@@ -383,20 +383,27 @@ left: 0em;
   #buttoncontainer{
     position: absolute;
     display: flex;
-    bottom: 0em;
+    bottom: -1em;
     width: 100%;
     right: 0em;
-    height:8vh;
-    background-color: black;
+    height: 8vh;
+    background-color: transparent;
   }
-
+  #logoanalysis{
+    display: block; /* remove extra space below image */
+    font-size: 40px;
+  }
+  
   .button {
-  width: 50%;
-  margin: 4px 5px;
-  background-color: #2066ac;
-  z-index: 100;
-  font-size: 20px;
-  text-transform: UPPERCASE;
+    width: 50%;
+    margin: 0px 1px;
+    border-radius: 5px;
+    margin-bottom: 14px;
+    background-color: #333;
+    z-index: 100;
+    border: none;
+    font-size: 31px;
+    text-transform: UPPERCASE;
   }
 }
 
@@ -503,4 +510,16 @@ left: 0em;
       outline: #3f007d solid 2px;
       margin: 0px;
   }     
+}
+
+.estadosselect {
+  position: absolute;
+  margin: 0em;
+  padding: .1em .10em;
+  top: 0px;
+  right: 0em;
+  background-color: #222;
+  overflow: scroll;
+  width: 20vw;
+  height:100%;
 }

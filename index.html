@@ -19,6 +19,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style_covid.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
         
 
@@ -40,7 +41,9 @@
     <div class="container-fluid h-100 d-flex flex-column">
         <div class="row h-75 map-container flex-fill" id='map'></div>
         <div id='map-overlay' class='map-overlay'></div>
-        <div id="buttoncontainer" class="btn-group btn-group-toggle"><button class="button badge badge-primary text-wrap">  Grafica</button><button class="button badge badge-primary text-wrap" >Tabla</button> </div>
+        <div id="buttoncontainer">
+            <button class="button badge badge-primary text-wrap" > <i class="fas fa-chart-line logoanalysis"></i></button>
+            <button class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> </div>
         <div id='console'>
             <a href="https://escueladegobierno.itesm.mx/" target="_blank">
                 <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:80%" >
