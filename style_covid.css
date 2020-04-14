@@ -484,7 +484,7 @@ left: 0em;
       padding: .7vh .9vw;
       background-color: #222;
       left: 0em;
-      top: 3.1em;    
+      top: 50px;    
   }
   #console:hover {
       opacity: 1;
@@ -492,7 +492,6 @@ left: 0em;
   }
   #grafico{
       position: absolute;
-      width: 30vw;
       margin-top: 10px;
       padding: 10px 20px;
       background-color: #222;

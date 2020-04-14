@@ -426,7 +426,7 @@ Promise.all(loadFiles).then(function(data) {
             document.getElementById(feature.properties.ABREV).style.background = '#bcbddc';
             var element_touched_c = feature.properties.ABREV
             if (element_touched_c !== element_touched_a) {
-                document.getElementById(element_touched_a).style.background = 'black';
+                document.getElementById(element_touched_a).style.background = '#222';
                 element_touched_a = element_touched_c;
             }
         });
