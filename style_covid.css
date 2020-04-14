@@ -1,513 +1,513 @@
-body {
-  margin: 0;
-  padding: 0;
-  font: normal 1.6rem/1.6 'Work Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black
-  }
-  
-  html {
-  font-size: 62.5%;
-  }
+               body {
+                margin: 0;
+                padding: 0;
+                font: normal 1.6rem/1.6 'Work Sans', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: black
+                }
+                
+                html {
+                font-size: 62.5%;
+                }
 
-  #hover-map { position:absolute; top:0; bottom:0; width:100%; }
-  #map {
-  position: absolute;
-  top: 6vh;
-  padding: 0;
-  bottom: 0;
-  width: 100vw;
-  height:94vh;
-  }
-  #fuente{
-      margin:0;
-      padding:0;
-  font-size:  0.6em;
-  color: white;
-  }
-  #fechacorte_r{
-  font-size: 1.5em;
-  }
-  #fechacorte_l{
-   font-size: 1em;
-  }
-  h1 {
-  font-size: 1em;
-  line-height: 0.5em;
-  color: white;
-  padding: 0;
-  }
-  h2 {
-  font-size: 0.9em;
-  line-height: 0.5em;
-  margin-bottom: 0.3em;
-  color:white;
-  }
-  h3 {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  margin-bottom: 2em;
-  color: white;
-  }
-  a {
-  text-decoration: none;
-  color: #2dc4b2;
-  }
-  #fecha_corte{
-  color: #900C3F;
-  font-size: 4em;
-  }
-  
+                #hover-map { position:absolute; top:0; bottom:0; width:100%; }
+                #map {
+                position: absolute;
+                top: 6vh;
+                padding: 0;
+                bottom: 0;
+                width: 100vw;
+                height:94vh;
+                }
+                #fuente{
+                    margin:0;
+                    padding:0;
+                font-size:  0.6em;
+                color: white;
+                }
+                #fechacorte_r{
+                font-size: 1.5em;
+                }
+                #fechacorte_l{
+                 font-size: 1em;
+                }
+                h1 {
+                font-size: 1em;
+                line-height: 0.5em;
+                color: white;
+                padding: 0;
+                }
+                h2 {
+                font-size: 0.9em;
+                line-height: 0.5em;
+                margin-bottom: 0.3em;
+                color:white;
+                }
+                h3 {
+                font-size: 0.7em;
+                line-height: 0.7em;
+                margin-bottom: 2em;
+                color: white;
+                }
+                a {
+                text-decoration: none;
+                color: #2dc4b2;
+                }
+                #fecha_corte{
+                color: #900C3F;
+                font-size: 4em;
+                }
+                
 
-  #logoegob{
-  max-width: 100%;
-  display: block; /* remove extra space below image */
-  }
-  .session {
-  margin-bottom: 1em;
-  }
-  .rowConsole {
-  height: 1vw;
-  width: 100%;
-  }
-  .colors {
-  background: linear-gradient(to right, #c7e9b4, #7fcdbb, #41b6c4, #1d91c0, #225ea8, #0c2c84);
-  margin-bottom: 0.1em;
-  }
-  .labelConsole {
-  font-size: 0.7em;
-  font-weight: bold;
-  width: 14%;
-  display: inline-block;
-  text-align: center;
-  color:white;
-  }
-  
-  table {
-  font-family: arial, sans-serif;
-  font-size: 0.7em;
-  border-collapse: collapse;
-  width: 100%;
-  height: 50%;
-  overflow: scroll;
-  margin: 0.5em;
-  padding: 0.5em 0.5em;
-  right: 0em;
-  top: 0em;
-  background-color: #9e9ac8;
-  }
-  
-  td{
-  border-right: none;
-  border-bottom: 1px dotted ;
-  border-bottom-style: dotted;
-  text-align: left;
-  padding: 0.4em;
-  color: white;
-  }
+                #logoegob{
+                max-width: 100%;
+                display: block; /* remove extra space below image */
+                }
+                .session {
+                margin-bottom: 1em;
+                }
+                .rowConsole {
+                height: 1vw;
+                width: 100%;
+                }
+                .colors {
+                background: linear-gradient(to right, #c7e9b4, #7fcdbb, #41b6c4, #1d91c0, #225ea8, #0c2c84);
+                margin-bottom: 0.1em;
+                }
+                .labelConsole {
+                font-size: 0.7em;
+                font-weight: bold;
+                width: 14%;
+                display: inline-block;
+                text-align: center;
+                color:white;
+                }
+                
+                table {
+                font-family: arial, sans-serif;
+                font-size: 0.7em;
+                border-collapse: collapse;
+                width: 100%;
+                height: 50%;
+                overflow: scroll;
+                margin: 0.5em;
+                padding: 0.5em 0.5em;
+                right: 0em;
+                top: 0em;
+                background-color: #9e9ac8;
+                }
+                
+                td{
+                border-right: none;
+                border-bottom: 1px dotted ;
+                border-bottom-style: dotted;
+                text-align: left;
+                padding: 0.4em;
+                color: white;
+                }
 
-  th {
-  color: white;
-  text-align: left;
-  padding: 0.4em;
-  font-family: arial, sans-serif;
-  font-size: 0.7em;
-  border-right: none;
-  line-height: 0.5em;
+                th {
+                color: white;
+                text-align: left;
+                padding: 0.4em;
+                font-family: arial, sans-serif;
+                font-size: 0.7em;
+                border-right: none;
+                line-height: 0.5em;
 
-  }
-  .tupla{
-  background-color: black;
-  }
-  .edo_label{
-     color: white;
-      font-size: 0.8em;    
-  }
-  .num_p{
-  color: #DF1E1E;
-  font-size: 1em;
-  }
-  .num_s{
-  color: #DA7801;
-  font-size: 1em;
-  }
- 
-  .totalsC{
-  top:1vh;
-  width: 100%;
-  border: none;
-  max-width:200vw; /* or whatever width you want. */
-  display: inline-block;
-  z-index:1;
-  background: black;
-  outline: none;
-  opacity: 0.9;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-  }
-  .totalsC:hover {
-  opacity: 1;
-  outline: #3f007d solid .3em;
-  }
+                }
+                .tupla{
+                background-color: black;
+                }
+                .edo_label{
+                   color: white;
+                    font-size: 0.8em;    
+                }
+                .num_p{
+                color: #DF1E1E;
+                font-size: 1em;
+                }
+                .num_s{
+                color: #DA7801;
+                font-size: 1em;
+                }
+               
+                .totalsC{
+                top:1vh;
+                width: 100%;
+                border: none;
+                max-width:200vw; /* or whatever width you want. */
+                display: inline-block;
+                z-index:1;
+                background: black;
+                outline: none;
+                opacity: 0.9;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+                }
+                .totalsC:hover {
+                opacity: 1;
+                outline: #3f007d solid .3em;
+                }
 
-  /* Create two equal columns that floats next to each other */
-  .total_column {
-  background-color:#aaa;
-  float: left;
-  width: 50%;
-  padding: 0.5em;
-  height: 10vh; /* Should be removed. Only for demonstration */
-  }
-  /* Clear floats after the columns */
-  .total_row:after {
-  content: "";
-  display: table;
-  clear: both;
-  }
-  
-  .tot_label{
-  font-size: 0.6em;
-  font-weight: bold;
-  display: inline-block;
-  text-align: center;
-  padding-left: 0.5em;
-  margin:0;
-  margin-top: 0;
-  color: white;
-  }
+                /* Create two equal columns that floats next to each other */
+                .total_column {
+                background-color:#aaa;
+                float: left;
+                width: 50%;
+                padding: 0.5em;
+                height: 10vh; /* Should be removed. Only for demonstration */
+                }
+                /* Clear floats after the columns */
+                .total_row:after {
+                content: "";
+                display: table;
+                clear: both;
+                }
+                
+                .tot_label{
+                font-size: 0.6em;
+                font-weight: bold;
+                display: inline-block;
+                text-align: center;
+                padding-left: 0.5em;
+                margin:0;
+                margin-top: 0;
+                color: white;
+                }
 
-  #tot_lab_pos{
-  padding-left: 0.1em;
-  padding-right: 0.4em;
-  text-align: center;
-  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
-  font-weight: 900;
-  font-size: 1.6em;
-  font-stretch: ultra-expanded;
-  color: #DF1E1E;
-  margin:0
-  }
-  #tot_lab_sos{
-  padding-left: 0.4em;
-  padding-right: 0.4em;
-  text-align: center;
-  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
-  font-weight: 900;
-  font-size: 1.6em;
-  font-stretch: ultra-expanded;
-  color: #DA7801;
-  }
-  .switch {
-  position: relative;
-  display: inline-block;
-  width: 85%;
-  height: 1em;
-  vertical-align: middle;
-  }
-  .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  }
-  .sliderC {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 0.7em;
-      background: #d3d3d3;
-      outline: none;
-      opacity: 0.7;
-      -webkit-transition: .2s;
-      transition: opacity .2s;
-      }
-      .sliderC:hover {
-      opacity: 1;
-      }
-      .sliderC::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 1em;
-      height: 1em;
-      border: 0.1em solid #f0ffff;
-      border-radius: 0.2em;
-      background: #a569e0;
-      cursor: pointer;
-      margin-top: -0.0em; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-      box-shadow: .1em .1em .1em #000000, 0em 0em .1em #0d0d0d;
-      }
-      .sliderC::-moz-range-thumb {
-      width: 1em;
-      height: 1em;
-      background: #3f007d;
-      cursor: pointer;
-  }
-  .slider:before {
-  position: absolute;
-  content: "";
-  height: 1em;
-  width: 1em;
-  left: 75%;
-  bottom: 0.4em;
-  background-color: #3f007d;
-  -webkit-transition: .2s;
-  transition: .2s;
-  }
-  input:checked + .slider {
-  background-color: #DF1E1E;
-  }
-  input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-  }
-  input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-  left: 0;
-  }
-  /* Rounded sliders */
-  .slider.round {
-  border-radius: 34px;
-  }
-  .slider.round:before {
-  border-radius: 30%;
-  }
-  .on
-  {
-  display: none;
-  }
-  .on, .off
-  {
-  color: white;
-  position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-  font-size: 0.6em;
-  font-family: Verdana, sans-serif;
-  }
-  input:checked+ .slider .on
-  {display: block;}
-  input:checked + .slider .off
-  {display: none;}
-  /*--------- END --------*/
-  /* Rounded sliders */
-  .slider.round {
-  border-radius: 34px;
-  }
-  .slider.round:before {
-  border-radius: 80%;}
-  .navbar{
-      top: 0
-      bottom: 0;
-      width: 100vw;
-      height:6vh;
-  }
+                #tot_lab_pos{
+                padding-left: 0.1em;
+                padding-right: 0.4em;
+                text-align: center;
+                font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+                font-weight: 900;
+                font-size: 1.6em;
+                font-stretch: ultra-expanded;
+                color: #DF1E1E;
+                margin:0
+                }
+                #tot_lab_sos{
+                padding-left: 0.4em;
+                padding-right: 0.4em;
+                text-align: center;
+                font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+                font-weight: 900;
+                font-size: 1.6em;
+                font-stretch: ultra-expanded;
+                color: #DA7801;
+                }
+                .switch {
+                position: relative;
+                display: inline-block;
+                width: 85%;
+                height: 1em;
+                vertical-align: middle;
+                }
+                .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+                }
+                .sliderC {
+                    -webkit-appearance: none;
+                    width: 100%;
+                    height: 0.7em;
+                    background: #d3d3d3;
+                    outline: none;
+                    opacity: 0.7;
+                    -webkit-transition: .2s;
+                    transition: opacity .2s;
+                    }
+                    .sliderC:hover {
+                    opacity: 1;
+                    }
+                    .sliderC::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 1em;
+                    height: 1em;
+                    border: 0.1em solid #f0ffff;
+                    border-radius: 0.2em;
+                    background: #a569e0;
+                    cursor: pointer;
+                    margin-top: -0.0em; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                    box-shadow: .1em .1em .1em #000000, 0em 0em .1em #0d0d0d;
+                    }
+                    .sliderC::-moz-range-thumb {
+                    width: 1em;
+                    height: 1em;
+                    background: #3f007d;
+                    cursor: pointer;
+                }
+                .slider:before {
+                position: absolute;
+                content: "";
+                height: 1em;
+                width: 1em;
+                left: 75%;
+                bottom: 0.4em;
+                background-color: #3f007d;
+                -webkit-transition: .2s;
+                transition: .2s;
+                }
+                input:checked + .slider {
+                background-color: #DF1E1E;
+                }
+                input:focus + .slider {
+                box-shadow: 0 0 1px #2196F3;
+                }
+                input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+                left: 0;
+                }
+                /* Rounded sliders */
+                .slider.round {
+                border-radius: 34px;
+                }
+                .slider.round:before {
+                border-radius: 30%;
+                }
+                .on
+                {
+                display: none;
+                }
+                .on, .off
+                {
+                color: white;
+                position: absolute;
+                transform: translate(-50%,-50%);
+                top: 50%;
+                left: 50%;
+                font-size: 0.6em;
+                font-family: Verdana, sans-serif;
+                }
+                input:checked+ .slider .on
+                {display: block;}
+                input:checked + .slider .off
+                {display: none;}
+                /*--------- END --------*/
+                /* Rounded sliders */
+                .slider.round {
+                border-radius: 34px;
+                }
+                .slider.round:before {
+                border-radius: 80%;}
+                .navbar{
+                    top: 0
+                    bottom: 0;
+                    width: 100vw;
+                    height:6vh;
+                }
 
- .line {
-      fill: none;
-      stroke: #DF1E1E;
-      stroke-width: 5;
-      }
+               .line {
+                    fill: none;
+                    stroke: #DF1E1E;
+                    stroke-width: 5;
+                    }
 
-  .axis path,
-  .axis line {
-      fill: none;
-      stroke: white;
-      shape-rendering: crispEdges;
-  }
-  .axis text {
-      font-size: 8px;
-      color:white;
-  }
-  .dot {
-      color: white;
-  }
+                .axis path,
+                .axis line {
+                    fill: none;
+                    stroke: white;
+                    shape-rendering: crispEdges;
+                }
+                .axis text {
+                    font-size: 8px;
+                    color:white;
+                }
+                .dot {
+                    color: white;
+                }
 
-  
+                
 
-  div.tooltip {   
-  position: absolute;         
-  text-align: center;         
-  width: 3em;                    
-  height: 2.5em;                   
-  padding: .1em;               
-  font: 0.7em sans-serif;      
-  background: lightsteelblue; 
-  border: 0px;        
-  border-radius: 0.2em;         
-  pointer-events: none;           
-}
+                div.tooltip {   
+                position: absolute;         
+                text-align: center;         
+                width: 3em;                    
+                height: 2.5em;                   
+                padding: .1em;               
+                font: 0.7em sans-serif;      
+                background: lightsteelblue; 
+                border: 0px;        
+                border-radius: 0.2em;         
+                pointer-events: none;           
+            }
 
-.tabla-estados{
-  padding:0px;
-  margin:0px;
-  width:100%;
-  top: 0em;
-  left: 0em;
-}
+            .tabla-estados{
+                padding:0px;
+                margin:0px;
+                width:100%;
+                top: 0em;
+                left: 0em;
+            }
 
 
-  @media  (max-width: 990px) {
-      header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+                @media  (max-width: 990px) {
+                    header {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                    }
+                  
+                    .hamburger {
+                      display: flex;
+                      justify-content: flex-end;
+                    }
+                  
+                    .menu {
+                      display: none;
+                    }
+                  
+                    footer > ul {
+                      display: flex;
+                      padding: 0px 70px;
+                      justify-content: space-around;
+                      list-style: none;
+                    }
+                  
+                    main {
+                      display: flex;
+                      flex-direction: column;
+                    }
+                    #estados {
+                        display: none;
+                    }
+                    #console {
+                        display: none;
+                    }
+                    #grafico{
+                        display: none;
+                    }
+                    #slider{
+                        display: absolute;
+                    }
+                    #buttoncontainer{
+                        position: absolute;
+                        display: flex;
+                        bottom: 0em;
+                        width: 100%;
+                        right: 0em;
+                        height:8vh;
+                        background-color: black;
+                    }
+                    .button {
+                        width: 50%;
+                        padding: 5px 5px;
+                    }
+
+                    
     
-      .hamburger {
-        display: flex;
-        justify-content: flex-end;
-      }
-    
-      .menu {
-        display: none;
-      }
-    
-      footer > ul {
-        display: flex;
-        padding: 0px 70px;
-        justify-content: space-around;
-        list-style: none;
-      }
-    
-      main {
-        display: flex;
-        flex-direction: column;
-      }
-      #estados {
-          display: none;
-      }
-      #console {
-          display: none;
-      }
-      #grafico{
-          display: none;
-      }
-      #slider{
-          display: absolute;
-      }
-      #buttoncontainer{
-          position: absolute;
-          display: flex;
-          top: 2.6em;
-          width: 100%;
-          right: 0em;
-          height:8vh;
-          background-color: black;
-      }
-      .button {
-          width: 50%;
-          padding: 5px 5px;
-      }
+                  }
+                  
+                  @media (min-width: 600px) {
+                    header {
+                      display: flex;
+                      flex-direction: row;
+                    }
+                    
+                    header > .logo {
+                      flex: 1;
+                      align-items: center;
+                      display: flex;
+                      justify-content: center;
+                    }
+                  
+                    header > h1 {
+                      flex: 2;
+                    }
+                  
+                    footer > ul {
+                      margin-bottom: 0px;
+                      -webkit-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
+                      -moz-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
+                      box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
+                      padding: 10px 0px;
+                    }
+                  
+                    
+                    .product {
+                      margin: 5px 50px;
+                    }
+                    
+                  }
+                  
+                  @media  (min-width: 990px) {
+                    .hamburger {
+                      display: none;
+                    }
+                  
+                    ul {
+                      display: flex;
+                      justify-content: flex-end;
+                      list-style: none;
+                      height: 50px;
+                      align-items: center;
+                    }
+                  
+                    footer > ul {
+                      justify-content: space-around;
+                    }
+                  
+                    ul > li {
+                      padding: 0px 20px;
+                    }
+                  
+                    main {
+                      display: flex;
+                      flex-direction: row;
+                    }
+                  
+                    .product {
+                      margin: 5px 20px;
+                      flex: 1;
+                    }
+                    #estados {
+                        float: right;
+                        position: absolute;
+                        margin: 0em;
+                        padding: .1em .10em;
+                        top: 3.1em;
+                        right: 0em;
+                        background-color: black;
+                        overflow: scroll;
+                        width: 20vw;
+                        height:93vh;
+                    }
 
-      
-
-    }
-    
-    @media (min-width: 600px) {
-      header {
-        display: flex;
-        flex-direction: row;
-      }
-      
-      header > .logo {
-        flex: 1;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-    
-      header > h1 {
-        flex: 2;
-      }
-    
-      footer > ul {
-        margin-bottom: 0px;
-        -webkit-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-        -moz-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-        box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-        padding: 10px 0px;
-      }
-    
-      
-      .product {
-        margin: 5px 50px;
-      }
-      
-    }
-    
-    @media  (min-width: 990px) {
-      .hamburger {
-        display: none;
-      }
-    
-      ul {
-        display: flex;
-        justify-content: flex-end;
-        list-style: none;
-        height: 50px;
-        align-items: center;
-      }
-    
-      footer > ul {
-        justify-content: space-around;
-      }
-    
-      ul > li {
-        padding: 0px 20px;
-      }
-    
-      main {
-        display: flex;
-        flex-direction: row;
-      }
-    
-      .product {
-        margin: 5px 20px;
-        flex: 1;
-      }
-      #estados {
-          float: right;
-          position: absolute;
-          margin: 0em;
-          padding: .1em .10em;
-          top: 2.8em;
-          right: 0em;
-          background-color: black;
-          overflow: scroll;
-          width: 20vw;
-          height:100vh;
-      }
-
-      #console {
-          float: right;
-          position: absolute;
-          width: 20vw;
-          margin-top: 0;
-          margin: 0px;
-          padding: .7vh .9vw;
-          background-color: black;
-          left: 0em;
-          top: 2.9em;    
-      }
-      #console:hover {
-          opacity: 1;
-          outline: #3f007d solid 2px;
-      }
-      #grafico{
-          position: absolute;
-          width: 30vw;
-          margin-top: 10px;
-          padding: 10px 20px;
-          background-color: black;
-          bottom: 0vh;
-          left: 0vw;
-         }
-
-      #grafico:hover{
-          opacity: 1;
-          outline: #3f007d solid 2px;
-          margin: 0px;
-      }     
-    }
+                    #console {
+                        float: right;
+                        position: absolute;
+                        width: 20vw;
+                        margin-top: 0;
+                        margin: 0px;
+                        padding: .7vh .9vw;
+                        background-color: black;
+                        left: 0em;
+                        top: 3.1em;    
+                    }
+                    #console:hover {
+                        opacity: 1;
+                        outline: #3f007d solid 2px;
+                    }
+                    #grafico{
+                        position: absolute;
+                        width: 30vw;
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        background-color: black;
+                        bottom: 0vh;
+                        left: 0vw;
+                       }
+        
+                    #grafico:hover{
+                        opacity: 1;
+                        outline: #3f007d solid 2px;
+                        margin: 0px;
+                    }     
+                  }
