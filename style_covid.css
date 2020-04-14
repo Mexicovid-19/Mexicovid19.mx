@@ -384,21 +384,23 @@ left: 0em;
       display: absolute;
   }
   #buttoncontainer{
-      position: absolute;
-      display: flex;
-      bottom: 0em;
-      width: 100%;
-      right: 0em;
-      height:8vh;
-      background-color: black;
+    position: absolute;
+    display: flex;
+    bottom: 0em;
+    width: 100%;
+    right: 0em;
+    height:8vh;
+    background-color: black;
   }
+
   .button {
-      width: 50%;
-      padding: 5px 5px;
+  width: 50%;
+  margin: 4px 5px;
+  background-color: #2066ac;
+  z-index: 100;
+  font-size: 20px;
+  text-transform: UPPERCASE;
   }
-
-  
-
 }
 
 @media (min-width: 600px) {
