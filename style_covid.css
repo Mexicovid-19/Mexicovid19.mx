@@ -126,11 +126,11 @@ background-color: #222;
   font-size: 0.8em;    
 }
 .num_p{
-color: #DF1E1E;
+color: #ff4747;
 font-size: 16px;
 }
 .num_s{
-color: #DA7801;
+color: #d8ff3c;
 font-size: 16px;
 }
 hr {
@@ -183,7 +183,7 @@ font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
 font-weight: 900;
 font-size: 1.6em;
 font-stretch: ultra-expanded;
-color: #DF1E1E;
+color: #ff4747;
 margin:0
 }
 #tot_lab_sos{
@@ -191,7 +191,7 @@ font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
 font-weight: 900;
 font-size: 1.6em;
 font-stretch: ultra-expanded;
-color: #DA7801;
+color: #d8ff3c;
 margin: 0;
 }
 .switch {
@@ -249,7 +249,7 @@ background-color: #3f007d;
 transition: .2s;
 }
 input:checked + .slider {
-background-color: #DF1E1E;
+background-color: #ff4747;
 }
 input:focus + .slider {
 box-shadow: 0 0 1px #2196F3;
@@ -302,7 +302,7 @@ border-radius: 80%;}
 
 .line {
   fill: none;
-  stroke: #DF1E1E;
+  stroke: #ff4747;
   stroke-width: 5;
   }
 
