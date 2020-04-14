@@ -86,7 +86,6 @@ color:white;
 }
 
 table {
-font-family: arial, sans-serif;
 font-size: 0.7em;
 border-collapse: collapse;
 width: 100%;
@@ -112,7 +111,6 @@ th {
 color: white;
 text-align: left;
 padding: 0.4em;
-font-family: arial, sans-serif;
 font-size: 0.7em;
 border-right: none;
 line-height: 0.5em;
@@ -126,11 +124,11 @@ background-color: #222;
   font-size: 0.8em;    
 }
 .num_p{
-color: #DF1E1E;
+color: #ff4747;
 font-size: 16px;
 }
 .num_s{
-color: #DA7801;
+color: #d8ff3c;
 font-size: 16px;
 }
 hr {
@@ -179,19 +177,17 @@ color: white;
 }
 
 #tot_lab_pos{
-font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
 font-weight: 900;
 font-size: 1.6em;
 font-stretch: ultra-expanded;
-color: #DF1E1E;
+color: #ff4747;
 margin:0
 }
 #tot_lab_sos{
-font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
 font-weight: 900;
 font-size: 1.6em;
 font-stretch: ultra-expanded;
-color: #DA7801;
+color: #d8ff3c;
 margin: 0;
 }
 .switch {
@@ -249,7 +245,7 @@ background-color: #3f007d;
 transition: .2s;
 }
 input:checked + .slider {
-background-color: #DF1E1E;
+background-color: #ff4747;
 }
 input:focus + .slider {
 box-shadow: 0 0 1px #2196F3;
@@ -279,7 +275,6 @@ transform: translate(-50%,-50%);
 top: 50%;
 left: 50%;
 font-size: 0.6em;
-font-family: Verdana, sans-serif;
 }
 input:checked+ .slider .on
 {display: block;}
@@ -302,7 +297,7 @@ border-radius: 80%;}
 
 .line {
   fill: none;
-  stroke: #DF1E1E;
+  stroke: #9dc7f1;
   stroke-width: 5;
   }
 
@@ -319,7 +314,9 @@ border-radius: 80%;}
 .dot {
   color: white;
 }
-
+circle  {
+  fill:#2066ac !important;
+}
 
 
 div.tooltip {   
@@ -493,7 +490,7 @@ left: 0em;
       padding: .7vh .9vw;
       background-color: #222;
       left: 0em;
-      top: 3.1em;    
+      top: 50px;    
   }
   #console:hover {
       opacity: 1;
@@ -501,7 +498,6 @@ left: 0em;
   }
   #grafico{
       position: absolute;
-      width: 30vw;
       margin-top: 10px;
       padding: 10px 20px;
       background-color: #222;

@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style_covid.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
@@ -50,7 +50,7 @@
             </a>
             <hr>
             <div class='scrollbar'>
-                <h2>Fecha: <label id='fechacorte_l'>.</label></h2>
+                <h2><label id='fechacorte_l'>.</label></h2>
                 <input id='slider' class='sliderC' type='range' min='0' max='30' step='1' value='24' />
             </div>
             <div class='session'>
@@ -84,14 +84,14 @@
         <div id='estados'>
             <div class='totalsC' id='totals'>
                 <div class="col-sm-12 text-center">
-                    <span id='fechacorte_r'>11 de Abril</span>
+                    <span id='fechacorte_r'></span>
                 </div>
                 <div class="col-sm-6 text-center">
-                    <p id=tot_lab_pos >120</p>
+                    <p id=tot_lab_pos ></p>
                     <span class=tot_label>POSITIVOS</span>
                 </div>
                 <div class="col-sm-6 text-center">
-                    <p id=tot_lab_sos>120</p>
+                    <p id=tot_lab_sos></p>
                     <span class=tot_label>SOSPECHOSOS</span>
                 </div>
             </div>
