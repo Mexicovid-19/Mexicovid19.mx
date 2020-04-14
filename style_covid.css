@@ -397,8 +397,12 @@
                         background-color: black;
                     }
                     .button {
-                        width: 50%;
-                        padding: 5px 5px;
+                      width: 50%;
+                      margin: 4px 5px;
+                      background-color: #2066ac;
+                      z-index: 100;
+                      font-size: 20px;
+                      text-transform: UPPERCASE;
                     }
 
                     
