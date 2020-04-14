@@ -562,16 +562,6 @@ Promise.all(loadFiles).then(function(data) {
 
         });
 
-        //svg.selectAll(".text")
-            //.data(lineData)
-            //.enter()
-            //.append("text") // Uses the enter().append() method
-            //.attr("class", "label") // Assign a class for styling
-            //.attr("x", function(d, i) { return x(d.date) })
-            //.attr("y", function(d) { return y(d.nps) })
-            //.attr("dy", "-5")
-            //.text(function(d) {return d.nps;});
-
         svg.append("text")
             .attr("x", (width / 2))             
             .attr("y", 0)

@@ -16,9 +16,9 @@ font-size: 62.5%;
 #map {
 position: relative;
 padding: 0;
-bottom: 0;
+top: 0;
 width: 100vw;
-height:94vh;
+height:92vh;
 }
 #fuente{
   margin:0;
@@ -342,32 +342,6 @@ left: 0em;
 
 
 @media  (max-width: 990px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hamburger {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  footer > ul {
-    display: flex;
-    padding: 0px 70px;
-    justify-content: space-around;
-    list-style: none;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-  }
   #estados {
       display: none;
   }
@@ -383,7 +357,7 @@ left: 0em;
   #buttoncontainer{
     position: absolute;
     display: flex;
-    bottom: -1em;
+    bottom: 0em;
     width: 100%;
     right: 0em;
     height: 8vh;
@@ -407,68 +381,11 @@ left: 0em;
   }
 }
 
-@media (min-width: 600px) {
-  header {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  header > .logo {
-    flex: 1;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  header > h1 {
-    flex: 2;
-  }
-
-  footer > ul {
-    margin-bottom: 0px;
-    -webkit-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-    box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-    padding: 10px 0px;
-  }
-
-  
-  .product {
-    margin: 5px 50px;
-  }
-  
-}
-
 @media  (min-width: 990px) {
-  .hamburger {
+  #buttoncontainer {
     display: none;
   }
 
-  ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    height: 50px;
-    align-items: center;
-  }
-
-  footer > ul {
-    justify-content: space-around;
-  }
-
-  ul > li {
-    padding: 0px 20px;
-  }
-
-  main {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .product {
-    margin: 5px 20px;
-    flex: 1;
-  }
   #estados {
       position: absolute;
       margin: 0em;
