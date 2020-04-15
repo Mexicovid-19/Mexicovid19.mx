@@ -20,6 +20,9 @@ font-size: 62.5%;
   width: 80vw;
   height:90vh;
 }
+#country {
+  font-size: 3em;
+}
 #fuente{
   margin:0;
   padding:0;
@@ -135,7 +138,6 @@ hr {
   margin: 0px;
 }
 .totalsC{
-margin-top: 20px;
 width: 100%;
 border: none;
 max-width:200vw; /* or whatever width you want. */
@@ -306,20 +308,24 @@ border-radius: 34px;
 .axis path,
 .axis line {
   fill: none;
-  stroke: white;
+  stroke: #222;
   shape-rendering: crispEdges;
 }
 .axis text {
-  font-size: 8px;
-  color:white;
+  font-size: 12px;
+  color:#222;
 }
 .dot {
   color: white;
 }
 circle  {
   fill:#9dc7f1 !important;
+  cursor: pointer;
 }
 
+#graph-modal {
+  width: fit-content;
+}
 
 div.tooltip {   
 position: absolute;         
@@ -421,13 +427,12 @@ left: 0em;
       outline: #3f007d solid 2px;
   }
   #grafico{
-      position: absolute;
-      margin-top: 10px;
       padding: 10px 20px;
-      background-color: #222;
-      bottom: 0vh;
-      left: 0vw;
-      }
+      background-color: white;
+      border: 2px solid #222;
+      border-radius: 3px;
+}
+  }
 
   #grafico:hover{
       opacity: 1;
