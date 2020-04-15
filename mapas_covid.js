@@ -72,7 +72,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mildredg/ck8xwex5j19ei1iqkha7x2sko',*/
     style: 'mapbox://styles/mildredg/ck8xwex5j19ei1iqkha7x2sko',
     center: [-101.33083597801148, 22.192387333218626], // starting position [lng, lat]
-    zoom: 4.1 // starting zoom
+    zoom: 3.8 // starting zoom
 });
 
 
@@ -574,4 +574,8 @@ Promise.all(loadFiles).then(function(data) {
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+let eventHandlers = () => {
+
 }

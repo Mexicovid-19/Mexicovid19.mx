@@ -14,11 +14,11 @@ font-size: 62.5%;
 
 #hover-map { position:absolute; top:0; bottom:0; width:100%; }
 #map {
-position: relative;
-padding: 0;
-top: 0;
-width: 100vw;
-height:92vh;
+  position: relative;
+  padding: 0;
+  top: 0;
+  width: 80vw;
+  height:90vh;
 }
 #fuente{
   margin:0;
@@ -382,16 +382,18 @@ left: 0em;
 }
 
 @media  (min-width: 990px) {
+  .container-map {
+    display: inline-flex;
+    height: 90vh;
+  }
+
   #buttoncontainer {
     display: none;
   }
 
   #estados {
-      position: absolute;
       margin: 0em;
       padding: .1em .10em;
-      top: 0px;
-      right: 0em;
       background-color: #222;
       overflow-y: scroll;
       width: 20vw;
