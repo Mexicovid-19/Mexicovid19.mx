@@ -493,3 +493,7 @@ left: 0em;
   width: 100%;
   margin-bottom: 10px;
 }
+
+#country {
+  font-family: 'Lato', sans-serif;
+}

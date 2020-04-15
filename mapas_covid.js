@@ -10,13 +10,13 @@ function sortTable() {
         rows = table.rows;
         /* Loop through all table rows (except the
         first, which contains table headers): */
-        for (i = 1; i < (rows.length - 1); i++) {
+        for (i = 0; i < (rows.length - 1); i++) {
             // Start by saying there should be no switching:
             shouldSwitch = false;
             /* Get the two elements you want to compare,
             one from current row and one from the next: */
-            x = rows[i].getElementsByTagName("td")[1];
-            y = rows[i + 1].getElementsByTagName("td")[1];
+            x = rows[i].getElementsByTagName("td")[2];
+            y = rows[i + 1].getElementsByTagName("td")[2];
             // Check if the two rows should switch place:
             if (parseInt(x.innerHTML) < parseInt(y.innerHTML)) {
                 // If so, mark as a switch and break the loop:
