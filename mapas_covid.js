@@ -1,3 +1,26 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyDVLoR7EItZV3ZeHqVEzFinF4PVPF6j9VI",
+    authDomain: "mexicovid-19.firebaseapp.com",
+    databaseURL: "https://mexicovid-19.firebaseio.com",
+    projectId: "mexicovid-19",
+    storageBucket: "mexicovid-19.appspot.com",
+    messagingSenderId: "120285866166",
+    appId: "1:120285866166:web:2e30922e8033cbe2b3de17",
+    measurementId: "G-DE9Q3D7K8L"
+  };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var contagios={}
+
+firebase.database().ref('masterSheet').once('value', function(datos){
+    contagios=datos.val();
+    console.log(contagios)
+},function(objetoError){
+    console.log('Error de lectura:'+objetoError.code);
+});
+
 function sortTable() {
     var table, rows, switching, i, x, y, shouldSwitch;
     table = document.getElementById("tabla-estados");
@@ -79,6 +102,7 @@ var map = new mapboxgl.Map({
 var loadFiles = [
     d3.json("Mexico_Estados.geojson"),
     d3.csv("contagios.csv")
+    
 ];
 Promise.all(loadFiles).then(function(data) {
     lt = data[1].columns.length;
