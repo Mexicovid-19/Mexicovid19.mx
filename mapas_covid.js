@@ -287,12 +287,14 @@ Promise.all(loadFiles).then(function(data) {
             };
             sortTable();
         });
-        var checkbox = document.querySelector("input[name=checkbox]");
+        var pos_sos = document.querySelector("input[name=pos_sos]");
 
-        checkbox.addEventListener('change', function() {
-            if (this.checked) {
+        btn_g = document.querySelector(".btn-group")
+        btn_g.addEventListener("click", function(e) {
+            if(e.target.matches('.buttonboxp')) {
+                console.log("positivos");
                 toggle_positivo = true;
-                // Checkbox is checked..
+                // pos_sos is checked..
                 console.log(day);
                 casos = 'p'
                 today_p = pos_keys[day];
@@ -323,7 +325,7 @@ Promise.all(loadFiles).then(function(data) {
                 };
                 map.setPaintProperty('pref', 'fill-color', rep_edo);
             } else {
-                // Checkbox is not checked..
+                // pos_sos is not checked..
                 toggle_positivo = false;
                 casos = 's'
                 today_s = sos_keys[day];
@@ -355,6 +357,73 @@ Promise.all(loadFiles).then(function(data) {
                 map.setPaintProperty('pref', 'fill-color', rep_edo);
             }
         });
+        /*
+        pos_sos.addEventListener('change', function(e) {
+            if (this.checked) {
+                toggle_positivo = true;
+                // pos_sos is checked..
+                console.log(day);
+                casos = 'p'
+                today_p = pos_keys[day];
+                array_positivos = data[1].map(function(d) {
+                    return +d[today_p];
+                });
+                array_positivos.sort(function(a, b) {
+                    return a - b;
+                });
+                var i;
+                var quantile_pos = [array_positivos[5], array_positivos[10], array_positivos[15], array_positivos[20], array_positivos[25], array_positivos[29]]
+                for (i = 0; i < label_holder.length; i++) {
+                     if(i == 0){
+                    document.getElementById(label_holder[i]).innerHTML = quantile_pos[i] + '-'
+                }else if (i >0 && i < (label_holder.length - 1)) {
+                    document.getElementById(label_holder[i]).innerHTML = quantile_pos[i];
+                } else {
+                    document.getElementById(label_holder[i]).innerHTML = quantile_pos[i] + '+'
+                }
+                }
+                thresholdsNum = [array_positivos[5], array_positivos[10], array_positivos[15], array_positivos[20], array_positivos[25], array_positivos[29]];
+                stepsList = thresholdsNum.map((num, i) => {
+                    return [num, thresholdsColor[i]];
+                });
+                var rep_edo = {
+                    property: month + days_list[day] + casos,
+                    stops: stepsList
+                };
+                map.setPaintProperty('pref', 'fill-color', rep_edo);
+            } else {
+                // pos_sos is not checked..
+                toggle_positivo = false;
+                casos = 's'
+                today_s = sos_keys[day];
+                array_sospechosos = data[1].map(function(d) {
+                    return +d[today_s];
+                });
+                array_sospechosos.sort(function(a, b) {
+                    return a - b;
+                });
+                var i;
+                var quantile_sos = [array_sospechosos[5], array_sospechosos[10], array_sospechosos[15], array_sospechosos[20], array_sospechosos[25], array_sospechosos[29]]
+                for (i = 0; i < label_holder.length; i++) {
+                     if(i == 0){
+                    document.getElementById(label_holder[i]).innerHTML = quantile_sos[i] + '-'
+                }else if (i >0 && i < (label_holder.length - 1)) {
+                    document.getElementById(label_holder[i]).innerHTML = quantile_sos[i];
+                } else {
+                    document.getElementById(label_holder[i]).innerHTML = quantile_sos[i] + '+'
+                }
+                }
+                thresholdsNum = [array_sospechosos[5], array_sospechosos[10], array_sospechosos[15], array_sospechosos[20], array_sospechosos[25], array_sospechosos[29]];
+                 stepsList = thresholdsNum.map((num, i) => {
+                    return [num, thresholdsColor[i]];
+                });
+                var rep_edo = {
+                    property: month + days_list[day] + casos,
+                    stops: stepsList
+                };
+                map.setPaintProperty('pref', 'fill-color', rep_edo);
+            }
+        });*/
 
         map.addLayer({
             "id": "attribution-layer",
