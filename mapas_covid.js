@@ -399,7 +399,6 @@ Promise.all(loadFiles).then(function(data) {
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
         map.on("mousemove", function(e) {
-            console.log("Hiiiii");
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
             });
@@ -477,8 +476,8 @@ Promise.all(loadFiles).then(function(data) {
         height =    height - margin.top - margin.bottom;
 
         var svg = d3.select('#grafico').append("svg")
-          .attr("width",  width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
+          .attr("width",  width)
+          .attr("height", height)
           .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
