@@ -14,12 +14,49 @@ firebase.initializeApp(firebaseConfig);
 
 var contagios={}
 
+counter = 0;
+var estado ={"AGS":[],
+        "BC":[],"BCS":[],"CAMP":[],"CHIS":[],"CHIH":[],"CDMX":[],
+        "COAH":[],"COL":[],"DGO":[],"GTO":[],"GRO":[],"HGO":[],"JAL":[],
+        "MEX":[],"MICH":[],"MOR":[],"NAY":[],"NL":[],"OAX":[],"PUE":[],
+        "QRO":[],"QROO":[],"SLP":[],"SIN":[],"SON":[],"TAB":[],"TAMP":[],
+        "TLAX":[],"VER":[],"YUC":[],"ZAC":[]
+};
+//fecha de inicio 15 de marzo son 2 por dia
+function days_passed() {
+    var start =new Date(2020, 2, 15) //Month is 0-11 in JavaScript
+    today=new Date()
+    //Get 1 day start
+    var one_day=1000*60*60*24;
+    
+    //Calculate difference btw the two dates, and convert to days
+    return 2*(Math.ceil((today.getTime()-start.getTime())/(one_day)));
+}
+
 firebase.database().ref('masterSheet').once('value', function(datos){
     contagios=datos.val();
-    console.log(contagios)
+    for(i=0;i<=31;i++){
+        for(j=0;j<=days_passed();j++){
+            if(j==0){
+                console.log("Estado:"+contagios[i][j])
+            }
+            else{
+                if(j%2!=0){
+                    console.log("Positivos:"+contagios[i][j])//imprime cada estado y los casos
+                }
+                else{
+                    console.log("Sospechosos:"+contagios[i][j])//imprime cada estado y los casos
+                }
+            }
+            
+        }
+    }
 },function(objetoError){
     console.log('Error de lectura:'+objetoError.code);
 });
+
+
+
 
 function sortTable() {
     var table, rows, switching, i, x, y, shouldSwitch;
