@@ -306,7 +306,7 @@ border-radius: 80%;}
 .axis path,
 .axis line {
   fill: none;
-  stroke: white;
+  stroke: #222;
   shape-rendering: crispEdges;
 }
 .axis text {
@@ -426,8 +426,8 @@ left: 0em;
   }
   #grafico{
       padding: 10px 20px;
-      background-color: #222;
-      
+      background-color: white;
+      border: 1px #222 solid;
   }
 
   #grafico:hover{
