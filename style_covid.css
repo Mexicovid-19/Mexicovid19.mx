@@ -431,7 +431,39 @@ left: 0em;
       opacity: 1;
       outline: #3f007d solid 2px;
       margin: 0px;
-  }     
+  } 
+ 
+  .buttonboxp {
+    width: 50%;
+    background-color: #ff4747 !important;
+    color: black;
+    z-index: 100;
+    text-transform: UPPERCASE;
+  }   
+  .buttonboxs {
+    width: 50%;
+    background-color: #ffe73e !important;
+    color: black;
+    z-index: 100;
+    text-transform: UPPERCASE;
+  }   
+  .buttonbox {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .chartbutton{
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 30%;
+    margin-right: auto;
+    background-color: whitesmoke;
+    border-color: #222;
+    margin-bottom: 10px;
+    margin-left: 110px;
+    left: auto;
+
+  }
 }
 
 .estadosselect {
