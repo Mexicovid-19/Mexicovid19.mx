@@ -31,6 +31,12 @@ function sortTable() {
             switching = true;
         }
     }
+
+    rows = table.rows;
+    
+    for (i = 0; i < rows.length; i++) {
+        rows[i].getElementsByTagName("td")[0].innerText = i + 1;
+    }
 }
 
 var lineData = [];
