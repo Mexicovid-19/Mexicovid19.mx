@@ -393,7 +393,7 @@ left: 0em;
       top: 0px;
       right: 0em;
       background-color: #222;
-      overflow: scroll;
+      overflow-y: scroll;
       width: 20vw;
       height:100%;
   }
@@ -436,7 +436,7 @@ left: 0em;
   top: 0px;
   right: 0em;
   background-color: #222;
-  overflow: scroll;
+  overflow-y: scroll;
   width: 20vw;
   height:100%;
 }
