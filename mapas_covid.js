@@ -614,7 +614,7 @@ Promise.all(loadFiles).then(function(data) {
             return new Date(b.date) - new Date(a.date);
         });
         graphic();
-        graphimobile();
+        graphicmovile();
 });
 
 function numberWithCommas(x) {
@@ -722,18 +722,18 @@ function graphic() {
 }
 
 
-function graphimobile() {
+function graphicmovile() {
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    var height  = 0.65*vh;
-    var width   = 0.60*vw;;
-    var margin = {top: 10, right: 10, bottom: 10, left: 30};
+    var height  = 0.45*vh;
+    var width   = 0.40*vw;;
+    var margin = {top: 10, right: 20, bottom: 40, left: 30};
 
     width =     width - margin.left - margin.right;
     height =    height - margin.top - margin.bottom;
 
-    var svg = d3.select('#graficomov').append("svg")
+    var svg = d3.select('#grafico').append("svg")
         .attr("width",  width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
