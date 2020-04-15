@@ -342,6 +342,9 @@ left: 0em;
 
 
 @media  (max-width: 990px) {
+  #map {
+    width: 100vw;
+  }
   #estados {
       display: none;
   }
