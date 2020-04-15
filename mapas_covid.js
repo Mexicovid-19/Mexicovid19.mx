@@ -399,6 +399,7 @@ Promise.all(loadFiles).then(function(data) {
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
         map.on("mousemove", function(e) {
+            console.log("Hiiiii");
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
             });
@@ -577,5 +578,5 @@ function numberWithCommas(x) {
 }
 
 let eventHandlers = () => {
-
+    console.log("hi");
 }
