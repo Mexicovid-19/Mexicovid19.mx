@@ -733,7 +733,7 @@ function graphicmovile() {
     width =     width - margin.left - margin.right;
     height =    height - margin.top - margin.bottom;
 
-    var svg = d3.select('#grafico').append("svg")
+    var svg = d3.select('#graficomov').append("svg")
         .attr("width",  width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")

@@ -368,6 +368,13 @@ font-size: 16px;
   #grafico { 
       display: none;
   }
+  #graficomov { 
+    padding: 10px 20px;
+    background-color: white;
+    border: 2px solid #222;
+    border-radius: 3px;
+  }
+
 }
 
 @media  (min-width: 990px) {
@@ -407,6 +414,10 @@ font-size: 16px;
     border: 2px solid #222;
     border-radius: 3px;
   }
+
+  #graficomov { 
+    display: none;
+  }
 }
 
 #grafico:hover{
@@ -428,7 +439,7 @@ font-size: 16px;
 }
 
 /*Final because paints the select button*/
-.active{
+.active {
   width: 50%;
   background-color: #2066ac !important;
   color: white !important;
