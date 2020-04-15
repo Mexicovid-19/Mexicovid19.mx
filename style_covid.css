@@ -14,11 +14,11 @@ font-size: 62.5%;
 
 #hover-map { position:absolute; top:0; bottom:0; width:100%; }
 #map {
-position: relative;
-padding: 0;
-bottom: 0;
-width: 100vw;
-height:94vh;
+  position: relative;
+  padding: 0;
+  top: 0;
+  width: 80vw;
+  height:90vh;
 }
 #fuente{
   margin:0;
@@ -128,7 +128,7 @@ color: #ff4747;
 font-size: 16px;
 }
 .num_s{
-color: #d8ff3c;
+color: #ffe73e;
 font-size: 16px;
 }
 hr {
@@ -187,7 +187,7 @@ margin:0
 font-weight: 900;
 font-size: 1.6em;
 font-stretch: ultra-expanded;
-color: #d8ff3c;
+color: #ffe73e;
 margin: 0;
 }
 .switch {
@@ -297,7 +297,7 @@ border-radius: 80%;}
 
 .line {
   fill: none;
-  stroke: #9dc7f1;
+  stroke:#2066ac;
   stroke-width: 5;
   }
 
@@ -315,7 +315,7 @@ border-radius: 80%;}
   color: white;
 }
 circle  {
-  fill:#2066ac !important;
+  fill:#9dc7f1 !important;
 }
 
 
@@ -342,32 +342,6 @@ left: 0em;
 
 
 @media  (max-width: 990px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hamburger {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  footer > ul {
-    display: flex;
-    padding: 0px 70px;
-    justify-content: space-around;
-    list-style: none;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-  }
   #estados {
       display: none;
   }
@@ -383,7 +357,7 @@ left: 0em;
   #buttoncontainer{
     position: absolute;
     display: flex;
-    bottom: -1em;
+    bottom: 0em;
     width: 100%;
     right: 0em;
     height: 8vh;
@@ -407,76 +381,21 @@ left: 0em;
   }
 }
 
-@media (min-width: 600px) {
-  header {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  header > .logo {
-    flex: 1;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  header > h1 {
-    flex: 2;
-  }
-
-  footer > ul {
-    margin-bottom: 0px;
-    -webkit-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-    box-shadow: 0px -1px 8px 1px rgba(0,0,0,0.15);
-    padding: 10px 0px;
-  }
-
-  
-  .product {
-    margin: 5px 50px;
-  }
-  
-}
-
 @media  (min-width: 990px) {
-  .hamburger {
+  .container-map {
+    display: inline-flex;
+    height: 90vh;
+  }
+
+  #buttoncontainer {
     display: none;
   }
 
-  ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    height: 50px;
-    align-items: center;
-  }
-
-  footer > ul {
-    justify-content: space-around;
-  }
-
-  ul > li {
-    padding: 0px 20px;
-  }
-
-  main {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .product {
-    margin: 5px 20px;
-    flex: 1;
-  }
   #estados {
-      position: absolute;
       margin: 0em;
       padding: .1em .10em;
-      top: 0px;
-      right: 0em;
       background-color: #222;
-      overflow: scroll;
+      overflow-y: scroll;
       width: 20vw;
       height:100%;
   }
@@ -551,7 +470,7 @@ left: 0em;
   top: 0px;
   right: 0em;
   background-color: #222;
-  overflow: scroll;
+  overflow-y: scroll;
   width: 20vw;
   height:100%;
 }

@@ -21,253 +21,246 @@
         <link rel="stylesheet" href="style_covid.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
-        
-
- <body>
+    <body>
         <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
+            <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand">Covid-19 en México</a>
+                <a class="navbar-brand">Covid-19 en México</a>
             </div>
             <ul class="nav navbar-nav" id="mybar">
-              <li ><a href="metodologia.html" target="_blank">Metodología</a></li>
-              <li><a href="seguimientoestados.html">Seguimiento a Estados</a></li>
-              <li><a href="investigacion.html">Investigación</a></li>
-              <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
+                <li ><a href="metodologia.html" target="_blank">Metodología</a></li>
+                <li><a href="seguimientoestados.html">Seguimiento a Estados</a></li>
+                <li><a href="investigacion.html">Investigación</a></li>
+                <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
             </ul>
-          </div>
+            </div>
         </nav>
-
-        <div class="container-fluid h-100 d-flex flex-column">
-            <div class="row h-75 map-container flex-fill" id='map'></div>
-            <div id='map-overlay' class='map-overlay'></div>
-            <div id="buttoncontainer">
-                <button class="button badge badge-primary text-wrap" > <i class="fas fa-chart-line logoanalysis"></i></button>
-                <button class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> </div>
-            <div id='console'>
-                <a href="https://escueladegobierno.itesm.mx/" target="_blank">
-                    <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:80%" >
-                </a>
-                <hr>
-                <div class='scrollbar'>
-                    <h2><label id='fechacorte_l'>.</label></h2>
-                    <input id='slider' class='sliderC' type='range' min='0' max='30' step='1' value='24' />
+        <div class="container-map">
+            <div class="">
+                <div class="" id='map'></div>
+                <div id='map-overlay' class='map-overlay'></div>
+                <div id="buttoncontainer">
+                    <button class="button badge badge-primary text-wrap" > <i class="fas fa-chart-line logoanalysis"></i></button>
+                    <button class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> 
                 </div>
-                <div class='session'>
-                    <h2>Número de Casos</h2>
-                    <div class='rowConsole colors'> </div>
-                    <div class='rowConsole labels'>
-                        <div id='l1' class='labelConsole'>.</div>
-                        <div id='l2' class='labelConsole'>.</div>
-                        <div id='l3' class='labelConsole'>.</div>
-                        <div id='l4' class='labelConsole'>.</div>
-                        <div id='l5' class='labelConsole'>.</div>
-                        <div id='l6' class='labelConsole'>.</div>
+                <div id='console'>
+                    <a href="https://escueladegobierno.itesm.mx/" target="_blank">
+                        <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:80%" >
+                    </a>
+                    <hr>
+                    <div class='scrollbar'>
+                        <h2><label id='fechacorte_l'>.</label></h2>
+                        <input id='slider' class='sliderC' type='range' min='0' max='30' step='1' value='24' />
+                    </div>
+                    <div class='session'>
+                        <h2>Número de Casos</h2>
+                        <div class='rowConsole colors'> </div>
+                        <div class='rowConsole labels'>
+                            <div id='l1' class='labelConsole'>.</div>
+                            <div id='l2' class='labelConsole'>.</div>
+                            <div id='l3' class='labelConsole'>.</div>
+                            <div id='l4' class='labelConsole'>.</div>
+                            <div id='l5' class='labelConsole'>.</div>
+                            <div id='l6' class='labelConsole'>.</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="btn-group btn-group-toggle buttonbox" data-toggle="buttons">
+                            <label class="btn btn-secondary active buttonboxp">
+                              <input type="radio" name="options" id="option1" checked>POSITIVOS
+                            </label>
+                            <label class="btn btn-secondary buttonboxs">
+                              <input type="radio" name="options" id="option2">SOSPECHOSOS
+                            </label>
+                          </div>    
+                        <p id=fuente>Fuente: SINAVE/DGE/InDRE</p>
+                    </div>
+                </div> 
+            </div>
+            <div id='estados'>
+                <div class='totalsC' id='totals'>
+                    <div class="col-sm-12 text-center">
+                        <span id='fechacorte_r'></span>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <p id=tot_lab_pos ></p>
+                        <span class=tot_label>POSITIVOS</span>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <p id=tot_lab_sos></p>
+                        <span class=tot_label>SOSPECHOSOS</span>
                     </div>
                 </div>
-            
-                <div>
-                    <div class="btn-group btn-group-toggle buttonbox" data-toggle="buttons">
-                        <label class="btn btn-secondary active buttonboxp">
-                          <input type="radio" name="options" id="option1" checked>POSITIVOS
-                        </label>
-                        <label class="btn btn-secondary buttonboxs">
-                          <input type="radio" name="options" id="option2">SOSPECHOSOS
-                        </label>
-                      </div>    
-                    <p id=fuente>Fuente: SINAVE/DGE/InDRE</p>
+                <hr>
+                <div class="col-sm-12">
+                    <table id='tabla-estados' class="js-sort-table">
+                        <tr id='AGS' class='tupla'>
+                            <td id='AGS_n' class='edo_label'> AGS  </td>
+                            <td id='AGS_p' class='num_p'> . </td>
+                            <td id='AGS_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='BC' class='tupla'>
+                            <td id='BC_n' class='edo_label'>  BC  </td>
+                            <td id='BC_p' class='num_p'> . </td>
+                            <td id='BC_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='BCS' class='tupla'>
+                            <td id='BCS_n' class='edo_label'>  BCS  </td>
+                            <td id='BCS_p' class='num_p'> . </td>
+                            <td id='BCS_s' class='num_s'> . </td>
+                        </tr>
+                        <tr  id='CAMP' class='tupla'>
+                            <td id='CAMP_n' class='edo_label'>  CAMP  </td>
+                            <td id='CAMP_p' class='num_p'> . </td>
+                            <td id='CAMP_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='CHIS' class='tupla'>
+                            <td id='CHIS_n' class='edo_label'>  CHIS  </td>
+                            <td id='CHIS_p' class='num_p'> . </td>
+                            <td id='CHIS_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='CHIH' class='tupla'>
+                            <td id='CHIH_n' class='edo_label'>  CHIH  </td>
+                            <td id='CHIH_p' class='num_p'> . </td>
+                            <td id='CHIH_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='CDMX' class='tupla'>
+                            <td id='CDMX_n' class='edo_label'>  CDMX  </td>
+                            <td id='CDMX_p' class='num_p'> . </td>
+                            <td id='CDMX_s' class='num_s'> . </td>
+                        </tr>
+                        <tr  id='COAH' class='tupla'>
+                            <td id='COAH_n' class='edo_label'>  COAH  </td>
+                            <td id='COAH_p' class='num_p'> . </td>
+                            <td id='COAH_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='COL' class='tupla'>
+                            <td id='COL_n' class='edo_label'>  COL </td>
+                            <td id='COL_p' class='num_p'> . </td>
+                            <td id='COL_s' class='num_s'> . </td>
+                        </tr>
+                        
+                        <tr id='DGO' class='tupla'>
+                            <td id='DGO_n' class='edo_label'>  DGO  </td>
+                            <td id='DGO_p' class='num_p'> . </td>
+                            <td id='DGO_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='GTO' class='tupla'>
+                            <td id='GTO_n' class='edo_label'>  GTO  </td>
+                            <td id='GTO_p' class='num_p'> . </td>
+                            <td id='GTO_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='GRO' class='tupla'>
+                            <td id='GRO_n' class='edo_label'>  GRO  </td>
+                            <td id='GRO_p' class='num_p'> . </td>
+                            <td id='GRO_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='HGO' class='tupla'>
+                            <td id='HGO_n' class='edo_label'>  HGO  </td>
+                            <td id='HGO_p' class='num_p'> . </td>
+                            <td id='HGO_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='JAL' class='tupla'>
+                            <td id='JAL_n' class='edo_label'> JAL  </td>
+                            <td id='JAL_p' class='num_p'> . </td>
+                            <td id='JAL_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='MEX' class='tupla'>
+                            <td id='MEX_n' class='edo_label'> MEX  </td>
+                            <td id='MEX_p' class='num_p'> . </td>
+                            <td id='MEX_s' class='num_s'> <b> . </b> </td>
+                        </tr>
+                        <tr id='MICH' class='tupla'>
+                            <td id='MICH_n' class='edo_label'> MICH  </td>
+                            <td id='MICH_p' class='num_p'> . </td>
+                            <td id='MICH_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='MOR' class='tupla'>
+                            <td id='MOR_n' class='edo_label'>  MOR  </td>
+                            <td id='MOR_p' class='num_p'> . </td>
+                            <td id='MOR_s' class='num_s'> . </td>
+                        </tr>
+                        <tr  id='NAY' class='tupla'>
+                            <td id='NAY_n' class='edo_label'> NAY  </td>
+                            <td id='NAY_p' class='num_p'> . </td>
+                            <td id='NAY_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='NL' class='tupla'>
+                            <td id='NL_n' class='edo_label'>  NL  </td>
+                            <td id='NL_p' class='num_p'> . </td>
+                            <td id='NL_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='OAX' class='tupla'>
+                            <td id='OAX_n' class='edo_label'>  OAX  </td>
+                            <td id='OAX_p' class='num_p'> . </td>
+                            <td id='OAX_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='PUE' class='tupla'>
+                            <td id='PUE_n' class='edo_label'>  PUE  </td>
+                            <td id='PUE_p' class='num_p'> . </td>
+                            <td id='PUE_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='QRO' class='tupla'>
+                            <td  id='QRO_n' class='edo_label'>  QRO  </td>
+                            <td  id='QRO_p' class='num_p'> . </td>
+                            <td  id='QRO_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='QROO' class='tupla'>
+                            <td id='QROO_n' class='edo_label'>  QROO  </td>
+                            <td id='QROO_p' class='num_p'> . </td>
+                            <td id='QROO_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='SIN' class='tupla'>
+                            <td id='SIN_n' class='edo_label'>  SIN  </td>
+                            <td id='SIN_p' class='num_p'> . </td>
+                            <td id='SIN_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='SLP' class='tupla'>
+                            <td id='SLP_n' class='edo_label'> SLP </td>
+                            <td id='SLP_p' class='num_p'> . </td>
+                            <td id='SLP_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='SON' class='tupla'>
+                            <td id='SON_n' class='edo_label'>  SON  </td>
+                            <td id='SON_p' class='num_p'> . </td>
+                            <td id='SON_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='TAB' class='tupla'>
+                            <td id='TAB_n' class='edo_label'> TAB  </td>
+                            <td id='TAB_p' class='num_p'> . </td>
+                            <td id='TAB_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='TAMP' class='tupla'>
+                            <td id='TAMP_n' class='edo_label'>  TAMP  </td>
+                            <td id='TAMP_p' class='num_p'> . </td>
+                            <td id='TAMP_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='TLAX' class='tupla'>
+                            <td id='TLAX_n' class='edo_label'>  TLAX  </td>
+                            <td id='TLAX_p' class='num_p'> . </td>
+                            <td id='TLAX_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='VER' class='tupla'>
+                            <td id='VER_n' class='edo_label'>  VER  </td>
+                            <td id='VER_p' class='num_p'> . </td>
+                            <td id='VER_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='YUC' class='tupla'>
+                            <td id='YUC_n' class='edo_label'>  YUC  </td>
+                            <td id='YUC_p' class='num_p'> . </td>
+                            <td id='YUC_s' class='num_s'> . </td>
+                        </tr>
+                        <tr id='ZAC' class='tupla'>
+                            <td id='ZAC_n' class='edo_label'>  ZAC  </td>
+                            <td id='ZAC_p' class='num_p'> . </td>
+                            <td id='ZAC_s' class='num_s'> . </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
-        <div><button type="button" class="btn btn-secondary btn-lg active">hola</button></div>
-        <div>
-            </div>
-            <div><button type="button" class="btn btn-secondary btn-lg active chartbutton"><img src="analysis.png" style="width:50%"></button></div>
-            <div>
-            
-            <div id="grafico"> </div>
-
-        <div id='estados'>
-            <div class='totalsC' id='totals'>
-                <div class="col-sm-12 text-center">
-                    <span id='fechacorte_r'></span>
-                </div>
-                <div class="col-sm-6 text-center">
-                    <p id=tot_lab_pos ></p>
-                    <span class=tot_label>POSITIVOS</span>
-                </div>
-                <div class="col-sm-6 text-center">
-                    <p id=tot_lab_sos></p>
-                    <span class=tot_label>SOSPECHOSOS</span>
-                </div>
-            </div>
-            <hr>
-            <div class="col-sm-12">
-                <table id='tabla-estados' class="js-sort-table">
-                    <tr id='AGS' class='tupla'>
-                        <td id='AGS_n' class='edo_label'> AGS  </td>
-                        <td id='AGS_p' class='num_p'> . </td>
-                        <td id='AGS_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='BC' class='tupla'>
-                        <td id='BC_n' class='edo_label'>  BC  </td>
-                        <td id='BC_p' class='num_p'> . </td>
-                        <td id='BC_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='BCS' class='tupla'>
-                        <td id='BCS_n' class='edo_label'>  BCS  </td>
-                        <td id='BCS_p' class='num_p'> . </td>
-                        <td id='BCS_s' class='num_s'> . </td>
-                    </tr>
-                    <tr  id='CAMP' class='tupla'>
-                        <td id='CAMP_n' class='edo_label'>  CAMP  </td>
-                        <td id='CAMP_p' class='num_p'> . </td>
-                        <td id='CAMP_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='CHIS' class='tupla'>
-                        <td id='CHIS_n' class='edo_label'>  CHIS  </td>
-                        <td id='CHIS_p' class='num_p'> . </td>
-                        <td id='CHIS_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='CHIH' class='tupla'>
-                        <td id='CHIH_n' class='edo_label'>  CHIH  </td>
-                        <td id='CHIH_p' class='num_p'> . </td>
-                        <td id='CHIH_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='CDMX' class='tupla'>
-                        <td id='CDMX_n' class='edo_label'>  CDMX  </td>
-                        <td id='CDMX_p' class='num_p'> . </td>
-                        <td id='CDMX_s' class='num_s'> . </td>
-                    </tr>
-                    <tr  id='COAH' class='tupla'>
-                        <td id='COAH_n' class='edo_label'>  COAH  </td>
-                        <td id='COAH_p' class='num_p'> . </td>
-                        <td id='COAH_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='COL' class='tupla'>
-                        <td id='COL_n' class='edo_label'>  COL </td>
-                        <td id='COL_p' class='num_p'> . </td>
-                        <td id='COL_s' class='num_s'> . </td>
-                    </tr>
-                    
-                    <tr id='DGO' class='tupla'>
-                        <td id='DGO_n' class='edo_label'>  DGO  </td>
-                        <td id='DGO_p' class='num_p'> . </td>
-                        <td id='DGO_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='GTO' class='tupla'>
-                        <td id='GTO_n' class='edo_label'>  GTO  </td>
-                        <td id='GTO_p' class='num_p'> . </td>
-                        <td id='GTO_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='GRO' class='tupla'>
-                        <td id='GRO_n' class='edo_label'>  GRO  </td>
-                        <td id='GRO_p' class='num_p'> . </td>
-                        <td id='GRO_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='HGO' class='tupla'>
-                        <td id='HGO_n' class='edo_label'>  HGO  </td>
-                        <td id='HGO_p' class='num_p'> . </td>
-                        <td id='HGO_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='JAL' class='tupla'>
-                        <td id='JAL_n' class='edo_label'> JAL  </td>
-                        <td id='JAL_p' class='num_p'> . </td>
-                        <td id='JAL_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='MEX' class='tupla'>
-                        <td id='MEX_n' class='edo_label'> MEX  </td>
-                        <td id='MEX_p' class='num_p'> . </td>
-                        <td id='MEX_s' class='num_s'> <b> . </b> </td>
-                    </tr>
-                    <tr id='MICH' class='tupla'>
-                        <td id='MICH_n' class='edo_label'> MICH  </td>
-                        <td id='MICH_p' class='num_p'> . </td>
-                        <td id='MICH_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='MOR' class='tupla'>
-                        <td id='MOR_n' class='edo_label'>  MOR  </td>
-                        <td id='MOR_p' class='num_p'> . </td>
-                        <td id='MOR_s' class='num_s'> . </td>
-                    </tr>
-                    <tr  id='NAY' class='tupla'>
-                        <td id='NAY_n' class='edo_label'> NAY  </td>
-                        <td id='NAY_p' class='num_p'> . </td>
-                        <td id='NAY_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='NL' class='tupla'>
-                        <td id='NL_n' class='edo_label'>  NL  </td>
-                        <td id='NL_p' class='num_p'> . </td>
-                        <td id='NL_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='OAX' class='tupla'>
-                        <td id='OAX_n' class='edo_label'>  OAX  </td>
-                        <td id='OAX_p' class='num_p'> . </td>
-                        <td id='OAX_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='PUE' class='tupla'>
-                        <td id='PUE_n' class='edo_label'>  PUE  </td>
-                        <td id='PUE_p' class='num_p'> . </td>
-                        <td id='PUE_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='QRO' class='tupla'>
-                        <td  id='QRO_n' class='edo_label'>  QRO  </td>
-                        <td  id='QRO_p' class='num_p'> . </td>
-                        <td  id='QRO_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='QROO' class='tupla'>
-                        <td id='QROO_n' class='edo_label'>  QROO  </td>
-                        <td id='QROO_p' class='num_p'> . </td>
-                        <td id='QROO_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='SIN' class='tupla'>
-                        <td id='SIN_n' class='edo_label'>  SIN  </td>
-                        <td id='SIN_p' class='num_p'> . </td>
-                        <td id='SIN_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='SLP' class='tupla'>
-                        <td id='SLP_n' class='edo_label'> SLP </td>
-                        <td id='SLP_p' class='num_p'> . </td>
-                        <td id='SLP_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='SON' class='tupla'>
-                        <td id='SON_n' class='edo_label'>  SON  </td>
-                        <td id='SON_p' class='num_p'> . </td>
-                        <td id='SON_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='TAB' class='tupla'>
-                        <td id='TAB_n' class='edo_label'> TAB  </td>
-                        <td id='TAB_p' class='num_p'> . </td>
-                        <td id='TAB_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='TAMP' class='tupla'>
-                        <td id='TAMP_n' class='edo_label'>  TAMP  </td>
-                        <td id='TAMP_p' class='num_p'> . </td>
-                        <td id='TAMP_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='TLAX' class='tupla'>
-                        <td id='TLAX_n' class='edo_label'>  TLAX  </td>
-                        <td id='TLAX_p' class='num_p'> . </td>
-                        <td id='TLAX_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='VER' class='tupla'>
-                        <td id='VER_n' class='edo_label'>  VER  </td>
-                        <td id='VER_p' class='num_p'> . </td>
-                        <td id='VER_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='YUC' class='tupla'>
-                        <td id='YUC_n' class='edo_label'>  YUC  </td>
-                        <td id='YUC_p' class='num_p'> . </td>
-                        <td id='YUC_s' class='num_s'> . </td>
-                    </tr>
-                    <tr id='ZAC' class='tupla'>
-                        <td id='ZAC_n' class='edo_label'>  ZAC  </td>
-                        <td id='ZAC_p' class='num_p'> . </td>
-                        <td id='ZAC_s' class='num_s'> . </td>
-                    </tr>
-                </table>
-            </div>
-    </div>
-    <script src="mapas_covid.js"></script>
+        <div id="grafico"> 
+        </div>
+        <script src="mapas_covid.js"></script>
     </body>
 </html>
