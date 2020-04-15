@@ -488,3 +488,8 @@ left: 0em;
   width: 20vw;
   height:100%;
 }
+
+.btn-grafica {
+  width: 100%;
+  margin-bottom: 10px;
+}
