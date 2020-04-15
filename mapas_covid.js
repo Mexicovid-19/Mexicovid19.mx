@@ -494,9 +494,10 @@ Promise.all(loadFiles).then(function(data) {
         y.domain([yMin, yMax]);
 
         // Define the div for the tooltip
-        var div = d3.select("#grafico").append("div")   
+        var div = d3.select("body").append("div")   
             .attr("class", "tooltip")               
-            .style("opacity", 0);
+            .style("opacity", 0)
+            .style("height", 0);
 
 
         var valueline = d3.line()
