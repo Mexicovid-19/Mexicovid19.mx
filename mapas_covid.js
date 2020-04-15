@@ -467,8 +467,8 @@ Promise.all(loadFiles).then(function(data) {
         const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
 
-        var height  = 0.60*vh;
-        var width   = 0.42*vw;;
+        var height  = 0.45*vh;
+        var width   = 0.40*vw;;
         
         var margin = {top: 10, right: 20, bottom: 40, left: 30};
 
