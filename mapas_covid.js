@@ -467,8 +467,8 @@ Promise.all(loadFiles).then(function(data) {
         const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
 
-        var height  = 0.50*vh;
-        var width   = 0.50*vw;;
+        var height  = 0.75*vh;
+        var width   = 0.75*vw;;
         
         var margin = {top: 10, right: 20, bottom: 40, left: 30};
 
@@ -542,16 +542,16 @@ Promise.all(loadFiles).then(function(data) {
             .attr("cx", function(d) { return x(d.date) })
             .attr("cy", function(d) { return y(d.nps) })
             .style('fill', 'darkOrange')
-            .attr("r", 4)
+            .attr("r", 8)
             .on("mouseover", function(d) {    
                 div.transition()        
                 .duration(200)   
-                .attr("r", 12)   
+                .attr("r", 10)   
                 .style("opacity", .9);      
                 div.html(formatDate(d.date) + "<br/>"  + d.nps)  
                 .style("left", (d3.event.pageX) + "px")     
                 .style("top", (d3.event.pageY - 28) + "px");  
-                d3.select(this).attr("r", 8); 
+                d3.select(this).attr("r", 12); 
                   })                 
                 .on("mouseout", function(d) {       
                 div.transition()        
