@@ -36,7 +36,20 @@ function days_passed() {
 firebase.database().ref('masterSheet').once('value', function(datos){
     contagios=datos.val();
     for(i=0;i<=31;i++){
-        console.log(contagios[i])
+        for(j=0;j<=days_passed();j++){
+            if(j==0){
+                console.log("Estado:"+contagios[i][j])
+            }
+            else{
+                if(j%2!=0){
+                    console.log("Positivos:"+contagios[i][j])//imprime cada estado y los casos
+                }
+                else{
+                    console.log("Sospechosos:"+contagios[i][j])//imprime cada estado y los casos
+                }
+            }
+            
+        }
     }
 },function(objetoError){
     console.log('Error de lectura:'+objetoError.code);
