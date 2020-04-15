@@ -576,7 +576,3 @@ Promise.all(loadFiles).then(function(data) {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-let eventHandlers = () => {
-    console.log("hi");
-}

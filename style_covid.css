@@ -20,6 +20,9 @@ font-size: 62.5%;
   width: 80vw;
   height:90vh;
 }
+#country {
+  font-size: 3em;
+}
 #fuente{
   margin:0;
   padding:0;
@@ -135,7 +138,6 @@ hr {
   margin: 0px;
 }
 .totalsC{
-margin-top: 20px;
 width: 100%;
 border: none;
 max-width:200vw; /* or whatever width you want. */
@@ -419,13 +421,9 @@ left: 0em;
       outline: #3f007d solid 2px;
   }
   #grafico{
-      position: absolute;
-      margin-top: 10px;
       padding: 10px 20px;
       background-color: #222;
-      bottom: 0vh;
-      left: 0vw;
-      }
+  }
 
   #grafico:hover{
       opacity: 1;
