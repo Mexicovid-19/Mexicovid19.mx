@@ -10,13 +10,13 @@ function sortTable() {
         rows = table.rows;
         /* Loop through all table rows (except the
         first, which contains table headers): */
-        for (i = 1; i < (rows.length - 1); i++) {
+        for (i = 0; i < (rows.length - 1); i++) {
             // Start by saying there should be no switching:
             shouldSwitch = false;
             /* Get the two elements you want to compare,
             one from current row and one from the next: */
-            x = rows[i].getElementsByTagName("td")[1];
-            y = rows[i + 1].getElementsByTagName("td")[1];
+            x = rows[i].getElementsByTagName("td")[2];
+            y = rows[i + 1].getElementsByTagName("td")[2];
             // Check if the two rows should switch place:
             if (parseInt(x.innerHTML) < parseInt(y.innerHTML)) {
                 // If so, mark as a switch and break the loop:
@@ -30,6 +30,12 @@ function sortTable() {
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true;
         }
+    }
+
+    rows = table.rows;
+    
+    for (i = 0; i < rows.length; i++) {
+        rows[i].getElementsByTagName("td")[0].innerText = i + 1;
     }
 }
 
@@ -71,7 +77,7 @@ var map = new mapboxgl.Map({
     /*style: 'mapbox://styles/roponmx/ck8gg4lk807en1ipfsdw472u6', // stylesheet locationdssss
     style: 'mapbox://styles/mildredg/ck8xwex5j19ei1iqkha7x2sko',*/
     style: 'mapbox://styles/mildredg/ck8xwex5j19ei1iqkha7x2sko',
-    center: [-101.33083597801148, 22.192387333218626], // starting position [lng, lat]
+    center: [-105.33083597801148, 25.192387333218626], // starting position [lng, lat]
     zoom: 3.8 // starting zoom
 });
 
@@ -287,12 +293,14 @@ Promise.all(loadFiles).then(function(data) {
             };
             sortTable();
         });
-        var checkbox = document.querySelector("input[name=checkbox]");
 
-        checkbox.addEventListener('change', function() {
-            if (this.checked) {
+        btn_g = document.querySelector(".btn-group");
+    
+        btn_g.addEventListener("click", function(e) {
+            if(e.target.matches('.buttonboxp')) {
+                console.log("positivos");
                 toggle_positivo = true;
-                // Checkbox is checked..
+                // pos_sos is checked..
                 console.log(day);
                 casos = 'p'
                 today_p = pos_keys[day];
@@ -323,7 +331,7 @@ Promise.all(loadFiles).then(function(data) {
                 };
                 map.setPaintProperty('pref', 'fill-color', rep_edo);
             } else {
-                // Checkbox is not checked..
+                // pos_sos is not checked..
                 toggle_positivo = false;
                 casos = 's'
                 today_s = sos_keys[day];
@@ -355,6 +363,73 @@ Promise.all(loadFiles).then(function(data) {
                 map.setPaintProperty('pref', 'fill-color', rep_edo);
             }
         });
+        /*
+        pos_sos.addEventListener('change', function(e) {
+            if (this.checked) {
+                toggle_positivo = true;
+                // pos_sos is checked..
+                console.log(day);
+                casos = 'p'
+                today_p = pos_keys[day];
+                array_positivos = data[1].map(function(d) {
+                    return +d[today_p];
+                });
+                array_positivos.sort(function(a, b) {
+                    return a - b;
+                });
+                var i;
+                var quantile_pos = [array_positivos[5], array_positivos[10], array_positivos[15], array_positivos[20], array_positivos[25], array_positivos[29]]
+                for (i = 0; i < label_holder.length; i++) {
+                     if(i == 0){
+                    document.getElementById(label_holder[i]).innerHTML = quantile_pos[i] + '-'
+                }else if (i >0 && i < (label_holder.length - 1)) {
+                    document.getElementById(label_holder[i]).innerHTML = quantile_pos[i];
+                } else {
+                    document.getElementById(label_holder[i]).innerHTML = quantile_pos[i] + '+'
+                }
+                }
+                thresholdsNum = [array_positivos[5], array_positivos[10], array_positivos[15], array_positivos[20], array_positivos[25], array_positivos[29]];
+                stepsList = thresholdsNum.map((num, i) => {
+                    return [num, thresholdsColor[i]];
+                });
+                var rep_edo = {
+                    property: month + days_list[day] + casos,
+                    stops: stepsList
+                };
+                map.setPaintProperty('pref', 'fill-color', rep_edo);
+            } else {
+                // pos_sos is not checked..
+                toggle_positivo = false;
+                casos = 's'
+                today_s = sos_keys[day];
+                array_sospechosos = data[1].map(function(d) {
+                    return +d[today_s];
+                });
+                array_sospechosos.sort(function(a, b) {
+                    return a - b;
+                });
+                var i;
+                var quantile_sos = [array_sospechosos[5], array_sospechosos[10], array_sospechosos[15], array_sospechosos[20], array_sospechosos[25], array_sospechosos[29]]
+                for (i = 0; i < label_holder.length; i++) {
+                     if(i == 0){
+                    document.getElementById(label_holder[i]).innerHTML = quantile_sos[i] + '-'
+                }else if (i >0 && i < (label_holder.length - 1)) {
+                    document.getElementById(label_holder[i]).innerHTML = quantile_sos[i];
+                } else {
+                    document.getElementById(label_holder[i]).innerHTML = quantile_sos[i] + '+'
+                }
+                }
+                thresholdsNum = [array_sospechosos[5], array_sospechosos[10], array_sospechosos[15], array_sospechosos[20], array_sospechosos[25], array_sospechosos[29]];
+                 stepsList = thresholdsNum.map((num, i) => {
+                    return [num, thresholdsColor[i]];
+                });
+                var rep_edo = {
+                    property: month + days_list[day] + casos,
+                    stops: stepsList
+                };
+                map.setPaintProperty('pref', 'fill-color', rep_edo);
+            }
+        });*/
 
         map.addLayer({
             "id": "attribution-layer",
@@ -421,7 +496,7 @@ Promise.all(loadFiles).then(function(data) {
             overlay.innerHTML = '';
 
             popup_mes.setLngLat(e.lngLat)
-                .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Positivos: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Sospechosos: "+ feature.properties[today_s])
+                .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Confirmados: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Sospechosos: "+ feature.properties[today_s])
                 .addTo(map);
             document.getElementById(feature.properties.ABREV).style.background = '#393a54';
             var element_touched_c = feature.properties.ABREV
@@ -462,7 +537,8 @@ Promise.all(loadFiles).then(function(data) {
         lineData.sort(function(a,b){
             return new Date(b.date) - new Date(a.date);
         });
-
+        graphic();
+        /*
         const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
@@ -570,9 +646,123 @@ Promise.all(loadFiles).then(function(data) {
             .style("font-size", "14px")
             .text("Número de positivos por fecha")
             .style("fill", "white");
+            */
 
 });
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function graphic() {
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+
+        var height  = 0.45*vh;
+        var width   = 0.40*vw;;
+        
+        var margin = {top: 10, right: 20, bottom: 40, left: 30};
+
+        width =     width - margin.left - margin.right;
+        height =    height - margin.top - margin.bottom;
+
+        var svg = d3.select('#grafico').append("svg")
+          .attr("width",  width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // set the ranges
+        var x = d3.scaleTime().range([0, width]);
+        var y = d3.scaleLinear().range([height, 0]);
+        x.domain(d3.extent(lineData, function(d) { return d.date;}));
+
+
+        var yMax = d3.max(lineData, function(d) { return d.nps; }) * 1.05;
+        var yMin = d3.min(lineData, function(d) { return d.nps; })* 0.95;
+
+        y.domain([yMin, yMax]);
+
+        // Define the div for the tooltip
+        var div = d3.select("body").append("div")   
+            .attr("class", "tooltip")               
+            .style("opacity", 0)
+            .style("top", 0);
+
+
+        var valueline = d3.line()
+                .x(function(d) { return x(d.date); })
+                .y(function(d) { return y(d.nps);  })
+                .curve(d3.curveCatmullRom);
+
+        svg.append("path")
+            .data([lineData]) 
+            .attr("class", "line")  
+            .attr("d", valueline); 
+
+        var label_axis = lineData.map(d=>d.nps);
+
+        // Select labels, the last three days, first and middle
+        var test = [label_axis[0],label_axis[1], label_axis[2], label_axis[Math.ceil((label_axis.length/2))], label_axis[(label_axis.length-1)]];
+
+        //var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("Week %V")).tickValues(lineData.map(d=>d.date));
+        var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("%d-%m")).ticks(d3.timeDay.every(3));
+        var yAxis = d3.axisLeft(y).tickValues(test);
+        var formatDate = d3.timeFormat("%d-%m");
+
+        svg.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis)
+                .selectAll("text")  
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", ".15em")
+                .attr("transform", "rotate(-90)");
+
+        //  Add the Y Axis
+        svg.append("g")
+            .attr("class", "axis")
+            .call(yAxis);
+            
+
+        svg.selectAll(".dot")
+            .data(lineData)
+            .enter()
+            .append("circle") // Uses the enter().append() method
+            .attr("class", "dot") // Assign a class for styling
+            .attr("cx", function(d) { return x(d.date) })
+            .attr("cy", function(d) { return y(d.nps) })
+            .style('fill', 'darkOrange')
+            .attr("r", 8)
+            .on("mouseover", function(d) {    
+                div.transition()        
+                .duration(200)   
+                .attr("r", 10)   
+                .style("opacity", .9);      
+                div.html(
+                    formatDate(d.date) + "<br/>"  + d.nps)  
+                    .style("left", (d3.event.pageX) + "px")     
+                    .style("top", (d3.event.pageY - 28) + "px");  
+                    d3.select(this).attr("r", 12); 
+                  })                 
+                .on("mouseout", function(d) {       
+                div.transition()        
+                .duration(500)      
+                .style("opacity", 0);
+                d3.select(this).attr("r", 8)
+
+        });
+
+        svg.append("text")
+            .attr("x", (width / 2))             
+            .attr("y", 0)
+            .attr("text-anchor", "middle")  
+            .style("font-size", "14px")
+            .style("fill", "white");
+}
+
+let showGraphic = () => {
+    
 }
