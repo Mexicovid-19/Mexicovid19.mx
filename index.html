@@ -40,8 +40,8 @@
                 <div class="" id='map'></div>
                 <div id='map-overlay' class='map-overlay'></div>
                 <div id="buttoncontainer">
-                    <button class="button badge badge-primary text-wrap" > <i class="fas fa-chart-line logoanalysis"></i></button>
-                    <button class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> 
+                    <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#grafica"> <i class="fas fa-chart-line logoanalysis"></i></button>
+                    <button id="btn_tabla" class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> 
                 </div>
                 <div id='console'>
                     <a href="https://escueladegobierno.itesm.mx/" target="_blank">
@@ -75,7 +75,7 @@
                               <label>SOSPECHOSOS</label>
                             </label>
                           </div>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#grafica">
                             Grafica
                           </button>
                           <div class='session'>
@@ -275,7 +275,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="grafica" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
             <div id="graph-modal" class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
