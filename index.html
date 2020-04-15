@@ -24,23 +24,23 @@
         <!--Firebase-->
         <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-        
-
     </head>
+
     <body>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand">Covid-19 en México</a>
-            </div>
-            <ul class="nav navbar-nav" id="mybar">
-                <li ><a href="metodologia.html" target="_blank">Metodología</a></li>
-                <li><a href="seguimientoestados.html">Seguimiento a Estados</a></li>
-                <li><a href="investigacion.html">Investigación</a></li>
-                <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
-            </ul>
+                <div class="navbar-header">
+                    <a class="navbar-brand">Covid-19 en México</a>
+                </div>
+                <ul class="nav navbar-nav" id="mybar">
+                    <li ><a href="metodologia.html" target="_blank">Metodología</a></li>
+                    <li><a href="seguimientoestados.html">Seguimiento a Estados</a></li>
+                    <li><a href="investigacion.html">Investigación</a></li>
+                    <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
+                </ul>
             </div>
         </nav>
+
         <div class="container-map">
             <div class="">
                 <div class="" id='map'></div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class='session'>
                         <h2>Número de Casos</h2>
-                        <div class='rowConsole colors'> </div>
+                        <div class='rowConsole colors'></div>
                         <div class='rowConsole labels'>
                             <div id='l1' class='labelConsole'>.</div>
                             <div id='l2' class='labelConsole'>.</div>
@@ -78,10 +78,10 @@
                             <label class="btn btn-secondary buttonboxs">
                               <input type="radio" name="pos_sos" id="option2">SOSPECHOSOS<span class="off"></span>
                             </label>
-                          </div>
-                          <button  type="button" class="btn-grafica btn btn-primary" data-toggle="modal" data-target="#grafica">
+                        </div>
+                        <button  type="button" class="btn-grafica btn btn-primary" data-toggle="modal" data-target="#grafica">
                             Gráfica
-                          </button>   
+                        </button>   
                         <p id=fuente>Fuente: SINAVE/DGE/InDRE</p>
                     </div>
                 </div>  
@@ -108,195 +108,194 @@
                 <div class="col-sm-12">
                     <table id='tabla-estados' class="js-sort-table">
                         <tr id='AGS' class='tupla'>
-                            <td id='AGS_n' class='edo_label'> 1  </td>
-                            <td id='AGS_n' class='edo_label'> AGS  </td>
+                            <td id='AGS_n' class='edo_label'> 1 </td>
+                            <td id='AGS_n' class='edo_label'> AGS </td>
                             <td id='AGS_p' class='num_p'> . </td>
                             <td id='AGS_s' class='num_s'> . </td>
                         </tr>
                         <tr id='BC' class='tupla'>
                             <td id='BC_n' class='edo_label'> 2 </td>
-                            <td id='BC_n' class='edo_label'>  BC  </td>
+                            <td id='BC_n' class='edo_label'> BC </td>
                             <td id='BC_p' class='num_p'> . </td>
                             <td id='BC_s' class='num_s'> . </td>
                         </tr>
                         <tr id='BCS' class='tupla'>
-                            <td id='BCS_n' class='edo_label'>  3  </td>
-                            <td id='BCS_n' class='edo_label'>  BCS  </td>
+                            <td id='BCS_n' class='edo_label'> 3 </td>
+                            <td id='BCS_n' class='edo_label'> BCS </td>
                             <td id='BCS_p' class='num_p'> . </td>
                             <td id='BCS_s' class='num_s'> . </td>
                         </tr>
                         <tr  id='CAMP' class='tupla'>
-                            <td id='CAMP_n' class='edo_label'>  4  </td>
-                            <td id='CAMP_n' class='edo_label'>  CAMP  </td>
+                            <td id='CAMP_n' class='edo_label'> 4 </td>
+                            <td id='CAMP_n' class='edo_label'> CAMP </td>
                             <td id='CAMP_p' class='num_p'> . </td>
                             <td id='CAMP_s' class='num_s'> . </td>
                         </tr>
                         <tr id='CHIS' class='tupla'>
-                            <td id='CHIS_n' class='edo_label'>  5  </td>
-                            <td id='CHIS_n' class='edo_label'>  CHIS  </td>
+                            <td id='CHIS_n' class='edo_label'> 5 </td>
+                            <td id='CHIS_n' class='edo_label'> CHIS </td>
                             <td id='CHIS_p' class='num_p'> . </td>
                             <td id='CHIS_s' class='num_s'> . </td>
                         </tr>
                         <tr id='CHIH' class='tupla'>
-                            <td id='CHIH_n' class='edo_label'>  6 </td>
-                            <td id='CHIH_n' class='edo_label'>  CHIH  </td>
+                            <td id='CHIH_n' class='edo_label'> 6 </td>
+                            <td id='CHIH_n' class='edo_label'> CHIH </td>
                             <td id='CHIH_p' class='num_p'> . </td>
                             <td id='CHIH_s' class='num_s'> . </td>
                         </tr>
                         <tr id='CDMX' class='tupla'>
-                            <td id='CDMX_n' class='edo_label'>  7  </td>
-                            <td id='CDMX_n' class='edo_label'>  CDMX  </td>
+                            <td id='CDMX_n' class='edo_label'> 7 </td>
+                            <td id='CDMX_n' class='edo_label'> CDMX </td>
                             <td id='CDMX_p' class='num_p'> . </td>
                             <td id='CDMX_s' class='num_s'> . </td>
                         </tr>
                         <tr  id='COAH' class='tupla'>
-                            <td id='COAH_n' class='edo_label'>  8  </td>
-                            <td id='COAH_n' class='edo_label'>  COAH  </td>
+                            <td id='COAH_n' class='edo_label'> 8 </td>
+                            <td id='COAH_n' class='edo_label'> COAH </td>
                             <td id='COAH_p' class='num_p'> . </td>
                             <td id='COAH_s' class='num_s'> . </td>
                         </tr>
                         <tr id='COL' class='tupla'>
                             <td id='COL_n' class='edo_label'> 9 </td>
-                            <td id='COL_n' class='edo_label'>  COL </td>
+                            <td id='COL_n' class='edo_label'> COL </td>
                             <td id='COL_p' class='num_p'> . </td>
                             <td id='COL_s' class='num_s'> . </td>
                         </tr>
-                        
                         <tr id='DGO' class='tupla'>
-                            <td id='DGO_n' class='edo_label'>  10  </td>
-                            <td id='DGO_n' class='edo_label'>  DGO  </td>
+                            <td id='DGO_n' class='edo_label'> 10 </td>
+                            <td id='DGO_n' class='edo_label'> DGO </td>
                             <td id='DGO_p' class='num_p'> . </td>
                             <td id='DGO_s' class='num_s'> . </td>
                         </tr>
                         <tr id='GTO' class='tupla'>
-                            <td id='GTO_n' class='edo_label'>  11  </td>
-                            <td id='GTO_n' class='edo_label'>  GTO  </td>
+                            <td id='GTO_n' class='edo_label'> 11 </td>
+                            <td id='GTO_n' class='edo_label'> GTO </td>
                             <td id='GTO_p' class='num_p'> . </td>
                             <td id='GTO_s' class='num_s'> . </td>
                         </tr>
                         <tr id='GRO' class='tupla'>
-                            <td id='GRO_n' class='edo_label'>  12  </td>
-                            <td id='GRO_n' class='edo_label'>  GRO  </td>
+                            <td id='GRO_n' class='edo_label'> 12 </td>
+                            <td id='GRO_n' class='edo_label'> GRO </td>
                             <td id='GRO_p' class='num_p'> . </td>
                             <td id='GRO_s' class='num_s'> . </td>
                         </tr>
                         <tr id='HGO' class='tupla'>
-                            <td id='HGO_n' class='edo_label'>  13  </td>
-                            <td id='HGO_n' class='edo_label'>  HGO  </td>
+                            <td id='HGO_n' class='edo_label'> 13 </td>
+                            <td id='HGO_n' class='edo_label'> HGO </td>
                             <td id='HGO_p' class='num_p'> . </td>
                             <td id='HGO_s' class='num_s'> . </td>
                         </tr>
                         <tr id='JAL' class='tupla'>
-                            <td id='JAL_n' class='edo_label'> 14  </td>
-                            <td id='JAL_n' class='edo_label'> JAL  </td>
+                            <td id='JAL_n' class='edo_label'> 14 </td>
+                            <td id='JAL_n' class='edo_label'> JAL </td>
                             <td id='JAL_p' class='num_p'> . </td>
                             <td id='JAL_s' class='num_s'> . </td>
                         </tr>
                         <tr id='MEX' class='tupla'>
-                            <td id='MEX_n' class='edo_label'> 15  </td>
-                            <td id='MEX_n' class='edo_label'> MEX  </td>
+                            <td id='MEX_n' class='edo_label'> 15 </td>
+                            <td id='MEX_n' class='edo_label'> MEX </td>
                             <td id='MEX_p' class='num_p'> . </td>
-                            <td id='MEX_s' class='num_s'> <b> . </b> </td>
+                            <td id='MEX_s' class='num_s'> . </td>
                         </tr>
                         <tr id='MICH' class='tupla'>
-                            <td id='MICH_n' class='edo_label'>16  </td>
-                            <td id='MICH_n' class='edo_label'> MICH  </td>
+                            <td id='MICH_n' class='edo_label'> 16 </td>
+                            <td id='MICH_n' class='edo_label'> MICH </td>
                             <td id='MICH_p' class='num_p'> . </td>
                             <td id='MICH_s' class='num_s'> . </td>
                         </tr>
                         <tr id='MOR' class='tupla'>
-                            <td id='MOR_n' class='edo_label'>  17 </td>
-                            <td id='MOR_n' class='edo_label'>  MOR  </td>
+                            <td id='MOR_n' class='edo_label'> 17 </td>
+                            <td id='MOR_n' class='edo_label'> MOR </td>
                             <td id='MOR_p' class='num_p'> . </td>
                             <td id='MOR_s' class='num_s'> . </td>
                         </tr>
                         <tr  id='NAY' class='tupla'>
-                            <td id='NAY_n' class='edo_label'> 18  </td>
-                            <td id='NAY_n' class='edo_label'> NAY  </td>
+                            <td id='NAY_n' class='edo_label'> 18 </td>
+                            <td id='NAY_n' class='edo_label'> NAY </td>
                             <td id='NAY_p' class='num_p'> . </td>
                             <td id='NAY_s' class='num_s'> . </td>
                         </tr>
                         <tr id='NL' class='tupla'>
-                            <td id='NL_n' class='edo_label'> 19  </td>
-                            <td id='NL_n' class='edo_label'>  NL  </td>
+                            <td id='NL_n' class='edo_label'> 19 </td>
+                            <td id='NL_n' class='edo_label'> NL </td>
                             <td id='NL_p' class='num_p'> . </td>
                             <td id='NL_s' class='num_s'> . </td>
                         </tr>
                         <tr id='OAX' class='tupla'>
-                            <td id='OAX_n' class='edo_label'> 20  </td>
-                            <td id='OAX_n' class='edo_label'>  OAX  </td>
+                            <td id='OAX_n' class='edo_label'> 20 </td>
+                            <td id='OAX_n' class='edo_label'> OAX </td>
                             <td id='OAX_p' class='num_p'> . </td>
                             <td id='OAX_s' class='num_s'> . </td>
                         </tr>
                         <tr id='PUE' class='tupla'>
-                            <td id='PUE_n' class='edo_label'>  21  </td>
-                            <td id='PUE_n' class='edo_label'>  PUE  </td>
+                            <td id='PUE_n' class='edo_label'> 21 </td>
+                            <td id='PUE_n' class='edo_label'> PUE </td>
                             <td id='PUE_p' class='num_p'> . </td>
                             <td id='PUE_s' class='num_s'> . </td>
                         </tr>
                         <tr id='QRO' class='tupla'>
-                            <td  id='QRO_n' class='edo_label'> 22  </td>
-                            <td  id='QRO_n' class='edo_label'>  QRO  </td>
+                            <td  id='QRO_n' class='edo_label'> 22 </td>
+                            <td  id='QRO_n' class='edo_label'> QRO </td>
                             <td  id='QRO_p' class='num_p'> . </td>
                             <td  id='QRO_s' class='num_s'> . </td>
                         </tr>
                         <tr id='QROO' class='tupla'>
-                            <td id='QROO_n' class='edo_label'> 23  </td>
-                            <td id='QROO_n' class='edo_label'>  QROO  </td>
+                            <td id='QROO_n' class='edo_label'> 23 </td>
+                            <td id='QROO_n' class='edo_label'> QROO </td>
                             <td id='QROO_p' class='num_p'> . </td>
                             <td id='QROO_s' class='num_s'> . </td>
                         </tr>
                         <tr id='SIN' class='tupla'>
-                            <td id='SIN_n' class='edo_label'>  24 </td>
-                            <td id='SIN_n' class='edo_label'>  SIN  </td>
+                            <td id='SIN_n' class='edo_label'> 24 </td>
+                            <td id='SIN_n' class='edo_label'> SIN </td>
                             <td id='SIN_p' class='num_p'> . </td>
                             <td id='SIN_s' class='num_s'> . </td>
                         </tr>
                         <tr id='SLP' class='tupla'>
-                            <td id='SLP_n' class='edo_label'>25 </td>
+                            <td id='SLP_n' class='edo_label'> 25 </td>
                             <td id='SLP_n' class='edo_label'> SLP </td>
                             <td id='SLP_p' class='num_p'> . </td>
                             <td id='SLP_s' class='num_s'> . </td>
                         </tr>
                         <tr id='SON' class='tupla'>
-                            <td id='SON_n' class='edo_label'>  26 </td>
-                            <td id='SON_n' class='edo_label'>  SON  </td>
+                            <td id='SON_n' class='edo_label'> 26 </td>
+                            <td id='SON_n' class='edo_label'> SON </td>
                             <td id='SON_p' class='num_p'> . </td>
                             <td id='SON_s' class='num_s'> . </td>
                         </tr>
                         <tr id='TAB' class='tupla'>
-                            <td id='TAB_n' class='edo_label'> 27  </td>
-                            <td id='TAB_n' class='edo_label'> TAB  </td>
+                            <td id='TAB_n' class='edo_label'> 27 </td>
+                            <td id='TAB_n' class='edo_label'> TAB </td>
                             <td id='TAB_p' class='num_p'> . </td>
                             <td id='TAB_s' class='num_s'> . </td>
                         </tr>
                         <tr id='TAMP' class='tupla'>
-                            <td id='TAMP_n' class='edo_label'>  28  </td>
-                            <td id='TAMP_n' class='edo_label'>  TAMP  </td>
+                            <td id='TAMP_n' class='edo_label'> 28 </td>
+                            <td id='TAMP_n' class='edo_label'> TAMP </td>
                             <td id='TAMP_p' class='num_p'> . </td>
                             <td id='TAMP_s' class='num_s'> . </td>
                         </tr>
                         <tr id='TLAX' class='tupla'>
-                            <td id='TLAX_n' class='edo_label'>  29  </td>
-                            <td id='TLAX_n' class='edo_label'>  TLAX  </td>
+                            <td id='TLAX_n' class='edo_label'> 29 </td>
+                            <td id='TLAX_n' class='edo_label'> TLAX </td>
                             <td id='TLAX_p' class='num_p'> . </td>
                             <td id='TLAX_s' class='num_s'> . </td>
                         </tr>
                         <tr id='VER' class='tupla'>
-                            <td id='VER_n' class='edo_label'>  30 </td>
-                            <td id='VER_n' class='edo_label'>  VER  </td>
+                            <td id='VER_n' class='edo_label'> 30 </td>
+                            <td id='VER_n' class='edo_label'> VER </td>
                             <td id='VER_p' class='num_p'> . </td>
                             <td id='VER_s' class='num_s'> . </td>
                         </tr>
                         <tr id='YUC' class='tupla'>
-                            <td id='YUC_n' class='edo_label'>  31  </td>
-                            <td id='YUC_n' class='edo_label'>  YUC  </td>
+                            <td id='YUC_n' class='edo_label'> 31 </td>
+                            <td id='YUC_n' class='edo_label'> YUC </td>
                             <td id='YUC_p' class='num_p'> . </td>
                             <td id='YUC_s' class='num_s'> . </td>
                         </tr>
                         <tr id='ZAC' class='tupla'>
-                            <td id='ZAC_n' class='edo_label'>  32  </td>
-                            <td id='ZAC_n' class='edo_label'>  ZAC  </td>
+                            <td id='ZAC_n' class='edo_label'> 32 </td>
+                            <td id='ZAC_n' class='edo_label'> ZAC </td>
                             <td id='ZAC_p' class='num_p'> . </td>
                             <td id='ZAC_s' class='num_s'> . </td>
                         </tr>
@@ -304,28 +303,30 @@
                 </div>
             </div>
         </div>
+
         <div class="modal fade" id="grafica" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
             <div id="graph-modal" class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">Número de confirmados por fecha</h5>
-                                <div id="grafico"></div>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="modal-title text-center" id="exampleModalLabel">Número de confirmados por fecha</h5>
+                                    <div id="grafico"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
         
         <script src="mapas_covid.js"></script>
+    
     </body>
 </html>
