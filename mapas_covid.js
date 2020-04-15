@@ -289,7 +289,7 @@ Promise.all(loadFiles).then(function(data) {
         });
         var pos_sos = document.querySelector("input[name=pos_sos]");
 
-        btn_g = document.querySelector(".btn-group")
+        btn_g = document.querySelector(".btn-group");
         btn_g.addEventListener("click", function(e) {
             if(e.target.matches('.buttonboxp')) {
                 console.log("positivos");
