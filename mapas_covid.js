@@ -467,7 +467,7 @@ Promise.all(loadFiles).then(function(data) {
         const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
 
-        var height  = 0.75*vh;
+        var height  = 0.55*vh;
         var width   = 0.75*vw;;
         
         var margin = {top: 10, right: 20, bottom: 40, left: 30};
@@ -548,16 +548,17 @@ Promise.all(loadFiles).then(function(data) {
                 .duration(200)   
                 .attr("r", 10)   
                 .style("opacity", .9);      
-                div.html(formatDate(d.date) + "<br/>"  + d.nps)  
-                .style("left", (d3.event.pageX) + "px")     
-                .style("top", (d3.event.pageY - 28) + "px");  
-                d3.select(this).attr("r", 12); 
+                div.html(
+                    formatDate(d.date) + "<br/>"  + d.nps)  
+                    .style("left", (d3.event.pageX) + "px")     
+                    .style("top", (d3.event.pageY - 28) + "px");  
+                    d3.select(this).attr("r", 12); 
                   })                 
                 .on("mouseout", function(d) {       
                 div.transition()        
                 .duration(500)      
                 .style("opacity", 0);
-                d3.select(this).attr("r", 4)
+                d3.select(this).attr("r", 8)
 
         });
 

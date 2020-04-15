@@ -306,7 +306,7 @@ border-radius: 80%;}
 .axis path,
 .axis line {
   fill: none;
-  stroke: white;
+  stroke: #222;
   shape-rendering: crispEdges;
 }
 .axis text {
