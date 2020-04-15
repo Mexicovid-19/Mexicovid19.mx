@@ -47,7 +47,7 @@
                 <div id='map'></div>
                 <div id='map-overlay' class='map-overlay'></div>
                 <div id="buttoncontainer">
-                    <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#grafica"> <i class="fas fa-chart-line logoanalysis"></i></button>
+                    <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#graficamovil"> <i class="fas fa-chart-line logoanalysis"></i></button>
                     <button id="btn_tabla" class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> 
                 </div>
                 <div id='console'>
@@ -327,6 +327,28 @@
             </div>
         </div>
         
+        <div class="modal fade" id="graficamovil" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
+            <div id="graph-modal" class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="modal-title text-center" id="exampleModalLabel">Número de confirmados por fecha</h5>
+                                    <div id="graficomov"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="mapas_covid.js"></script>
     
     </body>

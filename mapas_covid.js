@@ -8,7 +8,8 @@ var firebaseConfig = {
     messagingSenderId: "120285866166",
     appId: "1:120285866166:web:2e30922e8033cbe2b3de17",
     measurementId: "G-DE9Q3D7K8L"
-  };
+};
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -599,116 +600,7 @@ Promise.all(loadFiles).then(function(data) {
             return new Date(b.date) - new Date(a.date);
         });
         graphic();
-        /*
-        const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-
-        var height  = 0.45*vh;
-        var width   = 0.40*vw;;
-        
-        var margin = {top: 10, right: 20, bottom: 40, left: 30};
-
-        width =     width - margin.left - margin.right;
-        height =    height - margin.top - margin.bottom;
-
-        var svg = d3.select('#grafico').append("svg")
-          .attr("width",  width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-        // set the ranges
-        var x = d3.scaleTime().range([0, width]);
-        var y = d3.scaleLinear().range([height, 0]);
-        x.domain(d3.extent(lineData, function(d) { return d.date;}));
-
-
-        var yMax = d3.max(lineData, function(d) { return d.nps; }) * 1.05;
-        var yMin = d3.min(lineData, function(d) { return d.nps; })* 0.95;
-
-        y.domain([yMin, yMax]);
-
-        // Define the div for the tooltip
-        var div = d3.select("body").append("div")   
-            .attr("class", "tooltip")               
-            .style("opacity", 0)
-            .style("top", 0);
-
-
-        var valueline = d3.line()
-                .x(function(d) { return x(d.date); })
-                .y(function(d) { return y(d.nps);  })
-                .curve(d3.curveCatmullRom);
-
-        svg.append("path")
-            .data([lineData]) 
-            .attr("class", "line")  
-            .attr("d", valueline); 
-
-        var label_axis = lineData.map(d=>d.nps);
-
-        // Select labels, the last three days, first and middle
-        var test = [label_axis[0],label_axis[1], label_axis[2], label_axis[Math.ceil((label_axis.length/2))], label_axis[(label_axis.length-1)]];
-
-        //var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("Week %V")).tickValues(lineData.map(d=>d.date));
-        var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("%d-%m")).ticks(d3.timeDay.every(3));
-        var yAxis = d3.axisLeft(y).tickValues(test);
-        var formatDate = d3.timeFormat("%d-%m");
-
-        svg.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(xAxis)
-                .selectAll("text")  
-                .style("text-anchor", "end")
-                .attr("dx", "-.8em")
-                .attr("dy", ".15em")
-                .attr("transform", "rotate(-90)");
-
-        //  Add the Y Axis
-        svg.append("g")
-            .attr("class", "axis")
-            .call(yAxis);
-            
-
-        svg.selectAll(".dot")
-            .data(lineData)
-            .enter()
-            .append("circle") // Uses the enter().append() method
-            .attr("class", "dot") // Assign a class for styling
-            .attr("cx", function(d) { return x(d.date) })
-            .attr("cy", function(d) { return y(d.nps) })
-            .style('fill', 'darkOrange')
-            .attr("r", 8)
-            .on("mouseover", function(d) {    
-                div.transition()        
-                .duration(200)   
-                .attr("r", 10)   
-                .style("opacity", .9);      
-                div.html(
-                    formatDate(d.date) + "<br/>"  + d.nps)  
-                    .style("left", (d3.event.pageX) + "px")     
-                    .style("top", (d3.event.pageY - 28) + "px");  
-                    d3.select(this).attr("r", 12); 
-                  })                 
-                .on("mouseout", function(d) {       
-                div.transition()        
-                .duration(500)      
-                .style("opacity", 0);
-                d3.select(this).attr("r", 8)
-
-        });
-
-        svg.append("text")
-            .attr("x", (width / 2))             
-            .attr("y", 0)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "14px")
-            .text("Número de positivos por fecha")
-            .style("fill", "white");
-            */
-
+        graphimobile();
 });
 
 function numberWithCommas(x) {
@@ -717,113 +609,201 @@ function numberWithCommas(x) {
 
 function graphic() {
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
+    var height  = 0.45*vh;
+    var width   = 0.40*vw;;
+    var margin = {top: 10, right: 20, bottom: 40, left: 30};
 
-        var height  = 0.45*vh;
-        var width   = 0.40*vw;;
-        
-        var margin = {top: 10, right: 20, bottom: 40, left: 30};
+    width =     width - margin.left - margin.right;
+    height =    height - margin.top - margin.bottom;
 
-        width =     width - margin.left - margin.right;
-        height =    height - margin.top - margin.bottom;
+    var svg = d3.select('#grafico').append("svg")
+        .attr("width",  width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        var svg = d3.select('#grafico').append("svg")
-          .attr("width",  width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    // set the ranges
+    var x = d3.scaleTime().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
+    x.domain(d3.extent(lineData, function(d) { return d.date;}));
 
-        // set the ranges
-        var x = d3.scaleTime().range([0, width]);
-        var y = d3.scaleLinear().range([height, 0]);
-        x.domain(d3.extent(lineData, function(d) { return d.date;}));
+    var yMax = d3.max(lineData, function(d) { return d.nps; }) * 1.05;
+    var yMin = d3.min(lineData, function(d) { return d.nps; })* 0.95;
+    y.domain([yMin, yMax]);
 
+    // Define the div for the tooltip
+    var div = d3.select("body").append("div")   
+        .attr("class", "tooltip")               
+        .style("opacity", 0)
+        .style("top", 0);
 
-        var yMax = d3.max(lineData, function(d) { return d.nps; }) * 1.05;
-        var yMin = d3.min(lineData, function(d) { return d.nps; })* 0.95;
+    var valueline = d3.line()
+        .x(function(d) { return x(d.date); })
+        .y(function(d) { return y(d.nps);  })
+        .curve(d3.curveCatmullRom);
 
-        y.domain([yMin, yMax]);
+    svg.append("path")
+        .data([lineData]) 
+        .attr("class", "line")  
+        .attr("d", valueline);
+    var label_axis = lineData.map(d=>d.nps);
 
-        // Define the div for the tooltip
-        var div = d3.select("body").append("div")   
-            .attr("class", "tooltip")               
-            .style("opacity", 0)
-            .style("top", 0);
+    // Select labels, the last three days, first and middle
+    var test = [label_axis[0],label_axis[1], label_axis[2], label_axis[Math.ceil((label_axis.length/2))], label_axis[(label_axis.length-1)]];
 
+    //var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("Week %V")).tickValues(lineData.map(d=>d.date));
+    var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("%d-%m")).ticks(d3.timeDay.every(3));
+    var yAxis = d3.axisLeft(y).tickValues(test);
+    var formatDate = d3.timeFormat("%d-%m");
 
-        var valueline = d3.line()
-                .x(function(d) { return x(d.date); })
-                .y(function(d) { return y(d.nps);  })
-                .curve(d3.curveCatmullRom);
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+        .selectAll("text")  
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-90)");
 
-        svg.append("path")
-            .data([lineData]) 
-            .attr("class", "line")  
-            .attr("d", valueline); 
-
-        var label_axis = lineData.map(d=>d.nps);
-
-        // Select labels, the last three days, first and middle
-        var test = [label_axis[0],label_axis[1], label_axis[2], label_axis[Math.ceil((label_axis.length/2))], label_axis[(label_axis.length-1)]];
-
-        //var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("Week %V")).tickValues(lineData.map(d=>d.date));
-        var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("%d-%m")).ticks(d3.timeDay.every(3));
-        var yAxis = d3.axisLeft(y).tickValues(test);
-        var formatDate = d3.timeFormat("%d-%m");
-
-        svg.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(xAxis)
-                .selectAll("text")  
-                .style("text-anchor", "end")
-                .attr("dx", "-.8em")
-                .attr("dy", ".15em")
-                .attr("transform", "rotate(-90)");
-
-        //  Add the Y Axis
-        svg.append("g")
-            .attr("class", "axis")
-            .call(yAxis);
+    //  Add the Y Axis
+    svg.append("g")
+        .attr("class", "axis")
+        .call(yAxis);
             
-
-        svg.selectAll(".dot")
-            .data(lineData)
-            .enter()
-            .append("circle") // Uses the enter().append() method
-            .attr("class", "dot") // Assign a class for styling
-            .attr("cx", function(d) { return x(d.date) })
-            .attr("cy", function(d) { return y(d.nps) })
-            .style('fill', 'darkOrange')
-            .attr("r", 8)
-            .on("mouseover", function(d) {    
-                div.transition()        
+    svg.selectAll(".dot")
+        .data(lineData)
+        .enter()
+        .append("circle") // Uses the enter().append() method
+        .attr("class", "dot") // Assign a class for styling
+        .attr("cx", function(d) { return x(d.date) })
+        .attr("cy", function(d) { return y(d.nps) })
+        .style('fill', 'darkOrange')
+        .attr("r", 8)
+        .on("mouseover", function(d) {    
+            div.transition()        
                 .duration(200)   
                 .attr("r", 10)   
                 .style("opacity", .9);      
-                div.html(
-                    formatDate(d.date) + "<br/>"  + d.nps)  
-                    .style("left", (d3.event.pageX) + "px")     
-                    .style("top", (d3.event.pageY - 28) + "px");  
-                    d3.select(this).attr("r", 12); 
-                  })                 
-                .on("mouseout", function(d) {       
-                div.transition()        
+            div.html(formatDate(d.date) + "<br/>"  + d.nps)  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");  
+                d3.select(this).attr("r", 12); 
+        })                 
+        .on("mouseout", function(d) {       
+            div.transition()        
                 .duration(500)      
                 .style("opacity", 0);
                 d3.select(this).attr("r", 8)
-
         });
 
-        svg.append("text")
-            .attr("x", (width / 2))             
-            .attr("y", 0)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "14px")
-            .style("fill", "white");
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "14px")
+        .style("fill", "white");
 }
 
-let showGraphic = () => {
-    
+
+function graphimobile() {
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    var height  = 0.65*vh;
+    var width   = 0.60*vw;;
+    var margin = {top: 10, right: 10, bottom: 10, left: 30};
+
+    width =     width - margin.left - margin.right;
+    height =    height - margin.top - margin.bottom;
+
+    var svg = d3.select('#graficomov').append("svg")
+        .attr("width",  width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // set the ranges
+    var x = d3.scaleTime().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
+    x.domain(d3.extent(lineData, function(d) { return d.date;}));
+
+    var yMax = d3.max(lineData, function(d) { return d.nps; }) * 1.05;
+    var yMin = d3.min(lineData, function(d) { return d.nps; })* 0.95;
+    y.domain([yMin, yMax]);
+
+    // Define the div for the tooltip
+    var div = d3.select("body").append("div")   
+        .attr("class", "tooltip")               
+        .style("opacity", 0)
+        .style("top", 0);
+
+    var valueline = d3.line()
+        .x(function(d) { return x(d.date); })
+        .y(function(d) { return y(d.nps);  })
+        .curve(d3.curveCatmullRom);
+
+    svg.append("path")
+        .data([lineData]) 
+        .attr("class", "line")  
+        .attr("d", valueline);
+    var label_axis = lineData.map(d=>d.nps);
+
+    // Select labels, the last three days, first and middle
+    var test = [label_axis[0],label_axis[1], label_axis[2], label_axis[Math.ceil((label_axis.length/2))], label_axis[(label_axis.length-1)]];
+
+    //var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("Week %V")).tickValues(lineData.map(d=>d.date));
+    var xAxis = d3.axisBottom(x).tickFormat(d3.timeFormat("%d-%m")).ticks(d3.timeDay.every(3));
+    var yAxis = d3.axisLeft(y).tickValues(test);
+    var formatDate = d3.timeFormat("%d-%m");
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+        .selectAll("text")  
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-90)");
+
+    //  Add the Y Axis
+    svg.append("g")
+        .attr("class", "axis")
+        .call(yAxis);
+            
+    svg.selectAll(".dot")
+        .data(lineData)
+        .enter()
+        .append("circle") // Uses the enter().append() method
+        .attr("class", "dot") // Assign a class for styling
+        .attr("cx", function(d) { return x(d.date) })
+        .attr("cy", function(d) { return y(d.nps) })
+        .style('fill', 'darkOrange')
+        .attr("r", 8)
+        .on("mouseover", function(d) {    
+            div.transition()        
+                .duration(200)   
+                .attr("r", 10)   
+                .style("opacity", .9);      
+            div.html(formatDate(d.date) + "<br/>"  + d.nps)  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");  
+                d3.select(this).attr("r", 12); 
+        })                 
+        .on("mouseout", function(d) {       
+            div.transition()        
+                .duration(500)      
+                .style("opacity", 0);
+                d3.select(this).attr("r", 8)
+        });
+
+    svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "14px")
+        .style("fill", "white");
 }
