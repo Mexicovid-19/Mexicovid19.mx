@@ -243,20 +243,22 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         array_positivos=[];
         array_sospechosos=[];
         for (var key in estado) {
-            total_positivos+=(estado[key][today_n-1]);
-            total_sospechosos+=(estado[key][today_n]);
+            total_positivos+=(estado[key][today_n]);
+            total_sospechosos+=(estado[key][today_n-1]);
             //calcula todos los totales por día por cada columna
-            array_positivos.push(estado[key][today_n-1]);
-            array_sospechosos.push(estado[key][today_n]);
+            array_positivos.push(estado[key][today_n]);
+            array_sospechosos.push(estado[key][today_n-1]);
         }
         
         //se ordenan de mayor a menor
+        /*
         array_positivos.sort(function(a, b) {
             return a - b;
         });
         array_sospechosos.sort(function(a, b) { // Ordena los datos para sacar cuantiles.
             return a - b;
         });
+        */
         // Seis categorías y partición por cuantiles
     
         //ya ordenados los datos, se toma hasta el 5 y se calcula cuantiles
@@ -320,6 +322,7 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                 document.getElementById(key + '_s').innerHTML = parseInt(array_sospechosos[counter]);
                 counter++;
             };
+            
     
             sortTable();
             document.getElementById('slider').addEventListener('input', function(e) {
