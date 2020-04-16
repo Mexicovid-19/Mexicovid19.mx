@@ -46,6 +46,12 @@
             <div>
                 <div id='map'></div>
                 <div id='map-overlay' class='map-overlay'></div>
+                <div id='slidercontainer'>
+                    <div class=' scrollbar'>
+                        <h2><label id='fechacorte_l'>.</label></h2>
+                        <input id='slider' class='sliderC' type='range' min='0' max='30' step='1' value='24' />
+                    </div>
+                </div>
                 <div id="buttoncontainer">
                     <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#graficamovil"> <i class="fas fa-chart-line logoanalysis"></i></button>
                     <button id="btn_tabla" class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> 
@@ -85,7 +91,7 @@
                         </button>   
                         <p id=fuente>Fuente: SINAVE/DGE/InDRE</p>
                     </div>
-                </div>  
+                </div>
             </div>
 
             <div id='estados'>
@@ -303,6 +309,7 @@
                     </table>
                 </div>
             </div>
+
         </div>
 
         <div class="modal fade" id="grafica" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">

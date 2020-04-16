@@ -98,6 +98,7 @@ hr {
   font-size: 1em;
 }
 
+
 input:checked + .slider {
   background-color: #ff4747;
 }
@@ -332,6 +333,23 @@ font-size: 16px;
   #map {
     width: 100vw;
   }
+  #slidercontainer {
+    position: absolute;
+    width: 100%;
+    left: 0em;
+    bottom: 20px;
+    border-radius: 5px;
+    height: 100px;
+    background-color: black;
+  }
+
+  #fechacorte_l {
+    margin-bottom: 9px;
+    font-size: 1em;
+    margin-left: 15px;
+    margin-top: -7px;
+  }
+
   #buttoncontainer {
     position: absolute;
     display: flex;
@@ -361,6 +379,8 @@ font-size: 16px;
   }
   #slider {
     display: absolute;
+    width: 98%;
+    margin-left: 3px;
   }
   #estados {
       display: none;
@@ -373,6 +393,18 @@ font-size: 16px;
     background-color: white;
     border: 2px solid #222;
     border-radius: 3px;
+  }
+
+  .sliderC {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.7em;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top: 5px;
   }
 
 }
