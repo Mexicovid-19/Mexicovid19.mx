@@ -170,8 +170,8 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         //Esto esta tomando el ultimo dia
         today_s = nameCol[(lt - 1)]; 
         size_slider = (lt - 1) / 2; // size of slider, considerando que una columna es positivos y otra negativos, son pares, y la primera es de estados.
-        console.log(size_slider);
-        console.log(lt)
+        //console.log(size_slider);
+        //console.log(lt)
         document.getElementById('slider').setAttribute("max", (size_slider-1));
         document.getElementById('slider').setAttribute("value", (size_slider-1));
     
@@ -201,7 +201,7 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         }
     
         //Toma los labels, fecha de derecha e izquierda pone el dia mas reciente
-        console.log(label_fecha);
+        //console.log(label_fecha);
         document.getElementById('fechacorte_l').innerText = label_fecha;
         document.getElementById('fechacorte_r').innerText = label_fecha;
         
@@ -214,15 +214,15 @@ firebase.database().ref('masterSheet').once('value', function(datos){
 
         
         //console.log(geojson.features);
-        console.log(estado)
+        //console.log(estado)
         for(var i = 0;i<names.length;i++){
             geojson[names.length]
             for(var key in geojson.features){
                 var name = geojson.features[key].properties.ABREV
-                console.log(name)
+                //console.log(name)
             }
         }
-        console.log(geojson.features)
+        //console.log(geojson.features)
 
         var length_d  = nameCol.length;
         for(var key in geojson.features){
@@ -236,31 +236,8 @@ firebase.database().ref('masterSheet').once('value', function(datos){
             }
             //console.log("\n")
         }
-        console.log(geojson.features)
-        /*
-        geojson.features = geojson.feature.map(feature => {
-            /*data[1].forEach(estadosData => {
-                if (feature.properties.ABREV === estadosData['ESTADO']) {
-                    // Lee con este loop iterando por todas las columnas para pegar todas en el mapa
-                    var i;
-                    for (i = 1; i < lt; i++) {
-                        feature.properties[nameCol[i]] = Number(estadosData[nameCol[i]]);
-                    }
-                    //aqui toma los datos 1 por que la primer columna es el estado
-                    //se lo añade al geojson
-                }
-            });
-            for (var key in estado) {
-                if(feature.properties.ABREV === key){
-                    for(i =1;i<lt;i++){
-                        feature.properties[namecol[i]] = Numer(estadosData[nameCol[i]]);
-                    }
-                }
-            }
-
-            return feature; //regresa geojson
-        });*/
-    
+        //console.log(geojson.features)
+        
     
         var margedGeoJSON = geojson;
         
