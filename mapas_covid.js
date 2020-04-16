@@ -33,6 +33,11 @@ estado ={"AGS":[],
         "TLAX":[],"VER":[],"YUC":[],"ZAC":[]
     };
 firebase.database().ref('masterSheet').once('value', function(datos){
+    $.getJSON('Mexico_Estados.json', function(data) { 
+    
+    var geojson = data;
+    console.log(geojson)
+
     contagios=datos.val();
     //console.log(contagios[0]);
 
@@ -43,7 +48,7 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         }
     }
 
-    console.log(names)
+    //console.log(names)
 
     for(i=0;i<=32;i++){
         var state_name=contagios[i][0];
@@ -157,13 +162,6 @@ firebase.database().ref('masterSheet').once('value', function(datos){
     });
     
     
-    var loadFiles = [
-        d3.json("Mexico_Estados.geojson"),
-        d3.csv("contagios.csv") //carga
-    ];
-
-    var geojson = "Mexico_Estados.geojson"; ///NO LO ESTA CARGANDO
-
     //Promise.all(loadFiles).then(function(data) {
         //lt = data[1].columns.length;
         lt = contagios[0].length;
@@ -213,10 +211,12 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         //hace un map de los features
         //esta asignando para cada uno del csv
         //
+        //Aqui lo que se tiene que hacer es añadir features a partir del geojson
 
         /*
-        geojson.features = geojson.features.map(feature => {
-            data[1].forEach(estadosData => {
+        console.log(geojson.features);
+        geojson.features = geojson.feature.map(feature => {
+            /*data[1].forEach(estadosData => {
                 if (feature.properties.ABREV === estadosData['ESTADO']) {
                     // Lee con este loop iterando por todas las columnas para pegar todas en el mapa
                     var i;
@@ -227,9 +227,16 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                     //se lo añade al geojson
                 }
             });
+            for (var key in estado) {
+                if(feature.properties.ABREV === key){
+                    for(i =1;i<lt;i++){
+                        feature.properties[namecol[i]] = Numer(estadosData[nameCol[i]]);
+                    }
+                }
+            }
+
             return feature; //regresa geojson
-        });
-        */
+        });*/
     
     
         var margedGeoJSON = geojson;
@@ -883,7 +890,7 @@ firebase.database().ref('masterSheet').once('value', function(datos){
             .style("font-size", "14px")
             .style("fill", "white");
     }
-        
+    });    
 },function(objetoError){
     console.log('Error de lectura:'+objetoError.code);
 });
