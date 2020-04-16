@@ -333,21 +333,31 @@ font-size: 16px;
   #map {
     width: 100vw;
   }
+
+  #logocontainermovil {
+    position: absolute;
+    width: 40%;
+    right: 0px;
+    top: 0;
+    border-radius: 5px;
+    height: 90%;
+  }
+
   #slidercontainer {
     position: absolute;
     width: 100%;
     left: 0em;
     bottom: 20px;
     border-radius: 5px;
-    height: 100px;
+    height: 118px;
     background-color: black;
   }
 
   #fechacorte_l {
-    margin-bottom: 9px;
-    font-size: 1em;
-    margin-left: 15px;
+    font-size: 1.5em;
+    margin-left: 16px;
     margin-top: -7px;
+    margin-bottom: 18px;
   }
 
   #buttoncontainer {
