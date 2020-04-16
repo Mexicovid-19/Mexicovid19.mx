@@ -34,7 +34,7 @@ estado ={"AGS":[],
     };
 firebase.database().ref('masterSheet').once('value', function(datos){
     contagios=datos.val();
-    //console.log(contagios);
+    //console.log(contagios[0]);
     for(i=0;i<=32;i++){
         var state_name=contagios[i][0];
         var cases =[];
@@ -152,25 +152,35 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         d3.csv("contagios.csv") //carga
     ];
 
-    Promise.all(loadFiles).then(function(data) {
-        lt = data[1].columns.length;
-        nameCol = Object.keys(data[1][0]);
+    var geojson = d3.json("Mexico_Estados.geojson") ///NO LO ESTA CARGANDO
+
+    //Promise.all(loadFiles).then(function(data) {
+        //lt = data[1].columns.length;
+        lt = contagios[0].length;
+        nameCol = contagios[0];
         today_p = nameCol[(lt - 2)]; // en el orden de columnas siempre van primero los positivos y luego los sospechosos
         //Esto esta tomando el ultimo dia
         today_s = nameCol[(lt - 1)]; 
         size_slider = (lt - 1) / 2; // size of slider, considerando que una columna es positivos y otra negativos, son pares, y la primera es de estados.
+        console.log(size_slider);
+        console.log(lt)
         document.getElementById('slider').setAttribute("max", (size_slider-1));
         document.getElementById('slider').setAttribute("value", (size_slider-1));
     
         day = (size_slider-1);
-    
-        var i;
-        for (i = 1; i < nameCol.length; i+=2){ //toma todos los valores de dias positivos
-            days_list.push(nameCol[i].substr(1,(nameCol[i].search("p")-1)));
+        for (var i = 1; i < nameCol.length; i++){ //toma todos los valores de dias positivos
+            if(i%2==0){
+                days_list.push(nameCol[i].slice(1,-1));
+            }
             pos_keys.push(nameCol[i]);
             sos_keys.push(nameCol[i+1]);
         }
     
+        //console.log(days_list)
+        //console.log(pos_keys)
+        //console.log(pos_keys)
+
+
         //esto es para poner meses
     
         if (today_p.substr(0, 1)=='m'){
@@ -184,15 +194,19 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         }
     
         //Toma los labels, fecha de derecha e izquierda pone el dia mas reciente
+        console.log(label_fecha);
         document.getElementById('fechacorte_l').innerText = label_fecha;
         document.getElementById('fechacorte_r').innerText = label_fecha;
+        document.getElementById('fechacorte_l').innerText = label_fecha;
         
     
         //es el json 
         //hace un map de los features
         //esta asignando para cada uno del csv
         //
-        data[0].features = data[0].features.map(feature => {
+
+        /*
+        geojson.features = geojson.features.map(feature => {
             data[1].forEach(estadosData => {
                 if (feature.properties.ABREV === estadosData['ESTADO']) {
                     // Lee con este loop iterando por todas las columnas para pegar todas en el mapa
@@ -206,27 +220,27 @@ firebase.database().ref('masterSheet').once('value', function(datos){
             });
             return feature; //regresa geojson
         });
+        */
     
     
-    
-        var margedGeoJSON = data[0];
-    
+        var margedGeoJSON = geojson;
+        
         //calcula el el total de cada columnas de hoy
-        total_positivos = d3.sum(data[1], function(d) {
-            return +d[today_p];
-        });
-        total_sospechosos = d3.sum(data[1], function(d) {
-            return +d[today_s];
-        });
-    
-        //calcula todos los totales por día por cada columna
-        array_positivos = data[1].map(function(d) {
-            return +d[today_p];
-        });
-        array_sospechosos = data[1].map(function(d) {
-            return +d[today_s];
-        });
-    
+
+        var today_n = nameCol.indexOf(today_p)
+
+        total_positivos = 0;
+        total_sospechosos = 0;
+        array_positivos=[];
+        array_sospechosos=[];
+        for (var key in estado) {
+            total_positivos+=(estado[key][today_n-1]);
+            total_sospechosos+=(estado[key][today_n]);
+            //calcula todos los totales por día por cada columna
+            array_positivos.push(estado[key][today_n-1]);
+            array_sospechosos.push(estado[key][today_n]);
+        }
+        
         //se ordenan de mayor a menor
         array_positivos.sort(function(a, b) {
             return a - b;
@@ -258,10 +272,12 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         
         // Big and large function to load the layer onto the map
         map.on('load', function() {
-            map.addSource('pref', {
+            /*map.addSource('pref', {
                 type: 'geojson',
                 data: margedGeoJSON
+                
             });
+            
             map.addLayer({
                 'id': 'pref',
                 'type': 'fill',
@@ -286,12 +302,15 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                 //"filter": ['>=', ['number', ['get', 'm24p']], 25]
                 // "filter": ['all', [ '==', 'ABREV', 'NONE' ]] // start with a filter that doesn't select anything
     
-            });
+            });*/
             //aqui hace el mapa normal no es interactivo
     
-            for (var i = 0; i < data[1].length; i++) {
-                document.getElementById(data[1][i]["ESTADO"] + '_p').innerHTML = parseInt(data[1][i][today_p]);
-                document.getElementById(data[1][i]["ESTADO"] + '_s').innerHTML = parseInt(data[1][i][today_s]);
+            //for (var i = 0; i < array_positivos.length; i++) {
+            var counter =0;
+            for (var key in estado) {
+                document.getElementById(key + '_p').innerHTML = parseInt(array_positivos[counter]);
+                document.getElementById(key + '_s').innerHTML = parseInt(array_sospechosos[counter]);
+                counter++;
             };
     
             sortTable();
@@ -299,6 +318,7 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                 day = parseInt(e.target.value);
                 // update the map
                 today_p = pos_keys[day];
+                console.log(today_p);
                 today_s = sos_keys[day];
     
                 month=today_p.substr(0,1);
@@ -522,6 +542,8 @@ firebase.database().ref('masterSheet').once('value', function(datos){
             
     
             //hace efectos del hover
+
+            /*
             map.addLayer({
                 "id": "attribution-layer",
                 "type": "circle",
@@ -545,13 +567,17 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                 },
                 "filter": ["==", "ABREV", ""]
             });
+
+            
     
             //"filter": ['>=', ['number', ['get', 'm24p']], 25]
             // "filter": ['all', [ '==', 'ABREV', 'NONE' ]] // start with a filter that doesn't select anything
     
-    
+            
             map.style.sourceCaches['attribution-layer']._source.attribution = "&copy; <a href='https://escueladegobierno.itesm.mx/'> Estudiantes del Tecnológico de Monterrey </a>";
+            */ //<========= ESTO BORRAR
             /*;-->*/
+            
             map.addControl(
                 new mapboxgl.GeolocateControl({
                 positionOptions: {
@@ -564,6 +590,8 @@ firebase.database().ref('masterSheet').once('value', function(datos){
     
             // When the user moves their mouse over the state-fill layer, we'll update the
             // feature state for the feature under the mouse.
+
+            /*
             map.on("mousemove", function(e) {
                 var features = map.queryRenderedFeatures(e.point, {
                     layers: ["pref"]
@@ -596,11 +624,12 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                     element_touched_a = element_touched_c;
                 }
             });
-        });
+            */
+    //});
     
       
     // Empieza parte de D3, el gráfico de la parte izquierda
-    
+        /*
        //console.log(nameCol);
         today_p = nameCol[(lt - 2)]; // en el orden de columnas siempre van primero los positivos y luego los sospechosos
         today_s = nameCol[(lt - 1)];
@@ -631,7 +660,9 @@ firebase.database().ref('masterSheet').once('value', function(datos){
             });
             graphic();
             graphicmovile();
+        */
     });
+        
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
