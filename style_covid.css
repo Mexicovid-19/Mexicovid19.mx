@@ -407,15 +407,17 @@ font-size: 16px;
   }
 
   .sliderCm {
+    margin-left: 9px;
     -webkit-appearance: none;
-    width: 100%;
+    width: 95% !important;
     height: 0.7em;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-    margin-top: 5px;
+    margin-top: 8px;
+    border-radius: 200px !important
   }
 
 }
@@ -436,7 +438,7 @@ font-size: 16px;
   
   .sliderm {
     display: absolute;
-    width: 98%;
+    width: 70%;
     margin-left: 3px;
   }
 
