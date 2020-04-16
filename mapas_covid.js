@@ -298,10 +298,10 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                     'fill-opacity': 0.8
                 },
                 'paint': {
-                    'fill-color': {
+                    /*'fill-color': {
                         property: today_p,//se ponen los datos de hoy
                         stops: stepsList //las particiones
-                    },
+                    },*/
                     'fill-opacity': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
