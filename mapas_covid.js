@@ -152,7 +152,7 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         d3.csv("contagios.csv") //carga
     ];
 
-    var geojson = d3.json("Mexico_Estados.geojson") ///NO LO ESTA CARGANDO
+    var geojson = "Mexico_Estados.geojson"; ///NO LO ESTA CARGANDO
 
     //Promise.all(loadFiles).then(function(data) {
         //lt = data[1].columns.length;
@@ -197,7 +197,6 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         console.log(label_fecha);
         document.getElementById('fechacorte_l').innerText = label_fecha;
         document.getElementById('fechacorte_r').innerText = label_fecha;
-        document.getElementById('fechacorte_l').innerText = label_fecha;
         
     
         //es el json 
@@ -272,9 +271,9 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         
         // Big and large function to load the layer onto the map
         map.on('load', function() {
-            /*map.addSource('pref', {
+            map.addSource('pref', {
                 type: 'geojson',
-                data: margedGeoJSON
+                data: geojson //margedGeoJSON
                 
             });
             
@@ -302,7 +301,7 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                 //"filter": ['>=', ['number', ['get', 'm24p']], 25]
                 // "filter": ['all', [ '==', 'ABREV', 'NONE' ]] // start with a filter that doesn't select anything
     
-            });*/
+            });
             //aqui hace el mapa normal no es interactivo
     
             //for (var i = 0; i < array_positivos.length; i++) {
