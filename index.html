@@ -59,7 +59,7 @@
                 </div>
                 <div id="buttoncontainer">
                     <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#graficamovil"> <i class="fas fa-chart-line logoanalysis"></i></button>
-                    <button id="btn_tabla" class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> 
+                    <button id="btn_tabla" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#tablamovil" value="clickme" onclick="move_table()"> <i class="fas fa-table"></i></button> 
                 </div>
                 <div id='console'>
                     <a href="https://escueladegobierno.itesm.mx/" target="_blank">
@@ -94,12 +94,12 @@
                         <button  type="button" class="btn-grafica btn btn-primary" data-toggle="modal" data-target="#grafica">
                             Gráfica
                         </button>   
-                        <p id=fuente>Fuente: SINAVE/DGE/InDRE</p>
+                        <p id="fuente">Fuente: SINAVE/DGE/InDRE</p>
                     </div>
                 </div>
             </div>
 
-            <div id='estados'>
+            <div id="estados">
                 <div class='totalsC' id='totals'>
                     <div class="col-sm-12 text-center">
                         <h1 id="country">México</h1>
@@ -108,16 +108,16 @@
                         <span id='fechacorte_r'></span>
                     </div>
                     <div class="col-sm-6 text-center">
-                        <p id=tot_lab_pos ></p>
+                        <p id="tot_lab_pos"></p>
                         <span class=tot_label>CONFIRMADOS</span>
                     </div>
                     <div class="col-sm-6 text-center">
-                        <p id=tot_lab_sos></p>
+                        <p id="tot_lab_sos"></p>
                         <span class=tot_label>SOSPECHOSOS</span>
                     </div>
                 </div>
                 <hr>
-                <div class="col-sm-12">
+                <div class="col-sm-12" id="container-tabla">
                     <table id='tabla-estados' class="js-sort-table">
                         <tr id='AGS' class='tupla'>
                             <td id='AGS_n' class='edo_label'> 1 </td>
@@ -352,8 +352,44 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <h5 class="modal-title text-center" id="exampleModalLabel">Número de confirmados por fecha</h5>
-                                    <div id="graficomov"></div>
+                                    <div id="graficomovil"></div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="tablamovil" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
+            <div id="graph-modalm" class="modal-dialog modal-dialog-centered" role="document" >
+                <div class="modal-content" style="background-color:black">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="color:white">&times;</span>
+                        </button>
+                        <div class="col-sm-12 text-center">
+                            <h1 id="country">México</h1>
+                            <div class="col-sm-12 text-center" style="padding-top:1rem">
+                                <span id="fechacorte_r">13 de Abril</span>
+                                <div class="row">
+                                    <div class="col-xs-6 text-center">
+                                        <p id="tot_lab_pos">5,014</p>
+                                        <span class="tot_label">CONFIRMADOS</span>
+                                    </div>
+                                    <div class="col-xs-6 text-center">
+                                        <p id="tot_lab_sos">9,341</p>
+                                        <span class="tot_label">SOSPECHOSOS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluidm">
+                            <div class="container" id="tablemobile-content">
+                                
+                                <!---->
                             </div>
                         </div>
                     </div>
