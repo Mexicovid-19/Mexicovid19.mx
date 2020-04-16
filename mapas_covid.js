@@ -924,3 +924,12 @@ function move_table(){
     fragment.appendChild(document.getElementById('container-tabla'));
     document.getElementById('tablemobile-content').appendChild(fragment);
 }
+
+function move_config(){
+    //console.log("deberia de moverse la tabla")
+    var element = document.getElementById("button-graph-p");
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(document.getElementById('config-p'));
+    document.getElementById('config').appendChild(fragment);
+    element.style.display = 'none'; 
+}

@@ -551,3 +551,38 @@ div.tooltip {
   border-radius: 0.2em;         
   pointer-events: none;           
 }
+
+#modal-menu{
+  font-size: large;
+
+}
+
+.menu-btn-div{
+  margin: 10%;
+}
+
+
+.menu-text{
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.menu-text:link {
+  color: #dbdbdb;
+  text-decoration: none;
+}
+
+.menu-text:visited {
+  color: #dbdbdb;
+  text-decoration: none;
+}
+
+.menu-text:hover {
+  color: #ffffff;
+}
+
+.menu-text:active {
+  color: #ffffff;
+  text-decoration: underline;
+  background-color: #6e6e6e;
+}

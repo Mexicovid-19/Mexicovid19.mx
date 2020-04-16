@@ -57,9 +57,11 @@
                         <input id='sliderm' class='sliderC sliderCm' type='range' min='0' max='30' step='1' value='24' />
                     </div>
                 </div>
-                <div id="buttoncontainer">
+                <div id="buttoncontainer" style="background-color:black">
+                    <button id="btn_menu" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#menu"> <i class="fas fa-bars"></i></button>
                     <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#graficamovil"> <i class="fas fa-chart-line logoanalysis"></i></button>
-                    <button id="btn_tabla" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#tablamovil" value="clickme" onclick="move_table()"> <i class="fas fa-table"></i></button> 
+                    <button id="btn_tabla" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#tablamovil" value="clickme" onclick="move_table()"> <i class="fas fa-table"></i></button>
+                    <button id="btn_tabla" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#selection" value="clickme" onclick="move_config()"> <i class="fas fa-cog"></i></button>  
                 </div>
                 <div id='console'>
                     <a href="https://escueladegobierno.itesm.mx/" target="_blank">
@@ -70,31 +72,36 @@
                         <h2><label id='fechacorte_l'>.</label></h2>
                         <input id='slider' class='sliderC' type='range' min='0' max='30' step='1' value='24' />
                     </div>
-                    <div class='session'>
-                        <h2>Número de Casos</h2>
-                        <div class='rowConsole colors'></div>
-                        <div class='rowConsole labels'>
-                            <div id='l1' class='labelConsole'>.</div>
-                            <div id='l2' class='labelConsole'>.</div>
-                            <div id='l3' class='labelConsole'>.</div>
-                            <div id='l4' class='labelConsole'>.</div>
-                            <div id='l5' class='labelConsole'>.</div>
-                            <div id='l6' class='labelConsole'>.</div>
+
+                    <div id="config-p">
+                        <div class='session'>
+                            <h2>Número de Casos</h2>
+                            <div class='rowConsole colors'></div>
+                            <div class='rowConsole labels'>
+                                <div id='l1' class='labelConsole'>.</div>
+                                <div id='l2' class='labelConsole'>.</div>
+                                <div id='l3' class='labelConsole'>.</div>
+                                <div id='l4' class='labelConsole'>.</div>
+                                <div id='l5' class='labelConsole'>.</div>
+                                <div id='l6' class='labelConsole'>.</div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="btn-group btn-group-toggle buttonbox" data-toggle="buttons">
-                            <label class="btn btn-secondary active buttonboxp">
-                              <input type="radio" name="pos_sos" id="fil" checked>CONFIRMADOS<span class="on"></span>
-                            </label>
-                            <label class="btn btn-secondary buttonboxs">
-                              <input type="radio" name="pos_sos" id="option2">SOSPECHOSOS<span class="off"></span>
-                            </label>
+                        <div>
+                            <div class="btn-group btn-group-toggle buttonbox" data-toggle="buttons">
+                                <label class="btn btn-secondary active buttonboxp">
+                                <input type="radio" name="pos_sos" id="fil" checked>CONFIRMADOS<span class="on"></span>
+                                </label>
+                                <label class="btn btn-secondary buttonboxs">
+                                <input type="radio" name="pos_sos" id="option2">SOSPECHOSOS<span class="off"></span>
+                                </label>
+                            </div>
+                            <div id="button-graph-p">
+                                <button type="button" class="btn-grafica btn btn-primary" data-toggle="modal" data-target="#grafica">
+                                    Gráfica
+                                </button>   
+                            </div>
+                            <p id="fuente">Fuente: SINAVE/DGE/InDRE</p>
                         </div>
-                        <button  type="button" class="btn-grafica btn btn-primary" data-toggle="modal" data-target="#grafica">
-                            Gráfica
-                        </button>   
-                        <p id="fuente">Fuente: SINAVE/DGE/InDRE</p>
                     </div>
                 </div>
             </div>
@@ -397,7 +404,67 @@
             </div>
         </div>
 
+        <div class="modal fade" id="selection" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
+            <div id="graph-modalm" class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="background-color:black">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="color:white">&times;</span>
+                        </button>
+                        <div class="col-sm-12 text-center">
+                            <h1 id="country">Configuración</h1>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluidm">
+                            <div class="container" id="config">
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="menu" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
+            <div id="graph-modalm" class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="background-color:black">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="color:white">&times;</span>
+                        </button>
+                        <div class="col-sm-12 text-center">
+                            <h1 id="country">Menú</h1>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluidm">
+                            <div class="container" id="config">
+                                <div class="container">
+                                    <div class="row" id="modal-menu">
+                                        <div class="col text-center menu-btn-div">
+                                            <a href="metodologia.html" class="menu-text" target="_blank">Metodología</a>
+                                        </div>
+                                        <div class="col text-center menu-btn-div">
+                                            <a href="seguimientoestados.html" class="menu-text">Seguimiento a Estados</a>
+                                        </div>
+                                        <div class="col text-center menu-btn-div">
+                                            <a href="investigacion.html" class="menu-text">Investigación</a>
+                                        </div>
+                                        <div class="col text-center menu-btn-div">
+                                            <a href="quienessomos.html" class="menu-text">¿Quiénes Somos?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="mapas_covid.js"></script>
-    
+
+
     </body>
 </html>
