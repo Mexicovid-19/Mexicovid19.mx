@@ -35,6 +35,16 @@ estado ={"AGS":[],
 firebase.database().ref('masterSheet').once('value', function(datos){
     contagios=datos.val();
     //console.log(contagios[0]);
+
+    names = [];//variable para guardar los nombres de los estados como array
+    for (var key in estado) {
+        if (estado.hasOwnProperty(key)) {
+            names.push(key);
+        }
+    }
+
+    console.log(names)
+
     for(i=0;i<=32;i++){
         var state_name=contagios[i][0];
         var cases =[];
@@ -304,7 +314,6 @@ firebase.database().ref('masterSheet').once('value', function(datos){
             });
             //aqui hace el mapa normal no es interactivo
     
-            //for (var i = 0; i < array_positivos.length; i++) {
             var counter =0;
             for (var key in estado) {
                 document.getElementById(key + '_p').innerHTML = parseInt(array_positivos[counter]);
