@@ -184,7 +184,6 @@ firebase.database().ref('masterSheet').once('value', function(datos){
             sos_keys.push(nameCol[i+1]);
         }
     
-        //console.log(days_list)
         //console.log(pos_keys)
         //console.log(pos_keys)
 
@@ -213,8 +212,32 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         //
         //Aqui lo que se tiene que hacer es añadir features a partir del geojson
 
+        
+        //console.log(geojson.features);
+        console.log(estado)
+        for(var i = 0;i<names.length;i++){
+            geojson[names.length]
+            for(var key in geojson.features){
+                var name = geojson.features[key].properties.ABREV
+                console.log(name)
+            }
+        }
+        console.log(geojson.features)
+
+        var length_d  = nameCol.length;
+        for(var key in geojson.features){
+            //console.log(estado[key].ABREV)
+            for(var i=1;i<(length_d-1);i++){
+                var name = geojson.features[key].properties.ABREV
+                //console.log(nameCol[i]+":"+estado[name][i])
+                //console.log(geojson.features[key].properties.ABREV)
+                geojson.features[key].properties[nameCol[i]] = estado[name][i];
+                
+            }
+            //console.log("\n")
+        }
+        console.log(geojson.features)
         /*
-        console.log(geojson.features);
         geojson.features = geojson.feature.map(feature => {
             /*data[1].forEach(estadosData => {
                 if (feature.properties.ABREV === estadosData['ESTADO']) {
