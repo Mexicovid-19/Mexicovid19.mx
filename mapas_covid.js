@@ -251,18 +251,18 @@ firebase.database().ref('masterSheet').once('value', function(datos){
         }
         
         //se ordenan de mayor a menor
-        /*
-        array_positivos.sort(function(a, b) {
+
+        array_positivos_s=array_positivos.sort(function(a, b) {
             return a - b;
         });
-        array_sospechosos.sort(function(a, b) { // Ordena los datos para sacar cuantiles.
+        array_sospechosos_s=array_sospechosos.sort(function(a, b) { // Ordena los datos para sacar cuantiles.
             return a - b;
         });
-        */
+
         // Seis categorías y partición por cuantiles
     
         //ya ordenados los datos, se toma hasta el 5 y se calcula cuantiles
-        var quantile_pos = [array_positivos[5], array_positivos[10], array_positivos[15], array_positivos[20], array_positivos[25], array_positivos[29]]
+        var quantile_pos = [array_positivos_s[5], array_positivos_s[10], array_positivos_s[15], array_positivos_s[20], array_positivos_s[25], array_positivos_s[29]]
         for (i = 0; i < label_holder.length; i++) {
             if(i == 0){
                 document.getElementById(label_holder[i]).innerHTML = quantile_pos[i] + '-'
@@ -298,10 +298,10 @@ firebase.database().ref('masterSheet').once('value', function(datos){
                     'fill-opacity': 0.8
                 },
                 'paint': {
-                    /*'fill-color': {
+                    'fill-color': {
                         property: today_p,//se ponen los datos de hoy
                         stops: stepsList //las particiones
-                    },*/
+                    },
                     'fill-opacity': [
                         'case',
                         ['boolean', ['feature-state', 'hover'], false],
