@@ -32,7 +32,7 @@ estado ={"AGS":[],
         "QRO":[],"QROO":[],"SLP":[],"SIN":[],"SON":[],"TAB":[],"TAMP":[],
         "TLAX":[],"VER":[],"YUC":[],"ZAC":[]
     };
-
+//hola
 //comienza la llamada asincrona a firebase
 //se hace lectura al indice masterSheet creado a partir del google sheet
 firebase.database().ref('masterSheet').once('value', function(datos){
