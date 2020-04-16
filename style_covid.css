@@ -126,7 +126,7 @@ input:checked + .slider:before {
   width: 1em;
   left: 75%;
   bottom: 0.4em;
-  background-color: #3f007d;
+  background-color: #099cb6;
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -160,7 +160,7 @@ input:checked + .slider:before {
   height: 1em;
   border: 0.1em solid #f0ffff;
   border-radius: 0.2em;
-  background: #a569e0;
+  background: #0dd5f8;
   cursor: pointer;
   margin-top: -0.0em; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   box-shadow: .1em .1em .1em #000000, 0em 0em .1em #0d0d0d;
@@ -169,9 +169,29 @@ input:checked + .slider:before {
 .sliderC::-moz-range-thumb {
   width: 1em;
   height: 1em;
-  background: #3f007d;
+  background: #0dd5f8;
   cursor: pointer;
 }
+
+
+.sliderC::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #0dd5f8;
+  cursor: pointer;
+}
+
+.sliderC::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0dd5f8;
+  cursor: pointer;
+}
+
 
 .session {
   margin-bottom: 1em;
