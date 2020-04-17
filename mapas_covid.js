@@ -972,6 +972,7 @@ function move_config(){
 
 
 //checar con cookies
+/*
 $(document).ready(function () {
     $("#myModal").click(function(){
         del_cookie("cookie");   
@@ -1011,3 +1012,4 @@ function getCookie(c_name) {
     }
     return c_value;
 }
+*/
