@@ -96,6 +96,7 @@ hr {
 
 #fechacorte_l {
   font-size: 1em;
+  color: white;
 }
 
 input:checked + .slider {
@@ -160,7 +161,7 @@ input:checked + .slider:before {
   height: 1em;
   border: 0.1em solid #f0ffff;
   border-radius: 0.2em;
-  background: #0dd5f8;
+  background: #fff;
   cursor: pointer;
   margin-top: -0.0em; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   box-shadow: .1em .1em .1em #000000, 0em 0em .1em #0d0d0d;
@@ -169,7 +170,8 @@ input:checked + .slider:before {
 .sliderC::-moz-range-thumb {
   width: 1em;
   height: 1em;
-  background: #0dd5f8;
+  background: #fff;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -177,10 +179,10 @@ input:checked + .slider:before {
 .sliderC::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 50%;
-  background: #0dd5f8;
+  background: #fff;
   cursor: pointer;
 }
 
@@ -188,7 +190,7 @@ input:checked + .slider:before {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #0dd5f8;
+  background: #fff;
   cursor: pointer;
 }
 
@@ -359,11 +361,22 @@ font-size: 16px;
     width: 100vw;
   }
 
+  #scrollbar-label {
+    margin-bottom: 5px;
+  }
+
+  .add-btn {
+    float: right;
+    color: white;
+    font-size: 30px;
+    background-color: #545454;
+    border-radius: 30%;
+    padding: 1px;
+  }
+
   #fechacorte_lm {
     font-size: 25px;
-    margin-left: 16px;
-    margin-top: -7px;
-    margin-bottom: 18px;
+    color: #fff;
   }
 
   #logocontainermovil {
@@ -379,12 +392,11 @@ font-size: 16px;
     position: absolute;
     width: 100%;
     left: 0em;
-    bottom: 20px;
+    bottom: 25px;
     border-radius: 5px;
     height: 118px;
     background-color: black;
   }
-
 
   #buttoncontainer {
     position: absolute;
@@ -395,16 +407,14 @@ font-size: 16px;
     height: 8vh;
     background-color: transparent;
   }
+
   .button {
     width: 50%;
-    margin: 0px 1px;
-    border-radius: 5px;
-    margin-bottom: 14px;
+    border-radius: 1px;
     background-color: #333;
     z-index: 100;
     border: none;
-    font-size: 31px;
-    text-transform: UPPERCASE;
+    font-size: 25px;
   }
   #logoanalysis {
     display: block; /* remove extra space below image */
@@ -426,18 +436,20 @@ font-size: 16px;
     border-radius: 3px;
   }
 
+  .scrollbar {
+    margin: 20px;
+  }
+
   .sliderCm {
-    margin-left: 9px;
+    margin: auto;
     -webkit-appearance: none;
-    width: 95% !important;
     height: 0.7em;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-    margin-top: 8px;
-    border-radius: 200px !important
+    border-radius: 50px !important
   }
 
   table {

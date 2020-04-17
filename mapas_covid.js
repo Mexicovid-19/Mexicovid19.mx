@@ -1013,3 +1013,17 @@ function getCookie(c_name) {
     return c_value;
 }
 */
+
+var btn_open = false;
+$('.add-btn').click(function(e) {
+    if(btn_open === false) {
+        
+        $('#slidercontainer').animate({ height: `${window.innerHeight / 2}px` });
+        e.currentTarget.innerText = "expand_more";
+        btn_open = true;
+    } else {
+        $('#slidercontainer').animate({ height: '120px' });
+        e.currentTarget.innerText = "expand_less";
+        btn_open = false;
+    }
+});	
