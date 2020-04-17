@@ -1046,7 +1046,7 @@ var btn_open = false;
 $('.add-btn').click(function(e) {
     var height = 0;
     if(window.innerHeight > 650) {
-        height = 5;
+        height = 10;
     }
     if(btn_open === false) {
         $('#slidercontainer').animate({ height: `${225 + height}px` });
