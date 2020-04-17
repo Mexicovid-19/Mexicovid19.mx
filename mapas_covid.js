@@ -673,7 +673,6 @@ Promise.all(loadFiles).then(function(data) {
                 element_touched_a = element_touched_c;
             }
         });
-        /*
         map.on("click", function(e) {
             console.log(e);
             var features = map.queryRenderedFeatures(e.point, {
@@ -708,7 +707,6 @@ Promise.all(loadFiles).then(function(data) {
                 element_touched_a = element_touched_c;
             }
         });
-        */
     });
 
   
