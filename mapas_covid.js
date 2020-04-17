@@ -241,6 +241,9 @@ Promise.all(loadFiles).then(function(data) {
     }
     document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
     document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
+
+    document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+    document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
     thresholdsNum = [array_positivos[5], array_positivos[10], array_positivos[15], array_positivos[20], array_positivos[25], array_positivos[29]];
     var thresholdsColor = ['#c7e9b4', '#7fcdbb', '#41b6c4', '#1d91c0', '#225ea8', '#0c2c84'];
     stepsList = thresholdsNum.map((num, i) => {
@@ -355,6 +358,9 @@ Promise.all(loadFiles).then(function(data) {
             document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
             document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
 
+            document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+            document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
+
              if (today_p.substr(0, 1)=='m'){
                 label_fecha = today_p.substr(1,(today_p.search("p")-1)) + ' de ' + 'Marzo';
 
@@ -443,6 +449,9 @@ Promise.all(loadFiles).then(function(data) {
             // update text in the UI
             document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
             document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
+            
+            document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+            document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
 
              if (today_p.substr(0, 1)=='m'){
                 label_fecha = today_p.substr(1,(today_p.search("p")-1)) + ' de ' + 'Marzo';
