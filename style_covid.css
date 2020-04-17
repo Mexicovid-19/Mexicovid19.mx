@@ -177,8 +177,8 @@ input:checked + .slider:before {
 .sliderC::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background: #0dd5f8;
   cursor: pointer;
@@ -360,7 +360,7 @@ font-size: 16px;
   }
 
   #fechacorte_lm {
-    font-size: 1.5em;
+    font-size: 25px;
     margin-left: 16px;
     margin-top: -7px;
     margin-bottom: 18px;
@@ -440,10 +440,30 @@ font-size: 16px;
     border-radius: 200px !important
   }
 
+  table {
+    font-size: 16px;
+    margin: 0px;
+  }
+
+  .close {
+    opacity: 0.8;
+  }
+
+  #container-tabla {
+    padding: 0px;
+  }
+
+  #tablemobile-content {
+    padding: 0px;
+  }
 }
 
 
 @media  (min-width: 990px) {
+  .add-btn {
+    display: none;
+  }
+
   .container-map {
     display: inline-flex;
     height: 90vh;
@@ -615,4 +635,8 @@ div.tooltip {
   bottom: auto;
   width: auto;  /* this can be however wide you want the modal to be */
   margin: 0 auto;
+}
+
+.p0 {
+  padding: 0px;
 }

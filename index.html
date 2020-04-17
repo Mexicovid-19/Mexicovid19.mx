@@ -40,6 +40,7 @@
 		<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
         <!--CUSTOM-->
         <link rel="stylesheet" href="style_covid.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
     <body>
@@ -68,7 +69,9 @@
                 </div>
                 <div id='slidercontainer'>
                     <div class="scrollbar">
-                        <h2><label id='fechacorte_lm'>.</label></h2>
+                        <h2><label id='fechacorte_lm'>.</label><span class="material-icons add-btn">
+                            add
+                            </span></h2>
                         <input id='sliderm' class='sliderC sliderCm' type='range' min='0' max='30' step='1' value='24' />
                     </div>
                 </div>
@@ -395,7 +398,7 @@
                             <div class="col-sm-12 text-center" style="padding-top:1rem">
                                 <span id="fechacorte_r">13 de Abril</span>
                                 <div class="row">
-                                    <div class="col-xs-6 text-center">
+                                    <div class="col-xs-6 text-center p0">
                                         <p id="tot_lab_pos">5,014</p>
                                         <span class="tot_label">CONFIRMADOS</span>
                                     </div>
