@@ -1041,7 +1041,7 @@ function getCookie(c_name) {
 var btn_open = false;
 $('.add-btn').click(function(e) {
     if(btn_open === false) {
-        $('#slidercontainer').animate({ height: `220px` });
+        $('#slidercontainer').animate({ height: `225px` });
         e.currentTarget.innerText = "expand_more";
         btn_open = true;
     } else {
