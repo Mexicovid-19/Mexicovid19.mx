@@ -205,8 +205,11 @@ input:checked + .slider:before {
 }
 
 .rowConsole {
-  height: 1vw;
+  height: 5px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .colors {
@@ -388,6 +391,11 @@ font-size: 16px;
 @media  (max-width: 990px) {
   #map {
     width: 100vw;
+  }
+
+  .colors {
+    margin-bottom: 0px;
+    height: 5px;
   }
   
   #fuente { 
