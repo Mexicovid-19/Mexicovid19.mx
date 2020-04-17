@@ -1050,7 +1050,3 @@ $('.add-btn').click(function(e) {
         btn_open = false;
     }
 });	
-
-if(window.innerWidth < 600) {
-    move_config();
-}
