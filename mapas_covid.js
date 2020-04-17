@@ -673,6 +673,38 @@ Promise.all(loadFiles).then(function(data) {
                 element_touched_a = element_touched_c;
             }
         });
+        map.on("mouseenter", function(e) {
+            var features = map.queryRenderedFeatures(e.point, {
+                layers: ["pref"]
+            });
+            if (features.length) {
+                map.setFilter("edo_boundary", ["==", "ABREV", features[0].properties.ABREV]);
+                //document.getElementById(features[0].properties.ABREV).style.background = '#bcbddc';
+                estado_posa = features[0].properties.ABREV;
+            } else if (!features.length) {
+                popup_mes.remove();
+                map.setFilter('edo_boundary', ['in', 'ABREV', '']);
+                overlay.style.display = 'none';
+                return;
+            } else {
+                map.setFilter("edo_boundary", ["==", "ABREV", ""]);
+            } // Remove things if no feature was found.
+
+            // Single out the first found feature on mouseove.
+            var feature = features[0];
+            // Render found features in an overlay.
+            overlay.innerHTML = '';
+
+            popup_mes.setLngLat(e.lngLat)
+                .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Confirmados: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Sospechosos: "+ feature.properties[today_s])
+                .addTo(map);
+            document.getElementById(feature.properties.ABREV).style.background = '#393a54';
+            var element_touched_c = feature.properties.ABREV
+            if (element_touched_c !== element_touched_a) {
+                document.getElementById(element_touched_a).style.background = '#222';
+                element_touched_a = element_touched_c;
+            }
+        });
     });
 
   
