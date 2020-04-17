@@ -673,10 +673,13 @@ Promise.all(loadFiles).then(function(data) {
                 element_touched_a = element_touched_c;
             }
         });
-        map.on("mouseenter", function(e) {
+        /*
+        map.on("click", function(e) {
+            console.log(e);
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
             });
+            console.log(features)
             if (features.length) {
                 map.setFilter("edo_boundary", ["==", "ABREV", features[0].properties.ABREV]);
                 //document.getElementById(features[0].properties.ABREV).style.background = '#bcbddc';
@@ -705,6 +708,7 @@ Promise.all(loadFiles).then(function(data) {
                 element_touched_a = element_touched_c;
             }
         });
+        */
     });
 
   
