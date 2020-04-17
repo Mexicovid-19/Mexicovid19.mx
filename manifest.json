@@ -1,27 +1,30 @@
 {
     "short_name": "MexiCOVID",
     "name": "ITESM Covid-19",
-    "theme_color": "##000000",
+    "description": "Seguimiento diario a la evoluación del Covid-19 en México",
+    "theme_color": "#000000",
     "background_color": "#000000",
+    "display": "standalone",
+    "scope": "/",
     "display": "standalone",
     "icons": [
       {
-        "src": "favicon.png",
+        "src": "48x48.png",
         "type": "image/png",
         "sizes": "48x48"
       },
       {
-        "src": "favicon.png",
+        "src": "96x96.png",
         "type": "image/png",
         "sizes": "96x96"
       },
       {
-        "src": "favicon.png",
+        "src": "144x144.png",
         "type": "image/png",
         "sizes": "144x144"
       },
       {
-        "src": "favicon.png",
+        "src": "192x192.png",
         "type": "image/png",
         "sizes": "192x192"
       }
