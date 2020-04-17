@@ -704,12 +704,29 @@ div.tooltip {
   position: fixed;
   top: 13vh;
   border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
   left: 0%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   background-color: #222222;
   z-index: 1;
+}
+
+@media all and (display-mode: standalone) {
+  /* Here goes the CSS rules that will only apply if app is running standalone */
+  .icon-bar {
+    position: fixed;
+    top: 13vh;
+    border-bottom-right-radius: 40px;
+    left: 0%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #222222;
+    z-index: 1;
+  }
+  
 }
 
 @media  (min-height: 665px) {
