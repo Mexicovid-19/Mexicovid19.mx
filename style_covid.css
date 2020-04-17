@@ -606,3 +606,12 @@ div.tooltip {
   text-decoration: underline;
   background-color: #6e6e6e;
 }
+.modal-allow-interact {
+  position: absolute;
+  top:50px;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;  /* this can be however wide you want the modal to be */
+  margin: 0 auto;
+}
