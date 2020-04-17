@@ -977,6 +977,10 @@ function move_table(){
     var fragment = document.createDocumentFragment();
     fragment.appendChild(document.getElementById('container-tabla'));
     document.getElementById('tablemobile-content').appendChild(fragment);
+
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(document.getElementById('info-table1'));
+    document.getElementById('info-table').appendChild(fragment);
 }
 
 function move_config(){
