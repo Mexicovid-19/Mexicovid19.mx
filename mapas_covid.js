@@ -654,7 +654,7 @@ Promise.all(loadFiles).then(function(data) {
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
 
-        map.on("click", function(e) {
+        map.on("mousemove", function(e) {
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
             });
