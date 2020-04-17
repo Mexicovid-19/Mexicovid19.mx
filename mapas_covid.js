@@ -654,7 +654,7 @@ Promise.all(loadFiles).then(function(data) {
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
 
-        map.on("mousemove", function(e) {
+        map.on("click", function(e) {
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
             });
@@ -1041,7 +1041,7 @@ function getCookie(c_name) {
 var btn_open = false;
 $('.add-btn').click(function(e) {
     if(btn_open === false) {
-        $('#slidercontainer').animate({ height: `${window.innerHeight / 3}px` });
+        $('#slidercontainer').animate({ height: `220px` });
         e.currentTarget.innerText = "expand_more";
         btn_open = true;
     } else {
