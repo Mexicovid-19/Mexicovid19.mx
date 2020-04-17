@@ -676,11 +676,6 @@ div.tooltip {
     top: 10vh;
   }
 }
-@media  (min-height: 720px) {
-  .icon-bar {
-    top: 10vh;
-  }
-}
 @media  (min-height: 667px) {
   .icon-bar {
     top: 11vh;
@@ -693,7 +688,7 @@ div.tooltip {
 }
 @media  (min-height: 812px) {
   .icon-bar {
-    top: 10vh;
+    top: 9vh;
   }
 }
 @media  (min-height: 1024px) {
