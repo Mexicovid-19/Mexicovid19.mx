@@ -653,6 +653,7 @@ div.tooltip {
   position: fixed;
   top: 13vh;
   border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
   left: 0%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
