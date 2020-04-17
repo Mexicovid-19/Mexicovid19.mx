@@ -5,8 +5,8 @@
         <meta property="og:url" content="http://www.mexicovid19.mx"/>
         <meta property="og:image" content="http://www.mexicovid19.mx/graphics/frente.png"/>
         <meta property="og:title" content="Covid-19 en México"/>
-        <meta property="og:description" content="Seguimiento diario a la evoluación del Covid-19 en México"/>
-        <title>ITESM @ Covid-19</title>
+        <meta property="og:description" content="Seguimiento diario a la evoluación del Covid-19 en México @ITESM"/>
+        <title>MexiCOVID</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--WEB APP PROPERTIES-->
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -44,7 +44,12 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-inverse">
+        <div id = 'logocontainermovil'>
+            <a href="https://escueladegobierno.itesm.mx/" target="_blank">
+                <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:80%" >
+            </a>
+        </div>
+        <nav class="navbar navbar-inverse" >
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand">Covid-19 en México</a>
@@ -57,16 +62,10 @@
                 </ul>
             </div>
         </nav>
-
         <div class="container-map">
             <div>
-                <div id='map'></div>
+                <div class="container-fluid"id='map'></div>
                 <div id='map-overlay' class='map-overlay'></div>
-                <div id = 'logocontainermovil'>
-                    <a href="https://escueladegobierno.itesm.mx/" target="_blank">
-                        <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:80%" >
-                    </a>
-                </div>
                 <div id='slidercontainer'>
                     <div class="scrollbar">
                         <div id="scrollbar-label">
@@ -75,12 +74,12 @@
                         </div>
                         <input id='sliderm' class='sliderC sliderCm' type='range' min='0' max='30' step='1' value='24' />
                     </div>
-                </div>
-                <div id="buttoncontainer" style="background-color:black">
-                    <button id="btn_menu" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#menu"> <i class="fas fa-bars"></i></button>
-                    <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#graficamovil"> <i class="fas fa-chart-line logoanalysis"></i></button>
-                    <button id="btn_tabla" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#tablamovil" value="clickme" onclick="move_table()"> <i class="fas fa-table"></i></button>
-                    <button id="btn_tabla" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#selection" value="clickme" onclick="move_config()"> <i class="fas fa-cog"></i></button>  
+                    <div class="container" id="config"></div>
+                    <div id="buttoncontainer" style="background-color:black">
+                        <button id="btn_menu" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#menu"> <i class="fas fa-bars"></i></button>
+                        <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#graficamovil"> <i class="fas fa-chart-line logoanalysis"></i></button>
+                        <button id="btn_tabla" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#tablamovil" value="clickme" onclick="move_table()"> <i class="fas fa-table"></i></button>
+                    </div>
                 </div>
                 <div id='console'>
                     <a href="https://escueladegobierno.itesm.mx/" target="_blank">
@@ -342,6 +341,19 @@
             </div>
 
         </div>
+        
+        <div class="icon-bar" id="floating-numbers">
+            <div class="col-sm-12 text-center" style="padding-top:1rem" id="floating-data">
+                <div class="col-xs-6 text-center">
+                    <p id="tot_lab_pos2"></p>
+                    <span class="tot_label"style="padding-bottom:15%">CONFIRMADOS</span>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <p id="tot_lab_sos2"></p>
+                    <span class="tot_label"style="padding-bottom:15%">SOSPECHOSOS</span>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="grafica" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
             <div id="graph-modal" class="modal-dialog modal-dialog-centered" role="document">
@@ -436,9 +448,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="container-fluidm">
-                            <div class="container" id="config">
-                                <!---->
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -144,6 +144,9 @@ var label_fecha;
 var popup_mes = new mapboxgl.Popup({
     closeButton: false
 });
+var popup_mes2 = new mapboxgl.Popup({
+    closeButton: false
+});
 var element_touched_a = 'AGS'
 var element_touched_b = 'AGS'
 mapboxgl.accessToken = 'pk.eyJ1IjoibWlsZHJlZGciLCJhIjoiY2s4eHc2cGpiMWJsbzNscXEzcTE5dzhtMiJ9.MPadSAVs6Jr1gOs7hfYVpQ';
@@ -238,6 +241,9 @@ Promise.all(loadFiles).then(function(data) {
     }
     document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
     document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
+
+    document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+    document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
     thresholdsNum = [array_positivos[5], array_positivos[10], array_positivos[15], array_positivos[20], array_positivos[25], array_positivos[29]];
     var thresholdsColor = ['#c7e9b4', '#7fcdbb', '#41b6c4', '#1d91c0', '#225ea8', '#0c2c84'];
     stepsList = thresholdsNum.map((num, i) => {
@@ -352,6 +358,9 @@ Promise.all(loadFiles).then(function(data) {
             document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
             document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
 
+            document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+            document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
+
              if (today_p.substr(0, 1)=='m'){
                 label_fecha = today_p.substr(1,(today_p.search("p")-1)) + ' de ' + 'Marzo';
 
@@ -440,6 +449,9 @@ Promise.all(loadFiles).then(function(data) {
             // update text in the UI
             document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
             document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
+            
+            document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+            document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
 
              if (today_p.substr(0, 1)=='m'){
                 label_fecha = today_p.substr(1,(today_p.search("p")-1)) + ' de ' + 'Marzo';
@@ -641,6 +653,7 @@ Promise.all(loadFiles).then(function(data) {
 
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
+
         map.on("mousemove", function(e) {
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
@@ -673,19 +686,17 @@ Promise.all(loadFiles).then(function(data) {
                 element_touched_a = element_touched_c;
             }
         });
-        /*
         map.on("click", function(e) {
-            console.log(e);
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
             });
-            console.log(features)
+            console.log(e)
             if (features.length) {
                 map.setFilter("edo_boundary", ["==", "ABREV", features[0].properties.ABREV]);
                 //document.getElementById(features[0].properties.ABREV).style.background = '#bcbddc';
                 estado_posa = features[0].properties.ABREV;
             } else if (!features.length) {
-                popup_mes.remove();
+                popup_mes2.remove();
                 map.setFilter('edo_boundary', ['in', 'ABREV', '']);
                 overlay.style.display = 'none';
                 return;
@@ -698,7 +709,7 @@ Promise.all(loadFiles).then(function(data) {
             // Render found features in an overlay.
             overlay.innerHTML = '';
 
-            popup_mes.setLngLat(e.lngLat)
+            popup_mes2.setLngLat(e.lngLat)
                 .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Confirmados: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Sospechosos: "+ feature.properties[today_s])
                 .addTo(map);
             document.getElementById(feature.properties.ABREV).style.background = '#393a54';
@@ -708,9 +719,16 @@ Promise.all(loadFiles).then(function(data) {
                 element_touched_a = element_touched_c;
             }
         });
-        */
     });
 
+    map.on('mouseenter', 'pref', function() {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+         
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'pref', function() {
+    map.getCanvas().style.cursor = '';
+    });
   
 
    //console.log(nameCol);
@@ -968,6 +986,12 @@ function move_config(){
     fragment.appendChild(document.getElementById('config-p'));
     document.getElementById('config').appendChild(fragment);
     element.style.display = 'none'; 
+
+    var fragment = document.createDocumentFragment();
+    var session = document.getElementsByClassName('session')[0];
+    session.firstElementChild.remove();
+    fragment.appendChild(session);
+    document.getElementById('slidercontainer').prepend(fragment);
 }
 
 
@@ -1017,13 +1041,16 @@ function getCookie(c_name) {
 var btn_open = false;
 $('.add-btn').click(function(e) {
     if(btn_open === false) {
-        
-        $('#slidercontainer').animate({ height: `${window.innerHeight / 2}px` });
+        $('#slidercontainer').animate({ height: `${window.innerHeight / 3}px` });
         e.currentTarget.innerText = "expand_more";
         btn_open = true;
     } else {
-        $('#slidercontainer').animate({ height: '120px' });
+        $('#slidercontainer').animate({ height: '100px' });
         e.currentTarget.innerText = "expand_less";
         btn_open = false;
     }
 });	
+
+if(window.innerWidth < 600) {
+    move_config();
+}
