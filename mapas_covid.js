@@ -144,6 +144,9 @@ var label_fecha;
 var popup_mes = new mapboxgl.Popup({
     closeButton: false
 });
+var popup_mes2 = new mapboxgl.Popup({
+    closeButton: false
+});
 var element_touched_a = 'AGS'
 var element_touched_b = 'AGS'
 mapboxgl.accessToken = 'pk.eyJ1IjoibWlsZHJlZGciLCJhIjoiY2s4eHc2cGpiMWJsbzNscXEzcTE5dzhtMiJ9.MPadSAVs6Jr1gOs7hfYVpQ';
@@ -641,6 +644,7 @@ Promise.all(loadFiles).then(function(data) {
 
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
+
         map.on("mousemove", function(e) {
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
@@ -674,17 +678,16 @@ Promise.all(loadFiles).then(function(data) {
             }
         });
         map.on("click", function(e) {
-            console.log(e);
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
             });
-            console.log(features)
+            console.log(e)
             if (features.length) {
                 map.setFilter("edo_boundary", ["==", "ABREV", features[0].properties.ABREV]);
                 //document.getElementById(features[0].properties.ABREV).style.background = '#bcbddc';
                 estado_posa = features[0].properties.ABREV;
             } else if (!features.length) {
-                popup_mes.remove();
+                popup_mes2.remove();
                 map.setFilter('edo_boundary', ['in', 'ABREV', '']);
                 overlay.style.display = 'none';
                 return;
@@ -697,15 +700,26 @@ Promise.all(loadFiles).then(function(data) {
             // Render found features in an overlay.
             overlay.innerHTML = '';
 
-            popup_mes.setLngLat(e.lngLat)
+            popup_mes2.setLngLat(e.lngLat)
                 .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Confirmados: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Sospechosos: "+ feature.properties[today_s])
                 .addTo(map);
             document.getElementById(feature.properties.ABREV).style.background = '#393a54';
             var element_touched_c = feature.properties.ABREV
-            
+            if (element_touched_c !== element_touched_a) {
+                document.getElementById(element_touched_a).style.background = '#222';
+                element_touched_a = element_touched_c;
+            }
         });
     });
 
+    map.on('mouseenter', 'pref', function() {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+         
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'pref', function() {
+    map.getCanvas().style.cursor = '';
+    });
   
 
    //console.log(nameCol);
