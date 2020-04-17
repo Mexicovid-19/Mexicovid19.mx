@@ -1,0 +1,30 @@
+{
+    "short_name": "MexiCOVID",
+    "name": "ITESM Covid-19",
+    "theme_color": "##000000",
+    "background_color": "#000000",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "favicon.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "favicon.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "favicon.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "favicon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "/?utm_source=launcher"
+  }

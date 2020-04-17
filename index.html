@@ -15,9 +15,10 @@
         <link rel="icon" sizes="192x192"  href="favicon.png">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
-        <meta name="theme-color" content="#222222">
+        <meta name="theme-color" content="#000000">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="apple-touch-startup-image" href="logo.png">
+        <link rel="manifest" href="/manifest.json">
 
         <!--D3 LIBRARY-->
         <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -477,8 +478,39 @@
             </div>
         </div>
 
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div id="myModal" class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Añadir a Home Screen</h4>
+                </div>
+                <div class="modal-body" style="text-size:large">
+                    <p>Bienvenido,<br> te invitamos a que añadas esta página a tu Home Screen 📲 o que la añadas a tus favoritos.🌟</p>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+        </div>
+        
         <script src="mapas_covid.js"></script>
 
+        <!--Service worker-->
+        <script>
+            if ('serviceWorker' in navigator) {
+                console.log("Will the service worker register?");
+                navigator.serviceWorker.register('service-worker.js')
+                .then(function(reg){
+                    console.log("Yes, it did.");
+                }).catch(function(err) {
+                    console.log("No it didn't. This happened:", err)
+                });
+            }
+        </script>
 
     </body>
 </html>
