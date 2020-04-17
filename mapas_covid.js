@@ -1044,12 +1044,16 @@ function getCookie(c_name) {
 
 var btn_open = false;
 $('.add-btn').click(function(e) {
+    var height = 0;
+    if(window.innerHeight > 650) {
+        height = 5;
+    }
     if(btn_open === false) {
-        $('#slidercontainer').animate({ height: `225px` });
+        $('#slidercontainer').animate({ height: `${225 + height}px` });
         e.currentTarget.innerText = "expand_more";
         btn_open = true;
     } else {
-        $('#slidercontainer').animate({ height: '100px' });
+        $('#slidercontainer').animate({ height: `${100 + height}px` });
         e.currentTarget.innerText = "expand_less";
         btn_open = false;
     }
