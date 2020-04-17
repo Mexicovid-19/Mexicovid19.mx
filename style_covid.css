@@ -683,7 +683,7 @@ div.tooltip {
 }
 @media  (min-height: 667px) {
   .icon-bar {
-    top: 12.5vh;
+    top: 11vh;
   }
 }
 @media  (min-height: 736px) {
