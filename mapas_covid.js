@@ -1012,10 +1012,12 @@ $(document).ready(function () {
         document.cookie = "cookie=here; expires=" + expire;
     }
 });
+
 function del_cookie(name)
 {
     document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
+
 function getCookie(c_name) {
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + c_name + "=");
