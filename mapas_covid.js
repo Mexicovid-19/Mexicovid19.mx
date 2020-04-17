@@ -702,10 +702,7 @@ Promise.all(loadFiles).then(function(data) {
                 .addTo(map);
             document.getElementById(feature.properties.ABREV).style.background = '#393a54';
             var element_touched_c = feature.properties.ABREV
-            if (element_touched_c !== element_touched_a) {
-                document.getElementById(element_touched_a).style.background = '#222';
-                element_touched_a = element_touched_c;
-            }
+            
         });
     });
 
