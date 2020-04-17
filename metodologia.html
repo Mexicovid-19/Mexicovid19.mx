@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <title>Métodos @ Covid-19</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--WEB APP PROPERTIES-->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="favicon.png">
+        <link rel="icon" sizes="192x192"  href="favicon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#000000">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-startup-image" href="logo.png">
+        <link rel="manifest" href="/manifest.json">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4PEYF8LZ7"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-K4PEYF8LZ7');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MWXBT2W');</script>
+        <!-- End Google Tag Manager -->
+     </head>
+        <style>
+
+         html {
+                font-size: 62.5%;
+                }
+        body {
+  		margin: 0;
+		}
+
+		/* Style the header */
+		.header {
+		  background-color: #f1f1f1;
+		  padding: 2em;
+		  text-align: center;
+		}
+		h1{
+			font-size: 4em;
+		}
+
+		h2{
+			font-size: 3em;
+		}
+
+		p {
+			font-size: 1.5em;
+		}
+
+		/* Change color on hover */
+		.topnav a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+
+		/* The navbar container */
+		.topnav {
+		  overflow: hidden;
+		  background-color: #333;
+		}
+
+		/* Navbar links */
+		.topnav a {
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 1em 2em;
+		  text-decoration: none;
+		  font-size: 2em;
+		}
+
+		.column {
+		  float: left;
+		  width: 28%;
+		  padding: 2em;
+		  font-size: 1.3em
+		}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+
+</style>
+
+ <body>
+  <div class="header">
+  <h1>Metodología</h1>
+	</div>
+
+	<div class="topnav">
+	<a href="index.html">Regresar a inicio</a>
+  <a href="contagios.csv" download>Descarga la base de datos</a>
+
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>Fuente de Información</h2>
+    <p>El mapa coroplético de número de contagios, la gráfica de líneas de número de contagios en el tiempo y la tabla por estados proceden de los reportes diarios que realiza la Secretaría de Salud en la conferencia de prensa otorgada a las 7 pm. Los reportes diarios pueden ser descargados de la siguiente liga oficial mantenida por la autoridad federal: 
+    	<a href="https://www.gob.mx/salud/documentos/coronavirus-covid-19-comunicado-tecnico-diario-238449" target="_blank"> Coronavirus (Covid-19) Comunicado Técnico Diario </a>. Los datos aportados por la Secretaria de Salud se reportan en un formato .pdf; uno para casos sospechosos y otro para confirmados. Los archivos reportan cada caso individual y el estado donde ocurrió. Nuestro equipo procesa en el software estadístico R la reconfiguración de estos archivos en una base estatal. La base mencionada se puede descargar de la liga ubicada en la parte superior de esta página. 
+    	<br>
+
+   <p> Los totales de casos positivos y sospechosos se calculan con base en los archivos .pdf que registran los archivos oficiales por caso y que se descargan de la liga mantenida por la autoridad federal. Las divergencias en las cifras de totales reportados por la autoridad federal en la conferencia de prensa diaria a las 7:00 PM y los totales registrados en la documentación diaria que da a conocer la Secretaría de Salud (utilizada en esta visualización), corresponden a variaciones de criterio en las fuentes fedeales y posiblemente a diferencias de horario en el corte para la elaboración de los reportes registrados por la Secretaria de Salud y aquéllos para la conferencia de prensa.</p>
+
+  </div>
+    <div class="column">
+    <h2>Metodología de Visualización de Datos</h2>
+    <p> Las visualizaciones de información cuantitativa son construidas en Javascript, HTML y CSS utilizando las librerías de Mapbox GL y D3. El método de partición del número de casos confirmados y sospechosos para la construcción de los mapas coropléticos es por cuantiles. Con este propósito, los datos de cada día por estado son ordenados de menor a mayor en un array y particionados en seis categorías. El suavizado de la curva de casos por fechas es a través del <em> Centripetal Catmull-Rom spline </em> </p>
+  </div>
+    <div class="column">
+    <h2>Política de Divulgación de Información</h2>
+     <p> Esta página es elaborada y mantenida por un grupo de profesores y estudiantes del Tecnológico de Monterrey. Las inconsistencias y errores son competencia de los autores de esta página y no de la Institución. Asimismo, las posturasy y opiniones aquí vertidas representan la posición personal de los autores y no del Tecnológico de Monterrey.
+    </p>
+  </div>
+  </div>
+
+ </body>
+</html>
