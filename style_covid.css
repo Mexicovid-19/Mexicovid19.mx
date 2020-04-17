@@ -371,6 +371,13 @@ font-size: 16px;
   width: fit-content;
 }
 
+@media  (min-width: 768px) {
+  #logoEGOB{
+    width: 50% !important;
+    display: block; /* remove extra space below image */
+  }
+}
+
 @media  (max-width: 990px) {
   #map {
     width: 100vw;
@@ -401,6 +408,7 @@ font-size: 16px;
     height: 118px;
     background-color: black;
   }
+
 
 
   #buttoncontainer {
@@ -435,6 +443,9 @@ font-size: 16px;
   }
   #grafico { 
       display: none;
+  }
+  #mybar{
+    display: none;
   }
   #graficomov { 
     padding: 10px 20px;
@@ -639,7 +650,7 @@ div.tooltip {
 
 /* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
 .icon-bar {
-  position: absolute;
+  position: fixed;
   top: 9.7vh;
   border-bottom-right-radius: 25px;
   left: 0%;
