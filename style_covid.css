@@ -651,14 +651,57 @@ div.tooltip {
 /* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
 .icon-bar {
   position: fixed;
-  top: 9.7vh;
+  top: 13vh;
   border-bottom-right-radius: 25px;
   left: 0%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   background-color: #222222;
+  z-index: 1;
 }
+
+@media  (min-height: 665px) {
+  .icon-bar {
+    top: 13vh;
+  }
+}
+@media  (min-height: 720px) {
+  .icon-bar {
+    top: 10.5vh;
+  }
+}
+@media  (min-height: 720px) {
+  .icon-bar {
+    top: 10vh;
+  }
+}
+@media  (min-height: 720px) {
+  .icon-bar {
+    top: 10vh;
+  }
+}
+@media  (min-height: 667px) {
+  .icon-bar {
+    top: 12.5vh;
+  }
+}
+@media  (min-height: 736px) {
+  .icon-bar {
+    top: 11vh;
+  }
+}
+@media  (min-height: 812px) {
+  .icon-bar {
+    top: 10vh;
+  }
+}
+@media  (min-height: 1024px) {
+  .icon-bar {
+    top: 9vh;
+  }
+}
+
 
 /* Style the icon bar links */
 .icon-bar a {
