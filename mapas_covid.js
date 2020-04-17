@@ -1053,7 +1053,7 @@ $('.add-btn').click(function(e) {
         e.currentTarget.innerText = "expand_more";
         btn_open = true;
     } else {
-        $('#slidercontainer').animate({ height: `${100 + height}px` });
+        $('#slidercontainer').animate({ height: `100px` });
         e.currentTarget.innerText = "expand_less";
         btn_open = false;
     }
