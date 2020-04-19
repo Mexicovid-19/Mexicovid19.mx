@@ -1,123 +1,173 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>MexiCOVID</title>
+        <!--WEBSITE NEEDS-->
         <meta charset='utf-8'/>
         <meta property="og:url" content="http://www.mexicovid19.mx"/>
         <meta property="og:image" content="http://www.mexicovid19.mx/graphics/frente.png"/>
         <meta property="og:title" content="Covid-19 en México"/>
-        <meta property="og:description" content="Seguimiento diario a la evoluación del Covid-19 en México"/>
-        <title>ITESM @ Covid-19</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:description" content="Seguimiento diario a la evoluación del Covid-19 en México @ITESM"/>
+        <!--VIEW PORT-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--WEB APP PROPERTIES-->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="favicon.png">
+        <link rel="icon" sizes="192x192"  href="favicon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#000000">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-startup-image" href="logo.png">
+        <link rel="manifest" href="/manifest.json">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4PEYF8LZ7"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-K4PEYF8LZ7');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MWXBT2W');</script>
+        <!-- End Google Tag Manager -->
+        
+        <!--D3 LIBRARY-->
         <script src="https://d3js.org/d3.v5.min.js"></script>
-        <!--<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
-		<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />-->
+        <!--JQUERY-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
-		<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--BOOTSTRAP-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!--FONTS-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style_covid.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <!--Firebase-->
         <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-        
+        <!--MapBox-->
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+        <!--CUSTOM-->
+        <link rel="stylesheet" href="style_covid.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
     <body>
-        <nav class="navbar navbar-inverse">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWXBT2W"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div id = 'logocontainermovil'>
+            <a href="https://escueladegobierno.itesm.mx/" target="_blank">
+                <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:80%" >
+            </a>
+        </div>
+        <nav class="navbar navbar-inverse" >
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand">Covid-19 en México</a>
                 </div>
                 <ul class="nav navbar-nav" id="mybar">
-                    <li><a href="metodologia.html" target="_blank">Metodología</a></li>
+                    <li><a href="metodologia.html">Metodología</a></li>
                     <li><a href="seguimientoestados.html">Seguimiento a Estados</a></li>
+                    <li><a href="simulaciones.html">Simulaciones</a></li>
                     <li><a href="investigacion.html">Investigación</a></li>
                     <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
                 </ul>
             </div>
         </nav>
-
         <div class="container-map">
             <div>
-                <div id='map'></div>
+                <div class="container-fluid"id='map'></div>
                 <div id='map-overlay' class='map-overlay'></div>
-                <div id = 'logocontainermovil'>
-                    <a href="https://escueladegobierno.itesm.mx/" target="_blank">
-                        <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:80%" >
-                    </a>
-                </div>
                 <div id='slidercontainer'>
-                    <div class='scrollbar'>
-                        <h2><label id='fechacorte_lm'>.</label></h2>
+                    <div class="scrollbar">
+                        <div id="scrollbar-label">
+                            <label id='fechacorte_lm'>.</label>
+                            <span class="material-icons add-btn">expand_less</span>
+                        </div>
                         <input id='sliderm' class='sliderC sliderCm' type='range' min='0' max='30' step='1' value='24' />
                     </div>
-                </div>
-                <div id="buttoncontainer">
-                    <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#graficamovil"> <i class="fas fa-chart-line logoanalysis"></i></button>
-                    <button id="btn_tabla" class="button badge badge-primary text-wrap" value="clickme" onclick="doFunction();"> <i class="fas fa-table"></i></button> 
+                    <div class="container" id="config"></div>
+                    <div id="buttoncontainer" style="background-color:black">
+                        <button id="btn_menu" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#menu"> <i class="fas fa-bars"></i></button>
+                        <button id="btn_grafica" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#graficamovil"> <i class="fas fa-chart-line logoanalysis"></i></button>
+                        <button id="btn_tabla" class="button badge badge-primary text-wrap" data-toggle="modal" data-target="#tablamovil" value="clickme" onclick="move_table()"> <i class="fas fa-table"></i></button>
+                    </div>
                 </div>
                 <div id='console'>
                     <a href="https://escueladegobierno.itesm.mx/" target="_blank">
-                        <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:80%" >
+                        <img src="logo.png" alt="EgyTP" id="logoEGOB" class = 'weblogo' >
                     </a>
                     <hr>
                     <div class='scrollbar'>
                         <h2><label id='fechacorte_l'>.</label></h2>
                         <input id='slider' class='sliderC' type='range' min='0' max='30' step='1' value='24' />
                     </div>
-                    <div class='session'>
-                        <h2>Número de Casos</h2>
-                        <div class='rowConsole colors'></div>
-                        <div class='rowConsole labels'>
-                            <div id='l1' class='labelConsole'>.</div>
-                            <div id='l2' class='labelConsole'>.</div>
-                            <div id='l3' class='labelConsole'>.</div>
-                            <div id='l4' class='labelConsole'>.</div>
-                            <div id='l5' class='labelConsole'>.</div>
-                            <div id='l6' class='labelConsole'>.</div>
+
+                    <div id="config-p">
+                        <div class='session'>
+                            <h2>Número de Casos</h2>
+                            <div class='rowConsole colors'></div>
+                            <div class='rowConsole labels'>
+                                <div id='l1' class='labelConsole'>.</div>
+                                <div id='l2' class='labelConsole'>.</div>
+                                <div id='l3' class='labelConsole'>.</div>
+                                <div id='l4' class='labelConsole'>.</div>
+                                <div id='l5' class='labelConsole'>.</div>
+                                <div id='l6' class='labelConsole'>.</div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="btn-group btn-group-toggle buttonbox" data-toggle="buttons">
-                            <label class="btn btn-secondary active buttonboxp">
-                              <input type="radio" name="pos_sos" id="fil" checked>CONFIRMADOS<span class="on"></span>
-                            </label>
-                            <label class="btn btn-secondary buttonboxs">
-                              <input type="radio" name="pos_sos" id="option2">SOSPECHOSOS<span class="off"></span>
-                            </label>
+                        <div>
+                            <div class="btn-group btn-group-toggle buttonbox" data-toggle="buttons">
+                                <label class="btn btn-secondary active buttonboxp">
+                                <input type="radio" name="pos_sos" id="fil" checked>CONFIRMADOS<span class="on"></span>
+                                </label>
+                                <label class="btn btn-secondary buttonboxs">
+                                <input type="radio" name="pos_sos" id="option2">FALLECIDOS<span class="off"></span>
+                                </label>
+                            </div>
+                            <div id="button-graph-p">
+                                <button type="button" class="btn-grafica btn btn-primary" data-toggle="modal" data-target="#grafica">
+                                    Curva de contagios
+                                </button>   
+                            </div>
+                            <p id="fuente">Fuente: SINAVE/DGE/InDRE</p>
                         </div>
-                        <button  type="button" class="btn-grafica btn btn-primary" data-toggle="modal" data-target="#grafica">
-                            Gráfica
-                        </button>   
-                        <p id=fuente>Fuente: SINAVE/DGE/InDRE</p>
                     </div>
                 </div>
             </div>
 
-            <div id='estados'>
+            <div id="estados">
                 <div class='totalsC' id='totals'>
-                    <div class="col-sm-12 text-center">
-                        <h1 id="country">México</h1>
-                    </div>
-                    <div class="col-sm-12 text-center">
-                        <span id='fechacorte_r'></span>
-                    </div>
-                    <div class="col-sm-6 text-center">
-                        <p id=tot_lab_pos ></p>
-                        <span class=tot_label>CONFIRMADOS</span>
-                    </div>
-                    <div class="col-sm-6 text-center">
-                        <p id=tot_lab_sos></p>
-                        <span class=tot_label>SOSPECHOSOS</span>
+                    <div id="info-table1">
+                        <div class="col-xs-12 text-center">
+                            <h1 id="country">México</h1>
+                        </div>
+                        <div class="col-xs-12 text-center">
+                            <span id='fechacorte_r'></span>
+                        </div>
+                        <div class="col-xs-6 text-center">
+                            <p id="tot_lab_pos"></p>
+                            <span class=tot_label>CONFIRMADOS</span>
+                        </div>
+                        <div class="col-xs-6 text-center">
+                            <p id="tot_lab_sos"></p>
+                            <span class=tot_label>FALLECIDOS</span>
+                        </div>
                     </div>
                 </div>
                 <hr>
-                <div class="col-sm-12">
+                <div class="col-sm-12" id="container-tabla">
                     <table id='tabla-estados' class="js-sort-table">
                         <tr id='AGS' class='tupla'>
                             <td id='AGS_n' class='edo_label'> 1 </td>
@@ -316,13 +366,26 @@
             </div>
 
         </div>
+        
+        <div class="icon-bar" id="floating-numbers">
+            <div class="col-sm-12 text-center" style="padding-top:1rem" id="floating-data">
+                <div class="col-xs-6 text-center">
+                    <p id="tot_lab_pos2"></p>
+                    <span class="tot_label"style="padding-bottom:15%">CONFIRMADOS</span>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <p id="tot_lab_sos2"></p>
+                    <span class="tot_label"style="padding-bottom:15%">FALLECIDOS</span>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="grafica" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
             <div id="graph-modal" class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
+                <div class="modal-content" style="background-color:black">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true" style="color:white">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
@@ -341,16 +404,16 @@
         
         <div class="modal fade" id="graficamovil" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
             <div id="graph-modalm" class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
+                <div class="modal-content compgrafmov" style="background-color:black">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true" style="color:white">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluidm">
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 p0">
                                     <h5 class="modal-title text-center" id="exampleModalLabel">Número de confirmados por fecha</h5>
                                     <div id="graficomov"></div>
                                 </div>
@@ -361,7 +424,121 @@
             </div>
         </div>
 
+        <div class="modal fade" id="tablamovil" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
+            <div id="graph-modalm" class="modal-dialog modal-dialog-centered" role="document" >
+                <div class="modal-content" style="background-color:black">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="color:white">&times;</span>
+                        </button>
+                        <div class="col-sm-12 text-center">
+                            <div id="info-table">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluidm">
+                            <div class="container" id="tablemobile-content">
+                                
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade modal-allow-interact" id="selection" tabindex="-1" role="dialog" data-backdrop="false" aria-labelledby="graficaTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+            <div id="graph-modalm" class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="background-color:black">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="color:white">&times;</span>
+                        </button>
+                        <div class="col-sm-12 text-center">
+                            <h1 id="country">Configuración</h1>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluidm">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="menu" tabindex="-1" role="dialog" aria-labelledby="graficaTitle" aria-hidden="true">
+            <div id="graph-modalm" class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="background-color:black">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="color:white">&times;</span>
+                        </button>
+                        <div class="col-sm-12 text-center">
+                            <h1 id="country">Menú</h1>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluidm">
+                            <div class="container" id="config">
+                                <div class="container">
+                                    <div class="row" id="modal-menu">
+                                        <div class="col text-center menu-btn-div">
+                                            <a href="metodologia.html" class="menu-text" target="_blank">Metodología</a>
+                                        </div>
+                                        <div class="col text-center menu-btn-div">
+                                            <a href="seguimientoestados.html" class="menu-text">Seguimiento a Estados</a>
+                                        </div>
+                                        <div class="col text-center menu-btn-div">
+                                            <a href="investigacion.html" class="menu-text">Investigación</a>
+                                        </div>
+                                        <div class="col text-center menu-btn-div">
+                                            <a href="quienessomos.html" class="menu-text">¿Quiénes Somos?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div id="myModal" class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Añadir a Home Screen</h4>
+                </div>
+                <div class="modal-body" style="text-size:large">
+                    <p>Bienvenido,<br> te invitamos a que añadas esta página a tu Home Screen 📲 o que la añadas a tus favoritos.🌟</p>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+        </div>
+        
         <script src="mapas_covid.js"></script>
-    
+
+        <!--Service worker-->
+        <script>
+            if ('serviceWorker' in navigator) {
+                console.log("Will the service worker register?");
+                navigator.serviceWorker.register('service-worker.js')
+                .then(function(reg){
+                    console.log("Yes, it did.");
+                }).catch(function(err) {
+                    console.log("No it didn't. This happened:", err)
+                });
+            }
+        </script>
+
     </body>
 </html>

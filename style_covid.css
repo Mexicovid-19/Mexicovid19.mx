@@ -73,6 +73,11 @@ hr {
   margin: 0px;
 }
 
+.container-map {
+  position: absolute;
+  left: 0;
+}
+
 .navbar {
   top: 0;
   bottom: 0;
@@ -86,16 +91,16 @@ hr {
   padding: 0;
   top: 0;
   width: 80vw;
-  height:90vh;
+  height:92vh;
 }
 
 #logoegob{
-  max-width: 100%;
-  display: block; /* remove extra space below image */
+  width: 100%;
+   /* remove extra space below image */
 }
-
 #fechacorte_l {
   font-size: 1em;
+  color: white;
 }
 
 input:checked + .slider {
@@ -126,7 +131,7 @@ input:checked + .slider:before {
   width: 1em;
   left: 75%;
   bottom: 0.4em;
-  background-color: #3f007d;
+  background-color: #099cb6;
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -160,7 +165,7 @@ input:checked + .slider:before {
   height: 1em;
   border: 0.1em solid #f0ffff;
   border-radius: 0.2em;
-  background: #a569e0;
+  background: #fff;
   cursor: pointer;
   margin-top: -0.0em; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   box-shadow: .1em .1em .1em #000000, 0em 0em .1em #0d0d0d;
@@ -169,17 +174,41 @@ input:checked + .slider:before {
 .sliderC::-moz-range-thumb {
   width: 1em;
   height: 1em;
-  background: #3f007d;
+  background: #fff;
+  color: #fff;
   cursor: pointer;
 }
+
+
+.sliderC::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.sliderC::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
 
 .session {
   margin-bottom: 1em;
 }
 
 .rowConsole {
-  height: 1vw;
+  height: 5px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .colors {
@@ -294,6 +323,23 @@ input:checked + .slider .off {
   margin: 0;
 }
 
+#tot_lab_pos2 {
+  font-weight: 900;
+  font-size: 1.6em;
+  font-stretch: ultra-expanded;
+  color: #ff4747;
+  margin:0
+}
+
+#tot_lab_sos2 {
+  font-weight: 900;
+  font-size: 1.6em;
+  font-stretch: ultra-expanded;
+  color: #ffe73e;
+  margin: 0;
+}
+
+
 .tot_label {
   font-size: 0.6em;
   letter-spacing: 1px;
@@ -334,40 +380,67 @@ font-size: 16px;
   width: fit-content;
 }
 
+@media  (min-width: 768px) {
+  #logoEGOB{
+    width:100%;
+     /* remove extra space below image */
+  }
+}
+
 @media  (max-width: 990px) {
   #map {
     width: 100vw;
   }
 
+  .colors {
+    margin-bottom: 0px;
+    height: 5px;
+  }
+  
+  #fuente { 
+    font-size: 15px;
+  }
+
+  #scrollbar-label {
+    margin-bottom: 5px;
+  }
+
+  .add-btn {
+    float: right;
+    color: white;
+    font-size: 30px;
+    background-color: #545454;
+    border-radius: 30%;
+    padding: 1px;
+  }
+
   #fechacorte_lm {
-    font-size: 1.5em;
-    margin-left: 16px;
-    margin-top: -7px;
-    margin-bottom: 18px;
+    font-size: 25px;
+    color: #fff;
   }
 
   #logocontainermovil {
     position: absolute;
-    width: 40%;
-    right: 0px;
-    top: 0;
+    width: 58%;
+    right: -35px;
+    z-index: 1;
     border-radius: 5px;
-    height: 90%;
+    margin-top: 5px;
   }
 
   #slidercontainer {
     position: absolute;
     width: 100%;
-    left: 0em;
-    bottom: 20px;
+    bottom: 0;
     border-radius: 5px;
-    height: 118px;
+    height: 100px;
     background-color: black;
+    overflow: hidden;
+    z-index: 10;
   }
 
-
   #buttoncontainer {
-    position: absolute;
+    position: relative;
     display: flex;
     bottom: 0em;
     width: 100%;
@@ -375,16 +448,14 @@ font-size: 16px;
     height: 8vh;
     background-color: transparent;
   }
+
   .button {
     width: 50%;
-    margin: 0px 1px;
-    border-radius: 5px;
-    margin-bottom: 14px;
+    border-radius: 1px;
     background-color: #333;
     z-index: 100;
     border: none;
-    font-size: 31px;
-    text-transform: UPPERCASE;
+    font-size: 25px;
   }
   #logoanalysis {
     display: block; /* remove extra space below image */
@@ -399,35 +470,67 @@ font-size: 16px;
   #grafico { 
       display: none;
   }
+  #mybar{
+    display: none;
+  }
   #graficomov { 
     padding: 10px 20px;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     border: 2px solid #222;
     border-radius: 3px;
   }
 
+  .scrollbar {
+    margin: 20px;
+  }
+
   .sliderCm {
-    margin-left: 9px;
+    margin: auto;
     -webkit-appearance: none;
-    width: 95% !important;
     height: 0.7em;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-    margin-top: 8px;
-    border-radius: 200px !important
+    border-radius: 50px !important
   }
 
+  table {
+    font-size: 16px;
+    margin: 0px;
+  }
+
+  .close {
+    opacity: 0.8;
+  }
+
+  #container-tabla {
+    padding: 0px;
+  }
+
+  #tablemobile-content {
+    padding: 0px;
+  }
+  .compgrafmov {
+    width: 91%;
+  }
 }
 
+
 @media  (min-width: 990px) {
+  .add-btn {
+    display: none;
+  }
+
   .container-map {
     display: inline-flex;
-    height: 90vh;
+    height: 92vh;
   }
-  
+  #floating-numbers{
+    display: none;
+  }
+
   #slidercontainer {
     display: none;
   }
@@ -448,13 +551,13 @@ font-size: 16px;
   #console {
     float: right;
     position: absolute;
-    width: 20vw;
+    width: 24vw;
     margin-top: 0;
     margin: 0px;
     padding: .7vh .9vw;
     background-color: #222;
     left: 0em;
-    top: 50px;    
+    top:  0px;    
   }
   #console:hover {
     opacity: 1;
@@ -470,7 +573,7 @@ font-size: 16px;
   }
   #grafico {
     padding: 10px 20px;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     border: 2px solid #222;
     border-radius: 3px;
   }
@@ -516,13 +619,13 @@ font-size: 16px;
 
 .axis path, .axis line {
   fill: none;
-  stroke: #222;
+  stroke: rgb(255, 255, 255);
   shape-rendering: crispEdges;
 }
 
 .axis text {
   font-size: 12px;
-  color:#222;
+  color:rgb(255, 255, 255);
 }
 
 .dot {
@@ -551,3 +654,117 @@ div.tooltip {
   border-radius: 0.2em;         
   pointer-events: none;           
 }
+
+#modal-menu{
+  font-size: large;
+
+}
+
+.menu-btn-div{
+  margin: 10%;
+}
+
+
+.menu-text{
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.menu-text:link {
+  color: #dbdbdb;
+  text-decoration: none;
+}
+
+.menu-text:visited {
+  color: #dbdbdb;
+  text-decoration: none;
+}
+
+.menu-text:hover {
+  color: #ffffff;
+}
+
+.menu-text:active {
+  color: #ffffff;
+  text-decoration: underline;
+  background-color: #6e6e6e;
+}
+.modal-allow-interact {
+  position: absolute;
+  top:50px;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;  /* this can be however wide you want the modal to be */
+  margin: 0 auto;
+}
+
+.p0 {
+  padding: 0px;
+}
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  top: 13vh;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  left: 0%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: #222222;
+  z-index: 1;
+}
+
+@media  (min-height: 665px) {
+  .icon-bar {
+    top: 13vh;
+  }
+}
+@media  (min-height: 720px) {
+  .icon-bar {
+    top: 10.5vh;
+  }
+}
+@media  (min-height: 720px) {
+  .icon-bar {
+    top: 10vh;
+  }
+}
+@media  (min-height: 667px) {
+  .icon-bar {
+    top: 11vh;
+  }
+}
+@media  (min-height: 736px) {
+  .icon-bar {
+    top: 11vh;
+  }
+}
+@media  (min-height: 812px) {
+  .icon-bar {
+    top: 9vh;
+  }
+}
+@media  (min-height: 1024px) {
+  .icon-bar {
+    top: 9vh;
+  }
+}
+
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+#exampleModalLabel{
+  color: white;
+}
+
+/* Style the social media icons with color, if you want */

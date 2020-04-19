@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Estados</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="estados.css">
+    <!--WEB APP PROPERTIES-->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="favicon.png">
+        <link rel="icon" sizes="192x192"  href="favicon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#000000">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-startup-image" href="logo.png">
+        <link rel="manifest" href="/manifest.json">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4PEYF8LZ7"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-K4PEYF8LZ7');
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MWXBT2W');</script>
+        <!-- End Google Tag Manager -->
+    <style>
+
+    @media only screen and (max-width: 767px)
+#allCat > li > #allSubWrap {
+  overflow-y: scroll;
+  width: 80%;
+  height: 80%;
+  position: fixed !important;
+}
+
+    .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    }
+    .names{
+    text-align:center;
+    font-weight: bold;
+    font-style: italic;
+    }
+    h1{
+    text-align: center;
+    font-family: 'Alike', serif;
+    font-size: 1.75em;
+    letter-spacing: .2em;
+    line-height: 1.1em;
+    margin-top: 20px;
+    margin:0px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #413F42;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    }
+    h2{
+    text-align: center;
+    font-family: 'Alike', serif;
+    font-size: 1.55em;
+    letter-spacing: .2em;
+    line-height: 1.1em;
+    margin:0px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #413F42;
+    padding-bottom: 1em;
+    }
+    .author{
+    font-size: 14px;
+    text-align:right;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+    }
+    p{
+    font-family: 'Alike', serif;
+    text-align:left;
+    font-size:1.3em;
+    text-align:left;
+    padding-right: 6%;
+    padding-left: 3%;
+    }
+    #logo{
+      max-height: 5%;  
+      max-width: 10%; 
+      position: relative;
+      padding:0.2em;
+    }
+    body {
+    position: relative;
+    font-size: 1.3em;
+    }
+    #section1 {padding-top:50px;height:100vh;}
+    #section2 {padding-top:50px;height:100vh;}
+    #section3 {padding-top:50px;height:100vh;}
+    #section41 {padding-top:50px;height:100vh;color: #fff; background-color: #00bcd4;}
+    #section42 {padding-top:50px;height:100vh;color: #fff; background-color: #009688;}
+    
+    #chart {
+    width: 100%;
+    height: 68%;
+    }
+
+      .tableauPlaceholder{
+  position:relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: auto;
+  align-content: center;
+  }
+
+  .container-fluid{
+    overflow-y: scroll;
+  }
+
+
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Covid-19 en México</a>
+        </div>
+        <div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#section1">Confirmados por Estado</a></li>
+              <li><a href="#section2">Camas versus Hospitalización</a></li>
+              <li><a href="#section3">Confirmados por Estado y Rango de Edad</a></li>
+              <li><a href="quienessomos.html" target="blank">¿Quiénes Somos?</a></li>
+              <!--        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#section41">Section 4-1</a></li>
+                <li><a href="#section42">Section 4-2</a></li>
+              </ul>
+            </li>  -->
+          </ul>
+          <a href="https://escueladegobierno.itesm.mx/" target="_blank">
+                <img src="logo.png" alt="EgyTP" id="logoEGOB" style="width:7vw" align="right";>
+            </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="section1" class="container-fluid">
+    <fieldset>
+      <form id='party' class="form">
+        <div class="switch-field1">
+          <h2>Número de Confirmados Positivos por Estado y por 100,000 Habitantes</h2>
+          <div class="switch-title">
+            <p> <u>Instrucciones</u>: Se seleccionan automáticamente los cinco estados con las tasas de confirmados-positivos más altas a nivel nacional. Tú puedes interactuar con el tablero, seleccionando y deseleccionando las comparaciones entre estados que quieras realizar.</p>
+          </div>
+          <div>
+            <input type="checkbox" class="switchEdo" id="AGS_s" name="switch_AGS" value='on' checked/>
+            <label for="AGS_s">AGS</label>
+            <input type="checkbox" class="switchEdo" id="BC_s" name="switch_BC" value="on" checked/>
+            <label for="BC_s">BC</label>
+            
+            <input type="checkbox"  class="switchEdo" id="BCS_s" name="switch_BCS" value="on" checked />
+            <label for="BCS_s">BCS</label>
+            
+            <input type="checkbox"  class="switchEdo" id="CAMP_s" name="switch_CAMP" value="on" checked/>
+            <label for="CAMP_s">CAMP</label>
+            
+            <input type="checkbox"  class="switchEdo" id="CHIS_s" name="switch_CHIS" value="on" checked/>
+            <label for="CHIS_s">CHIS</label>
+            <input type="checkbox"  class="switchEdo"  id="CHIH_s" name="switch_CHIH" value="on" checked/>
+            <label for="CHIH_s">CHIH</label>
+            <input type="checkbox"  class="switchEdo"  id="CDMX_s" name="switch_CDMX" value="on" checked/>
+            <label for="CDMX_s">CDMX</label>
+            <input type="checkbox"  class="switchEdo"  id="COAH_s" name="switch_COAH" value="on" checked/>
+            <label for="COAH_s">COAH</label>
+            <input type="checkbox"  class="switchEdo"  id="COL_s" name="switch_COL" value="on" checked/>
+            <label for="COL_s">COL</label>
+            <input type="checkbox"  class="switchEdo"  id="DGO_s" name="switch_DGO" value="on" checked/>
+            <label for="DGO_s">DGO</label>
+            <input type="checkbox"   class="switchEdo" id="GTO_s" name="switch_GTO" value="on" checked/>
+            <label for="GTO_s">GTO</label>
+            <input type="checkbox"  class="switchEdo"  id="GRO_s" name="switch_GRO" value="on" checked/>
+            <label for="GRO_s">GRO</label>
+            <input type="checkbox"   class="switchEdo" id="HGO_s" name="switch_HGO" value="on" checked/>
+            <label for="HGO_s">HGO</label>
+            <input type="checkbox"   class="switchEdo" id="JAL_s" name="switch_JAL" value="on" checked/>
+            <label for="JAL_s">JAL</label>
+            <input type="checkbox"   class="switchEdo" id="MEX_s" name="switch_MEX" value="on" checked/>
+            <label for="MEX_s">MEX</label>
+            <input type="checkbox"   class="switchEdo" id="MICH_s" name="switch_MICH" value="on" checked/>
+            <label for="MICH_s">MICH</label>
+            <input type="checkbox"   class="switchEdo" id="MOR_s" name="switch_MOR" value="on" checked/>
+            <label for="MOR_s">MOR</label>
+            <input type="checkbox"   class="switchEdo" id="NAY_s" name="switch_NAY" value="on" checked/>
+            <label for="NAY_s">NAY</label>
+            <input type="checkbox"   class="switchEdo" id="NL_s" name="switch_NL" value="on" checked/>
+            <label for="NL_s">NL</label>
+            <input type="checkbox"   class="switchEdo" id="OAX_s" name="switch_OAX" value="on" checked/>
+            <label for="OAX_s">OAX</label>
+            <input type="checkbox"   class="switchEdo" id="PUE_s" name="switch_PUE" value="on" checked/>
+            <label for="PUE_s">PUE</label>
+            <input type="checkbox"  class="switchEdo"  id="QRO_s" name="switch_QRO" value="on" checked/>
+            <label for="QRO_s">QRO</label>
+            <input type="checkbox"   class="switchEdo" id="QROO_s" name="switch_QROO" value="on" checked/>
+            <label for="QROO_s">QROO</label>
+            <input type="checkbox"   class="switchEdo" id="SLP_s" name="switch_SLP" value="on" checked/>
+            <label for="SLP_s">SLP</label>
+            <input type="checkbox"   class="switchEdo" id="SIN_s" name="switch_SIN" value="on" checked/>
+            <label for="SIN_s">SIN</label>
+            <input type="checkbox"   class="switchEdo" id="SON_s" name="switch_SON" value="on" checked/>
+            <label for="SON_s">SON</label>
+            <input type="checkbox"   class="switchEdo" id="TAB_s" name="switch_TAB" value="on" checked/>
+            <label for="TAB_s">TAB</label>
+            <input type="checkbox"   class="switchEdo" id="TAMP_s" name="switch_TAMP" value="on" checked/>
+            <label for="TAMP_s">TAMP</label>
+            <input type="checkbox"  class="switchEdo"  id="TLAX_s" name="switch_TLAX" value="on" checked/>
+            <label for="TLAX_s">TLAX</label>
+            <input type="checkbox"   class="switchEdo" id="VER_s" name="switch_VER" value="on" checked/>
+            <label for="VER_s">VER</label>
+            <input type="checkbox"   class="switchEdo" id="YUC_s" name="switch_YUC" value="on" checked/>
+            <label for="YUC_s">YUC</label>
+            <input type="checkbox"  class="switchEdo"  id="ZAC_s" name="switch_ZAC" value="on" checked/>
+            <label for="ZAC_s">ZAC</label>
+            
+            <input type="checkbox"  class="switchEdo2"  id="NACIONAL_s" name="switch_NACIONAL" value="on" checked/>
+            <label for="NACIONAL_s">NACIONAL</label>
+            <input type="checkbox"  class="switchEdo2"  id="TODOS_s" name="switch_TODOS" value="on"/>
+            <label for="TODOS_s">TODOS</label>
+          </div>
+        </form>
+      </fieldset>
+    <svg id="chart"></svg>
+    <script src="estados.js"> </script>
+  </div>
+</div>
+<div id="section2" class="container-fluid">
+  <h2>Disponibilidad de camas para hospitalización y en Unidades de Cuidado Intensivo (UCI)</h2>
+  <p> Mediante esta visualización se da seguimiento a la evolución del número de casos de COVID19 a nivel estatal que han requerido hospitalización, así como los casos graves que se encuentran en cuidado intensivo. Su objetivo es identificar las entidades federativas en las cuales, dada la evolución de los casos, será necesario destinar mayores recursos e infraestructura para lograr atender la demanda de atención médica. Para identificar el número y tipo de casos se utiliza la información más desagregada que el Gobierno Federal empezó a publicar a partir del 13 de abril. Respecto al número de camas a nivel estatal se utiliza la información de la Secretaría de Salud de 2018. </p>
+
+  <div class='tableauPlaceholder' id='viz1586987076307' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;me&#47;mexicovid19_camasv2&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='mexicovid19_camasv2&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;me&#47;mexicovid19_camasv2&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                
+
+  <script type='text/javascript'>                    
+    var divElement = document.getElementById('viz1586987076307');                    
+    var vizElement = divElement.getElementsByTagName('object')[0];                    
+    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+    else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+    else { vizElement.style.width='100%';vizElement.style.height='877px';}                     
+  var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);     
+</script>
+</div>
+
+<div id="section3" class="container-fluid">
+  <h2>Casos confirmados acumulados de COVID-19 por rango de edad</h2>
+  <p>La visualización presenta los rangos de edades en los que se ubican los casos confirmados acumulados de COVID-19 por estado y fecha. Con base en los Comunicados Técnicos diarios del Gobierno Federal, el objetivo de esta visualización es identificar la población que está siendo más susceptible al contagio por entidad federativa.</p>
+
+  <div class='tableauPlaceholder' id='viz1586703059877' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;me&#47;mexicovid19_edades&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='mexicovid19_edades&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;me&#47;mexicovid19_edades&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>
+ 
+
+  <script type='text/javascript'>                    
+    var divElement = document.getElementById('viz1586703059877');                    
+    var vizElement = divElement.getElementsByTagName('object')[0];                    
+    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='80vw';vizElement.style.height='77vh';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100vw';vizElement.style.height='70vh';} 
+  else { vizElement.style.width='90vw';vizElement.style.height='70vh';}                     
+var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+  
+</div>
+
+<!--<div id="section41" class="container-fluid">
+  <h1>Section 4 Submenu 1</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="section42" class="container-fluid">
+  <h1>Section 4 Submenu 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div> -->
+</body>
+</html>

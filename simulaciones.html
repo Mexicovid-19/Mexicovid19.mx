@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>simulaciones</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+   h2{
+      text-align: center;
+      font-family: 'Alike', serif;
+      font-size: 1.75em;
+      letter-spacing: .2em;
+      line-height: 1.1em;
+      margin:0px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #413F42;
+    }
+    h3{
+      text-align: center;
+      font-family: 'Alike', serif;
+      font-size:16px;
+    }
+    .author{
+    font-size: 10px;
+    text-align:right;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+    }
+    p{
+      font-family: 'Alike', serif;
+      text-align:left;
+    padding-left: 2%;
+    padding-right: 2%;
+    }
+    #doubling{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding-bottom: 1%;
+    }
+    .bullets{
+      font-family: 'Alike', serif;
+      font-size:20px;
+    }
+    table {
+    font-family: 'Alike', serif;
+    font-size: 0.7em;
+    border-collapse: collapse;
+    margin: 0.5em;
+    padding: 0.5em 0.5em;
+    right: 0em;
+    top: 0em;
+    }
+    td{
+    border-right: 1px;
+    border-bottom: 1px dotted ;
+    border-bottom-style: dotted;
+    text-align: left;
+    padding: 0.4em;
+    color: black;
+    }
+    th {
+    color: white;
+    text-align: left;
+    padding: 0.4em;
+    font-family: arial, sans-serif;
+    font-size: 0.7em;
+    border-right: none;
+    line-height: 0.5em;
+    }
+    hr {
+    border: 10px solid #213267  ;
+    border-radius: 5px;
+    }
+    .myFloated {
+    float: left;
+    position: relative;
+    top: -0.30em;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 0px;
+    margin-bottom: -0.9em;
+    font-size: 80px;
+    line-height: normal;
+    font-weight: bold;
+    padding: 5px 15px 25px  17px;
+    }
+    caption {
+    display: table-caption;
+    text-align: center;
+    caption-side: bottom;
+    }
+    figcaption{
+    text-align: center;
+    padding-bottom: 10px;
+    }
+    .navbar-header{
+      display:inline-block;
+    }
+    #logo{
+      position: relative;
+      padding-top:2px;
+      padding-bottom: 0;
+    }
+    header{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 80px;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 72px;
+    margin-bottom: 20px;
+    }
+    .head{
+    text-align: center;
+    position: relative;
+    }
+    .headerobjectswrapper{
+    }
+    .subhead{
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 0 12px 0;
+    }
+    .headline.hl3{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 36px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+    text-align: center;
+      font-family: 'Alike', serif;
+      letter-spacing: .1em;
+      line-height: 1.1em;
+      margin:0px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #413F42;
+    }
+    .headline.hl4{
+    font-weight: 700;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+    }
+
+    .tableauPlaceholder{
+      position:relative;
+      margin-left: auto;
+      margin-right: auto;
+      border: 2px solid;
+      overflow: auto;
+      height: 50vh;
+      width: 60vw;
+      resize: both;
+    }
+
+
+#logo{
+  position: relative;
+  padding-top:2px; 
+  padding-bottom: 0;
+}
+
+    
+    </style>
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Covid-19 en México</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="seguimientoestados.html">Seguimiento a Estados</a></li>
+             <li class="active"><a href="simulaciones.html">Simulaciones</a></li>
+            <li><a href="investigacion.html">Investigación</a></li>
+            <li><a href="metodologia.html">Metodología</a></li>
+            <li><a href="quienessomos.html">¿Quiénes Somos?</a></li>
+          </ul>
+          <img id="logo" src="logo.png" style="width:15%" align="right"> 
+        </div>
+      </div>
+    </nav>
+    
+   <div class="head"><span class="headline hl3"> Análisis de simulación del COVID-19 bajo incertidumbre** </span><p> 
+  <p><span class="headline hl4">por Edmundo Molina, Fernando Gómez y Luis Serra*</span></p> 
+  <p> Este modelo de difusión de COVID19  constituye una versión modificada del modelo SIR. Considera parámetros sobre la infectividad y mortalidad del COVID19, el impacto del distanciamiento social y, de manera muy importante, el rezago en la información entre el número real de infectados y el número de casos confirmados. En este ejercicio de modelación se integran además los datos de población ocupada total y producción bruta total de los censos económicos 2014 (último disponible con el nivel de desagregación requerido para el análisis), así como de la población estatal de la encuesta intercensal 2015 y el tamaño de empresas del Directorio Estadístico Nacional de Unidades Económicas (DENUE) de 2019. El modelo utilizado para el análisis todavía está en desarrollo y requiere refinamientos en relación a los efectos de externalidades geográficas, elasticidades de sustitución e impactos de la política de confinamiento. </p>
+  
+  <div class='tableauPlaceholder' id='viz1586919613795' style='position: relative'><noscript>
+    <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;me&#47;mexicovid19_modelacin&#47;MXCOVIDANALYSIS&#47;1_rss.png' style='border: none' /></a></noscript>
+    <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='mexicovid19_modelacin&#47;MXCOVIDANALYSIS' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;me&#47;mexicovid19_modelacin&#47;MXCOVIDANALYSIS&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                
+
+<script type='text/javascript'>                    
+  var divElement = document.getElementById('viz1586919613795');                   
+  var vizElement = divElement.getElementsByTagName('object')[0];                    
+  vizElement.style.width='1516px';vizElement.style.height='991px';                    
+  var scriptElement = document.createElement('script');                    
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+</script>
+
+<p>* Edmundo Molina es doctor en análisis de sistemas y política pública por la Pardee RAND Graduate School (@EdmundoMolinaMx), Fernando Gómez es doctor en políticas públicas por la Escuela de Gobierno y Transformación Pública del Tecnológico de Monterrey (@fgmzz), y Luis Serra es doctor en economía por la Universidad de Warwick (@luisserra23),. Los tres son profesores-investigadores en la Escuela de Gobierno y Transformación Pública del Tecnológico de Monterrey. 
+
+</p>
+<p>** Los resultados presentados son parte de una investigación en curso. Las opiniones aquí reflejadas representan la opinión personal de los autores y no de la institución donde laboran. 
+
+</p>
+ 
+  </body>
+</html>

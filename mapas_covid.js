@@ -144,6 +144,9 @@ var label_fecha;
 var popup_mes = new mapboxgl.Popup({
     closeButton: false
 });
+var popup_mes2 = new mapboxgl.Popup({
+    closeButton: false
+});
 var element_touched_a = 'AGS'
 var element_touched_b = 'AGS'
 mapboxgl.accessToken = 'pk.eyJ1IjoibWlsZHJlZGciLCJhIjoiY2s4eHc2cGpiMWJsbzNscXEzcTE5dzhtMiJ9.MPadSAVs6Jr1gOs7hfYVpQ';
@@ -238,6 +241,9 @@ Promise.all(loadFiles).then(function(data) {
     }
     document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
     document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
+
+    document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+    document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
     thresholdsNum = [array_positivos[5], array_positivos[10], array_positivos[15], array_positivos[20], array_positivos[25], array_positivos[29]];
     var thresholdsColor = ['#c7e9b4', '#7fcdbb', '#41b6c4', '#1d91c0', '#225ea8', '#0c2c84'];
     stepsList = thresholdsNum.map((num, i) => {
@@ -352,6 +358,9 @@ Promise.all(loadFiles).then(function(data) {
             document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
             document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
 
+            document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+            document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
+
              if (today_p.substr(0, 1)=='m'){
                 label_fecha = today_p.substr(1,(today_p.search("p")-1)) + ' de ' + 'Marzo';
 
@@ -440,6 +449,9 @@ Promise.all(loadFiles).then(function(data) {
             // update text in the UI
             document.getElementById('tot_lab_pos').innerText = numberWithCommas(total_positivos);
             document.getElementById('tot_lab_sos').innerText = numberWithCommas(total_sospechosos);
+            
+            document.getElementById('tot_lab_pos2').innerText = numberWithCommas(total_positivos);
+            document.getElementById('tot_lab_sos2').innerText = numberWithCommas(total_sospechosos);
 
              if (today_p.substr(0, 1)=='m'){
                 label_fecha = today_p.substr(1,(today_p.search("p")-1)) + ' de ' + 'Marzo';
@@ -641,6 +653,7 @@ Promise.all(loadFiles).then(function(data) {
 
         // When the user moves their mouse over the state-fill layer, we'll update the
         // feature state for the feature under the mouse.
+
         map.on("mousemove", function(e) {
             var features = map.queryRenderedFeatures(e.point, {
                 layers: ["pref"]
@@ -664,7 +677,40 @@ Promise.all(loadFiles).then(function(data) {
             overlay.innerHTML = '';
 
             popup_mes.setLngLat(e.lngLat)
-                .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Confirmados: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Sospechosos: "+ feature.properties[today_s])
+                .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Confirmados: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Fallecidos: "+ feature.properties[today_s])
+                .addTo(map);
+            document.getElementById(feature.properties.ABREV).style.background = '#393a54';
+            var element_touched_c = feature.properties.ABREV
+            if (element_touched_c !== element_touched_a) {
+                document.getElementById(element_touched_a).style.background = '#222';
+                element_touched_a = element_touched_c;
+            }
+        });
+        map.on("click", function(e) {
+            var features = map.queryRenderedFeatures(e.point, {
+                layers: ["pref"]
+            });
+            console.log(e)
+            if (features.length) {
+                map.setFilter("edo_boundary", ["==", "ABREV", features[0].properties.ABREV]);
+                //document.getElementById(features[0].properties.ABREV).style.background = '#bcbddc';
+                estado_posa = features[0].properties.ABREV;
+            } else if (!features.length) {
+                popup_mes2.remove();
+                map.setFilter('edo_boundary', ['in', 'ABREV', '']);
+                overlay.style.display = 'none';
+                return;
+            } else {
+                map.setFilter("edo_boundary", ["==", "ABREV", ""]);
+            } // Remove things if no feature was found.
+
+            // Single out the first found feature on mouseove.
+            var feature = features[0];
+            // Render found features in an overlay.
+            overlay.innerHTML = '';
+
+            popup_mes2.setLngLat(e.lngLat)
+                .setHTML(feature.properties.ABREV + "<br/> <circle r='4' fill='#ff4747'></circle>Confirmados: " + feature.properties[today_p] +"<br/><circle r='4' fill='#ffe73e'></circle>Fallecidos: "+ feature.properties[today_s])
                 .addTo(map);
             document.getElementById(feature.properties.ABREV).style.background = '#393a54';
             var element_touched_c = feature.properties.ABREV
@@ -675,6 +721,14 @@ Promise.all(loadFiles).then(function(data) {
         });
     });
 
+    map.on('mouseenter', 'pref', function() {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+         
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'pref', function() {
+    map.getCanvas().style.cursor = '';
+    });
   
 
    //console.log(nameCol);
@@ -719,7 +773,7 @@ function graphic() {
 
     var height  = 0.45*vh;
     var width   = 0.40*vw;;
-    var margin = {top: 10, right: 20, bottom: 40, left: 30};
+    var margin = {top: 10, right: 20, bottom: 40, left: 40};
 
     width =     width - margin.left - margin.right;
     height =    height - margin.top - margin.bottom;
@@ -777,6 +831,7 @@ function graphic() {
     //  Add the Y Axis
     svg.append("g")
         .attr("class", "axis")
+        .style("font", "8px")
         .call(yAxis);
             
     svg.selectAll(".dot")
@@ -787,11 +842,11 @@ function graphic() {
         .attr("cx", function(d) { return x(d.date) })
         .attr("cy", function(d) { return y(d.nps) })
         .style('fill', 'darkOrange')
-        .attr("r", 8)
+        .attr("r", 7)
         .on("mouseover", function(d) {    
             div.transition()        
                 .duration(200)   
-                .attr("r", 10)   
+                .attr("r", 8)   
                 .style("opacity", .9);      
             div.html(formatDate(d.date) + "<br/>"  + d.nps)  
                 .style("left", (d3.event.pageX) + "px")     
@@ -802,7 +857,7 @@ function graphic() {
             div.transition()        
                 .duration(500)      
                 .style("opacity", 0);
-                d3.select(this).attr("r", 8)
+                d3.select(this).attr("r", 7)
         });
 
     svg.append("text")
@@ -818,15 +873,15 @@ function graphicmovile() {
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    var height  = 0.45*vh;
-    var width   = 0.70*vw;
+    var height  = 0.40*vh;
+    var width   = 0.65*vw;
     var margin = {top: 10, right: 10, bottom: 40, left: 40};
 
     //width =     width - margin.left - margin.right;
     //height =    height - margin.top - margin.bottom;
 
-    width =    width - margin.right;
-    height =   height - margin.bottom;
+    width =    width;
+    height =   height;
 
     var svg = d3.select('#graficomov')
         .append("svg")
@@ -882,6 +937,7 @@ function graphicmovile() {
     //  Add the Y Axis
     svg.append("g")
         .attr("class", "axis")
+        .style("font", "8px")
         .call(yAxis);
             
     svg.selectAll(".dotm")
@@ -916,4 +972,91 @@ function graphicmovile() {
         .attr("text-anchor", "middle")  
         .style("font-size", "14px")
         .style("fill", "white");
+}
+
+function move_table(){
+    //console.log("deberia de moverse la tabla")
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(document.getElementById('container-tabla'));
+    document.getElementById('tablemobile-content').appendChild(fragment);
+
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(document.getElementById('info-table1'));
+    document.getElementById('info-table').appendChild(fragment);
+}
+
+function move_config(){
+    //console.log("deberia de moverse la tabla")
+    var element = document.getElementById("button-graph-p");
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild(document.getElementById('config-p'));
+    document.getElementById('config').appendChild(fragment);
+    element.style.display = 'none'; 
+
+    var fragment = document.createDocumentFragment();
+    var session = document.getElementsByClassName('session')[0];
+    session.firstElementChild.remove();
+    fragment.appendChild(session);
+    document.getElementById('slidercontainer').prepend(fragment);
+}
+
+
+//checar con cookies
+/*
+$(document).ready(function () {
+    $("#myModal").click(function(){
+        del_cookie("cookie");   
+    });
+    
+    console.log(document.cookie);
+    //del_cookie("cookie");
+    var visit = getCookie("cookie");
+    if (visit == null) {
+        $("#myModal").modal("show");
+        var expire = new Date();
+        expire = new Date(expire.getTime() + 7776000000);
+        document.cookie = "cookie=here; expires=" + expire;
+    }
+});
+
+function del_cookie(name)
+{
+    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+function getCookie(c_name) {
+    var c_value = document.cookie;
+    var c_start = c_value.indexOf(" " + c_name + "=");
+    if (c_start == -1) {
+        c_start = c_value.indexOf(c_name + "=");
+    }
+    if (c_start == -1) {
+        c_value = null;
+    } else {
+        c_start = c_value.indexOf("=", c_start) + 1;
+        var c_end = c_value.indexOf(";", c_start);
+        if (c_end == -1) {
+            c_end = c_value.length;
+        }
+        c_value = unescape(c_value.substring(c_start, c_end));
+    }
+    return c_value;
+}
+*/
+
+var btn_open = false;
+$('.add-btn').click(function(e) {
+    if(btn_open === false) {
+        $('#slidercontainer').animate({ height: `225px` });
+        e.currentTarget.innerText = "expand_more";
+        btn_open = true;
+    } else {
+        $('#slidercontainer').animate({ height: '100px' });
+        e.currentTarget.innerText = "expand_less";
+        btn_open = false;
+    }
+});	
+
+if(window.innerWidth < 600) {
+    move_config();
 }
